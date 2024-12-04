@@ -1,0 +1,21 @@
+project:
+  name: "activity"
+  mode: "dev"
+  address: "127.0.0.1"
+  port: "9990"
+  starttime: "2024-11-25"
+  machineid: 1
+log:
+  level: "debug"
+  filename: "activity.log"
+  max_size: 200
+  max_age: 30
+  max_backups: 7
+mysql:
+  host: "47.120.75.179"
+  port: 3306
+  user: "root"
+  password: "ljh011215"
+  dbname: "activity"
+  max_open_conns: 200
+  max_idle_conns: 50

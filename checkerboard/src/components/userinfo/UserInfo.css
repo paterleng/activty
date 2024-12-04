@@ -1,0 +1,19 @@
+.user-info {
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.info-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.info-row p {
+    margin-right: 10px;
+}
+
