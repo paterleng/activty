@@ -28,6 +28,12 @@ func (p *UserDao) GetUserInfo(userId string) (model.User, error) {
 	return user, err
 }
 
+func (p *UserDao) GetUserInfoFirst(userId string) (model.User, error) {
+	var user model.User
+	err := p.DB.Where("user_id = ?", userId).First(&user).Error
+	return user, err
+}
+
 // GetUserAssetInfo 根据用户id获取用户资产信息
 func (p *UserDao) GetUserAssetInfo(userId string) (model.Assets, error) {
 	var assets model.Assets
@@ -68,6 +74,11 @@ func (p *UserDao) UpdateUserAssetInfo(chargeInfo model.RechargerRecord) error {
 	return nil
 }
 
+func (p *UserDao) CreateAssetInfo(asset model.Assets) error {
+	err := p.DB.Create(&asset).Error
+	return err
+}
+
 // CheckPassWord 检查密码是否正确
 func (p *UserDao) CheckPassWord(password string) (bool, error) {
 	var user User
@@ -77,13 +88,15 @@ func (p *UserDao) CheckPassWord(password string) (bool, error) {
 	}
 	return true, nil
 }
-func (p *UserDao) Register(user *model.User) error {
 
-	return nil
+// Register 注册用户
+func (p *UserDao) Register(user *model.User) error {
+	err := p.DB.Create(user).Error
+	return err
 }
 
 // 更新用户信息
 func (p *UserDao) PutUserInfo(user model.User) error {
-	err := p.DB.Updates(&user).Error
+	err := p.DB.Where("user_id = ?", user.UserId).Updates(&user).Error
 	return err
 }

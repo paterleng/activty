@@ -12,7 +12,7 @@ type CheckBoardDao struct {
 // GetRecordByUserId 根据用户id查询用户的操作记录
 func (p *CheckBoardDao) GetRecordByUserId(userId string, page, size int) ([]model.Record, int64, error) {
 	var records []model.Record
-	err := p.DB.Where("owner = ?", userId).Limit(size).Offset((page - 1) * size).Order("created_at desc").Find(&records).Error
+	err := p.DB.Where("owner = ? or old_owner = ?", userId, userId).Limit(size).Offset((page - 1) * size).Order("created_at desc").Find(&records).Error
 	if err != nil {
 		return nil, 0, err
 	}
@@ -76,7 +76,13 @@ func (p *CheckBoardDao) GetRecord() ([]model.Record, error) {
 }
 
 // 更新用户在棋盘上的数据
-func (p *CheckBoardDao) UpdateUserBoardInfo(avatarId int, userId string) error {
-	err := p.DB.Where("user_id = ?", userId).Update("avatar_id", avatarId).Error
+func (p *CheckBoardDao) UpdateUserBoardInfo(user model.User) error {
+	err := p.DB.Model(&model.CheckerBoard{}).Where("user_id = ?", user.UserId).Updates(model.CheckerBoard{AvatarId: user.AvatarId, Owner: user.UserName}).Error
 	return err
+}
+
+func (p *CheckBoardDao) GetGaidInfoByGaidId(gaidId int) (model.CheckerBoard, error) {
+	var checkerBoard model.CheckerBoard
+	err := p.DB.Where("id = ?", gaidId).First(&checkerBoard).Error
+	return checkerBoard, err
 }

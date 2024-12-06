@@ -19,3 +19,6 @@ mysql:
   dbname: "activity"
   max_open_conns: 200
   max_idle_conns: 50
+
+#  TG机器人：7559410093:AAENqFuXpFVGecRqMMoutiy99pNLcZEQObY
+#  chat_id：-4620695304

@@ -49,6 +49,19 @@ func (p *CheckerBoardController) UserBetting(c *gin.Context) {
 		pkg.ResponseError(c, pkg.CodeInsufficientBalance)
 		return
 	}
+	//获取当前格子的信息，判断该用户提交的金额是否符合要求
+	checkerBoard, err := dao.GetDaoManager().GetGaidInfoByGaidId(bet.GridId)
+	if err != nil {
+		p.LG.Error("获取格子信息失败", zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeServerBusy)
+		return
+	}
+	if checkerBoard.PriceIncrease >= bet.TransactionAmount || checkerBoard.Price >= bet.TransactionAmount {
+		p.LG.Error("用户提交的数据不足以买下", zap.Error(err))
+		pkg.ResponseError(c, pkg.CodePriceError)
+		return
+	}
+
 	//查询用户信息
 	userInfo, err := dao.GetDaoManager().GetUserInfo(userId)
 	if err != nil {
@@ -57,6 +70,11 @@ func (p *CheckerBoardController) UserBetting(c *gin.Context) {
 		return
 	}
 	var board model.Board
+	//在记录中记录用户名用于前端展示
+	bet.OldAmount = checkerBoard.Price
+	bet.Name = userInfo.UserName
+	bet.OldName = checkerBoard.Owner
+	bet.OldOwner = checkerBoard.UserId
 	board.Record = bet
 	board.UserName = userInfo.UserName
 	board.Freeze = assetInfo.Freeze + bet.TransactionAmount
@@ -80,7 +98,7 @@ func (p *CheckerBoardController) UserBetting(c *gin.Context) {
 	pkg.ResponseSuccess(c, pkg.CodeSuccess)
 }
 
-// GetOperateRecords 获取用户的操作记录
+// GetOperateRecords 获取用户的操作记录，包括被抢占的记录
 func (p *CheckerBoardController) GetUserOperateRecords(c *gin.Context) {
 	userId := c.GetString(pkg.USERID)
 	if userId == "" {

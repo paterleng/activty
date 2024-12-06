@@ -25,7 +25,7 @@ func JWTAuthMiddleware() func(c *gin.Context) {
 		//	return
 		//}
 		//c.Set("userid", mc.UserID)
-		c.Set("user_id", "0x7D24a4398d5b9138451e6d16de31A45521CaACf4")
+		c.Set("user_id", "1231545")
 		c.Next()
 	}
 }

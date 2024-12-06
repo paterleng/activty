@@ -15,8 +15,10 @@ type DaoController struct {
 type User interface {
 	CheckUserName(username string) (bool, error)
 	GetUserInfo(userId string) (model.User, error)
+	GetUserInfoFirst(userId string) (model.User, error)
 	CheckPassWord(password string) (bool, error)
 	GetUserAssetInfo(userId string) (model.Assets, error)
+	CreateAssetInfo(assets model.Assets) error
 	UpdateUserAssetInfo(chargeInfo model.RechargerRecord) error
 	Register(user *model.User) error
 	PutUserInfo(user model.User) error
@@ -29,7 +31,8 @@ type CheckerBoard interface {
 	GerRecordGrid(blockId string, userId string) ([]model.Record, error)
 	CreateGridRecord(board model.Board) error
 	GetRecord() ([]model.Record, error)
-	UpdateUserBoardInfo(avatarId int, userId string) error
+	UpdateUserBoardInfo(user model.User) error
+	GetGaidInfoByGaidId(gaidId int) (model.CheckerBoard, error)
 }
 
 type DaoManager interface {

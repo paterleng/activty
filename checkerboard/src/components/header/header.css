@@ -1,0 +1,29 @@
+.header-box {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.left-box,
+.right-box {
+    width: 50%;
+    /* 设置子盒子的宽度 */
+    background-color: lightblue;
+    /* 背景色，用于区分盒子 */
+    padding: 20px;
+    /* 内边距 */
+    text-align: center;
+}
+
+.left-box {
+    background-color: lightcoral;
+    /* 左侧盒子的背景色 */
+}
+
+.right-box {
+    background-color: lightgreen;
+    /* 右侧盒子的背景色 */
+}

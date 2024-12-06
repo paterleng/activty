@@ -31,7 +31,7 @@ const UserRecordTable = () => {
   const columns = [
     {
       title: '用户',
-      dataIndex: 'owner',
+      dataIndex: 'name',
     },
     {
       title: '原来值',

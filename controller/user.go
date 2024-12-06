@@ -6,6 +6,7 @@ import (
 	"activity/pkg"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
+	"gorm.io/gorm"
 )
 
 type UserController struct {
@@ -21,13 +22,40 @@ func (p *UserController) Login(c *gin.Context) {
 		return
 	}
 
-	userInfo, err := dao.GetDaoManager().GetUserInfo(user.UserName)
-	if err != nil {
+	userInfo, err := dao.GetDaoManager().GetUserInfoFirst(user.UserId)
+	if err == gorm.ErrRecordNotFound {
+		//检查用户是否之前注册过，如果之前注册过就进行登录，如果没有注册过就注册过之后再返回信息
+		//区分用户使用的是钱包平台以及地址，创建用户，并初始化用户资源
+		/**
+		1、创建用户
+		2、创建用户资产数据
+		*/
+		err := dao.GetDaoManager().Register(&user)
+		if err != nil {
+			p.LG.Error("用户注册失败:", zap.Error(err))
+			pkg.ResponseError(c, pkg.CodeServerBusy)
+			return
+		}
+
+		//初始化资产数据
+		asset := model.Assets{
+			Total:     0,
+			Freeze:    0,
+			Available: 0,
+			UserId:    user.UserId,
+		}
+		err = dao.GetDaoManager().CreateAssetInfo(asset)
+		if err != nil {
+			p.LG.Error("创建用户资产数据失败:", zap.Error(err))
+			pkg.ResponseError(c, pkg.CodeServerBusy)
+			return
+		}
+	}
+	if err != nil && err != gorm.ErrRecordNotFound {
 		p.LG.Error("用户信息查询失败:", zap.Error(err))
 		pkg.ResponseError(c, pkg.CodeServerBusy)
 		return
 	}
-
 	//生成token，这个地方只返回一个token
 	token, err := pkg.GenToken(userInfo.UserId)
 	if err != nil {
@@ -77,11 +105,13 @@ func (p *UserController) GetUserInfo(c *gin.Context) {
 	}
 
 	info := struct {
-		UserName  string `json:"user_name"`
-		Total     int    `json:"total"`
-		Frozen    int    `json:"frozen"`
-		Available int    `json:"available"`
+		UserName  string  `json:"user_name"`
+		AvatarId  int     `json:"avatar_id"`
+		Total     float64 `json:"total"`
+		Frozen    float64 `json:"frozen"`
+		Available float64 `json:"available"`
 	}{
+		AvatarId:  userInfo.AvatarId,
 		UserName:  userInfo.UserName,
 		Total:     asset.Total,
 		Frozen:    asset.Freeze,
@@ -120,26 +150,39 @@ func (p *UserController) PutUserInfo(c *gin.Context) {
 		pkg.ResponseError(c, pkg.CodeNeedLogin)
 		return
 	}
-	var user model.User
+	var user model.UpdateUser
 	if err := c.ShouldBind(&user); err != nil {
 		p.LG.Error("修改用户信息失败", zap.Error(err))
 		pkg.ResponseError(c, pkg.CodeInvalidParam)
 		return
 	}
-	user.UserId = userId
+	userInfo, err := dao.GetDaoManager().GetUserInfo(userId)
+	if err != nil {
+		p.LG.Error("获取用户信息失败", zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeServerBusy)
+		return
+	}
+	if user.AvatarId != 0 {
+		userInfo.AvatarId = user.AvatarId
+	}
+	if user.UserName != "" {
+		userInfo.UserName = user.UserName
+	}
+
 	//更新用户信息
-	err := dao.GetDaoManager().PutUserInfo(user)
+	err = dao.GetDaoManager().PutUserInfo(userInfo)
 	if err != nil {
 		p.LG.Error("修改用户信息失败", zap.Error(err))
 		pkg.ResponseError(c, pkg.CodeUpdateError)
 		return
 	}
 	//更新棋盘信息
-	err = dao.GetDaoManager().UpdateUserBoardInfo(user.AvatarId, userId)
+	err = dao.GetDaoManager().UpdateUserBoardInfo(userInfo)
 	if err != nil {
 		p.LG.Error("修改用户棋盘信息失败", zap.Error(err))
 		pkg.ResponseError(c, pkg.CodeUpdateError)
 		return
 	}
+
 	pkg.ResponseSuccess(c, pkg.CodeSuccess)
 }

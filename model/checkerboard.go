@@ -19,7 +19,7 @@ type CheckerBoard struct {
 type Board struct {
 	Record    Record
 	UserName  string
-	Freeze    int
-	Available int
+	Freeze    float64
+	Available float64
 	AvatarId  int
 }

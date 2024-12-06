@@ -1,26 +1,42 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import onboard from './WebOnboard';
+import {loginUser} from '../../apis/manage'
 import { ethers } from 'ethers';
 
 const ConnectWallet = () => {
   const [wallet, setWallet] = useState(null);
   const [provider, setProvider] = useState(null);
 
+  // 在组件加载时设置语言
+  useEffect(() => {
+    onboard.state.actions.setLocale('zh')
+  }, []);
+
   // 连接钱包
   const connectWallet = async () => {
+    
     const wallets = await onboard.connectWallet();
     if (wallets && wallets.length > 0) {
       setWallet(wallets[0]);
-
-      console.log("账户信息：", wallets);
-
+      // 用户在连接钱包成功后，调用登录或注册的接口，直接判断钱包地址，
+      // 如果存在就说明不是第一次登录，则进行登录返回token
+      // 如果不存在就注册账号，然后创建一系列资源
+      console.log(wallets);
+      
+      const user = {
+        user_id: wallets[0].accounts[0].address,
+        user_name: "",              
+        wallet_adr: wallets[0].accounts[0].address,
+        wallet_platform: wallets[0].label
+      };
+      const response = await loginUser(user)
+      // 获取到token
+      console.log(response) 
       const ethersProvider = new ethers.providers.Web3Provider(
         wallets[0].provider,
         'any',
       );
-
       setProvider(ethersProvider);
-
       // 设置事件监听器
       wallets[0].provider.on('disconnect', handleDisconnect);
       wallets[0].provider.on('accountsChanged', handleAccountsChanged);
@@ -32,7 +48,6 @@ const ConnectWallet = () => {
     if (wallet) {
       wallet.provider.removeListener('disconnect', handleDisconnect);
       wallet.provider.removeListener('accountsChanged', handleAccountsChanged);
-
       await onboard.disconnectWallet({ label: wallet.label });
       setWallet(null);
       setProvider(null);

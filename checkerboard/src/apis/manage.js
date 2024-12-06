@@ -1,7 +1,7 @@
 import instance from './api'; 
 
 // 登录
-export const loginUser = (loginData) => instance.post('user/login', loginData);
+export const loginUser = (loginData) => instance.post('login', loginData);
 // 用户信息
 export const UserMessage = () => instance.get('user/userinfo') 
 // 棋盘信息
@@ -12,3 +12,5 @@ export const Board = (board_id) => instance.get(`checkboard/board?boardId=${boar
 export const Record = (page,size) => instance.get(`checkboard/record?page=${page}&size=${size}`)
 // 获取所有记录的前50条
 export const Records = () => instance.get('checkboard/records')
+// 修改用户信息
+export const UpdateUserInfo = (param) => instance.put('user/put/userinfo',param)

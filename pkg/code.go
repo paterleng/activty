@@ -22,6 +22,7 @@ const (
 	CodeEmpowerUser
 	CodeInsufficientBalance
 	CodeUpdateError
+	CodePriceError
 )
 
 var codeMsgMap = map[ResCode]string{
@@ -44,6 +45,7 @@ var codeMsgMap = map[ResCode]string{
 	CodeEmpowerUser:         "用户赋权失败",
 	CodeInsufficientBalance: "余额不足",
 	CodeUpdateError:         "更新失败",
+	CodePriceError:          "提交的价格过低",
 }
 
 func (c ResCode) Msg() string {

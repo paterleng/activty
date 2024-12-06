@@ -1,0 +1,41 @@
+.language-switcher-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    margin: 20px auto;
+}
+
+.language-switcher-container label {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+.language-switcher-container select {
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.language-switcher-container select:hover {
+    border-color: #007bff;
+}
+
+.language-switcher-container select:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.language-switcher-container select option {
+    padding: 8px;
+}

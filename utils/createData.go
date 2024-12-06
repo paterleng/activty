@@ -14,7 +14,7 @@ func CreateBoardData() {
 		fmt.Println(err)
 		return
 	}
-	if total >= 9600 {
+	if total >= 800 {
 		fmt.Println("表中已有数据")
 		return
 	}
@@ -23,8 +23,8 @@ func CreateBoardData() {
 	先创建第一块然后一块插入进去
 	*/
 	//外层盒子
-	for i := 1; i <= 100; i++ {
-		if i == 45 || i == 46 || i == 55 || i == 56 {
+	for i := 1; i <= 9; i++ {
+		if i == 5 {
 			continue
 		}
 		//内层盒子

@@ -2,14 +2,11 @@ html,
 body {
   display: flex;
   place-items: center;
-  min-width: 100vh;
-  min-height: 100vh;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   flex-direction: row;
   align-content: center;
-  padding: 0;
   height: 100%;
   width: 100%;
   /* overflow: hidden; */

@@ -1,13 +1,21 @@
-import { useState, useRef, useMemo, useEffect } from 'react';
+import { useState, useRef, useMemo, useEffect} from 'react';
+import { useParams,useNavigate  } from 'react-router-dom';
+import { AntDesignOutlined,CaretLeftFilled,CaretRightFilled } from '@ant-design/icons';
+import { Avatar,Button, Input, Space } from 'antd';
 import './Chessboard.css';
-import { frontURL } from '../../config/config'
 import { BoardInfo } from '../../apis/manage'
+import UserInfo from '../userinfo/UserInfo';
 
 const ChessBoard = () => {
+    const [selectedBoxes, setSelectedBoxes] = useState([]);
+    const isDragging = useRef(false); // 是否处于拖动状态
     const [blockId, setBlockId] = useState(null);
     const [boxes, setBoxes] = useState(null);
     const [ws, setWs] = useState(null);
-    const [selectedBox, setSelectedBox] = useState(null); // 用来保存选中的格子信息
+    const [showPopup, setShowPopup] = useState(false); // 控制弹窗显示与否
+    const [message, setMessage] = useState(null); // 存储弹窗信息
+    const { id } = useParams();
+    const navigate = useNavigate();
 
     const getInfo = async (blockId) => {
         const response = await BoardInfo(blockId)
@@ -17,9 +25,8 @@ const ChessBoard = () => {
     useEffect(() => {
         const getBoardInfo = async () => {
             try {
-                const hash = window.location.hash.substring(1);
-                const parsedData = JSON.parse(decodeURIComponent(hash));
-                setBlockId(parsedData);
+                const idInt = parseInt(id)
+                setBlockId(idInt);
             } catch (error) {
                 console.error('Failed to parse URL hash data:', error);
             }
@@ -29,16 +36,13 @@ const ChessBoard = () => {
             }
         }
         getBoardInfo()
-
         if (blockId) {
             // 创建 WebSocket 连接
             const socket = new WebSocket(`ws://localhost:9990/api/ws/handle?blockId=${blockId}`);
             setWs(socket);
-
             socket.onopen = () => {
                 console.log('WebSocket Connected');
             };
-
             socket.onmessage = (event) => {
                 // 当数据发生变化时，就去请求接口，更新页面数据
                 const data = JSON.parse(event.data);
@@ -54,7 +58,6 @@ const ChessBoard = () => {
             socket.onclose = () => {
                 console.log('WebSocket Closed');
             };
-
             // 在组件卸载时关闭 WebSocket 连接
             return () => {
                 if (socket.readyState === WebSocket.OPEN) {
@@ -64,13 +67,6 @@ const ChessBoard = () => {
             };
         }
     }, [blockId]);
-
-    const goBack = () => {
-        window.location.href = frontURL
-    };
-
-    const [selectedBoxes, setSelectedBoxes] = useState([]);
-    const isDragging = useRef(false); // 是否处于拖动状态
 
     // 计算选中盒子的总金额
     const totalAmount = useMemo(() => {
@@ -125,18 +121,40 @@ const ChessBoard = () => {
 
     // 选择一个格子并显示其信息
     const handleBoxClick = (box) => {
-        setSelectedBox(box); // 设置当前点击的格子信息
+        setMessage(box); 
+        setShowPopup(true);
+        if (showPopup) {
+            setSelectedBoxes([]);
+            toggleBoxSelection(box.ID);
+        }  
     };
+
+    // 关闭弹窗
+    const closePopup = () => {
+        setSelectedBoxes([]);
+        setShowPopup(false);
+    };
+
+    // 向左
+    const leftHandle = (blockId) => {
+        navigate(`/board/${blockId}`);
+    }
+    // 向右
+    const rightHandle = (blockId) => {
+        navigate(`/board/${blockId}`);
+    }
 
     return (
         <div className='main'>
+            <UserInfo />
             <div className="container">
                 <div className="countdown-wrapper-son">
+                    <CaretLeftFilled onClick={leftHandle(blockId-1)}/>
                     <div className='total'>
                         <p>总金额: <strong>${totalAmount}</strong></p>
                     </div>
                     <p>当前位置： <strong>{blockId}</strong></p>
-                    <button onClick={goBack}>返回上一页</button>
+                    <CaretRightFilled onClick={rightHandle(blockId+1)}/>
                 </div>
                 <div className="grid-container" onMouseUp={handleMouseUp}>
                     {boxes && boxes.length > 0 ? (
@@ -146,7 +164,7 @@ const ChessBoard = () => {
                                 className={`grid-box ${selectedBoxes.includes(box.ID) ? 'selected' : ''}`}
                                 onMouseDown={(event) => handleMouseDown(box.ID, event)}
                                 onMouseEnter={(event) => handleMouseEnter(box.ID, event)}
-                                onClick={() => handleBoxClick(box)} // 点击格子
+                                onClick={() => handleBoxClick(box)}
                             >
                                 <div>{box.price}</div>
                             </div>
@@ -157,15 +175,44 @@ const ChessBoard = () => {
                 </div>
             </div>
 
-            {/* 显示选中格子的信息 */}
-            {selectedBox && (
-                <div className="box-details">
-                    <h3>格子详细信息</h3>
-                    <p>价格: ${selectedBox.price}</p>
-                    <p>ID: {selectedBox.ID}</p>
-                    {/* 添加其他详细信息 */}
-                </div>
-            )}
+            <div>
+                {showPopup && (
+                    <div className="popupStyle">
+                        <div>
+                            {/* 头像 */}
+                            <Avatar
+                                size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }}
+                                icon={<AntDesignOutlined />}
+                                src="/images/avatar/1.png"
+                            />
+                            {/* owner为空的话就展示未被占领 */}
+                            {message.owner != "" ? (
+                                <p>{ message.owner}</p>
+                            ): (
+                               <p>未被占领</p>     
+                            )}
+                            {/* 哪个价格高展示哪个 */}
+                            {message.price > message.price_increase ? (
+                            <div>
+                                <Space.Compact
+                                    style={{
+                                    width: '100%',
+                                    }}
+                                >
+                                    <Input defaultValue={ message.price } />
+                                    <Button type="primary">Submit</Button>
+                                </Space.Compact>
+                                <p>{ message.price}</p>
+                            </div>
+                            ): (
+                               <p>{ message.price_increase}</p>     
+                            )}
+                            
+                            <button onClick={closePopup}>Close</button>
+                        </div>
+                    </div>
+                )}
+            </div>
 
             <button className="submit-button" onClick={handleSubmit}>提交</button>
         </div>

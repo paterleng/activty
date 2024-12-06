@@ -4,8 +4,8 @@ import "gorm.io/gorm"
 
 type Assets struct {
 	gorm.Model
-	Total     int    `json:"total"`
-	Freeze    int    `json:"freeze"`
-	Available int    `json:"available"`
-	UserId    string `json:"user_id" gorm:"column:user_id"`
+	Total     float64 `json:"total"`
+	Freeze    float64 `json:"freeze"`
+	Available float64 `json:"available"`
+	UserId    string  `json:"user_id" gorm:"column:user_id"`
 }

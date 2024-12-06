@@ -16,7 +16,7 @@ const TransactionRecord = () => {
     return (
         <>
             <Button type="primary" onClick={showLoading}>
-                提交记录
+                个人战报
             </Button>
             <Modal
                 title={<p>交易记录</p>}

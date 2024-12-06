@@ -10,6 +10,7 @@ const instance = axios.create({
   },
 });
 
+// 请求拦截器
 instance.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('atoken');
@@ -23,6 +24,7 @@ instance.interceptors.request.use(
   }
 );
 
+// 响应拦截器
 instance.interceptors.response.use(
   (response) => {
     if (response.data.code == 200 ) {

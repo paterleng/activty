@@ -16,7 +16,7 @@ func ApiRoute(r *gin.Engine) {
 		//   用户信息
 		user.GET("/userinfo", GetApiManager().GetUserInfo)
 		//  修改用户信息
-		user.PUT("/put/userinfo")
+		user.PUT("/put/userinfo", GetApiManager().PutUserInfo)
 		//	充值信息
 		user.POST("/recharge", GetApiManager().Recharge)
 	}

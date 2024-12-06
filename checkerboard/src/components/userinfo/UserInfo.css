@@ -8,12 +8,62 @@
 }
 
 .info-row {
+    position: relative;
+    display: inline-block;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    align-items: flex-end;
 }
 
 .info-row p {
     margin-right: 10px;
 }
 
+
+.image-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.image-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #f4f4f4;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-box.selected {
+    border: 2px solid blue;
+    /* 选中时的边框颜色 */
+}
+
+.icon-container {
+    position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+}
+
+.edit-icon {
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.edit-icon:hover {
+    font-size: 30px;
+    color: #1890ff;
+}

@@ -1,11 +1,10 @@
-
 import { createContext, useContext, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Expand from './pages/Expand';
+import Expand from './pages/home/Expand';
 import ChessBoard from './components/chessboard/ChessBoard';
 import RegisterForm from './pages/RegisterForm';
-import LoginForm from './pages/login/LoginForm'
-import ConnectWallet from './components/web3wallet/Wallet';
+import LoginForm from './pages/login/LoginForm';
+import Rule from './components/Rule';
 
 
 // 创建 AuthContext 用于管理用户登录状态
@@ -16,18 +15,15 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   
   return (
-    <>
-      {/* <div>
-        <ConnectWallet />
-      </div> */}
-      
+    <>    
        <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
         <Router>
           <Routes>
             <Route path='/' element={<Expand />}></Route>
-            <Route path="/newpage" element={<ChessBoard />} />
+            <Route path="/board/:id" element={<ChessBoard />} />
             <Route path="/login" element={<LoginForm loginIn={isLoggedIn} />} />
             <Route path="/register" element={<RegisterForm />} />
+            <Route path='/rule' element={<Rule />}></Route>
             <Route
               path="/"
               element={
