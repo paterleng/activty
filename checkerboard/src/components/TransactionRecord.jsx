@@ -20,14 +20,10 @@ const TransactionRecord = () => {
             </Button>
             <Modal
                 title={<p>交易记录</p>}
-                footer={
-                    <Button type="primary" onClick={showLoading}>
-                        刷新
-                    </Button>
-                }
                 open={open}
                 onCancel={() => setOpen(false)}
                 width={800}
+                footer={null} 
             >  
                 <UserRecordTable />
             </Modal>
