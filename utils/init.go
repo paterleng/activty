@@ -14,6 +14,7 @@ import (
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"os"
+	"time"
 )
 
 type Utils struct {
@@ -26,6 +27,7 @@ var Tools Utils
 var Conf = new(model.Config)
 var ConnManager map[string]map[int]model.Client
 var ChMessage chan model.Message
+var TimerController model.TimerManager
 
 func init() {
 	if err := ViperInit(); err != nil {
@@ -53,6 +55,15 @@ func init() {
 	ConnManager = make(map[string]map[int]model.Client)
 	//初始化消息广播的channel,缓冲区为100
 	ChMessage = make(chan model.Message, 100)
+	//	初始化全局定时管理对象
+	TimerController = NewTimerManager()
+}
+
+func NewTimerManager() *model.TimerManager {
+	return &model.TimerManager{
+		Timers:    make(map[int]*time.Timer),
+		Durations: make(map[int]time.Duration),
+	}
 }
 
 func TableInit() (err error) {
