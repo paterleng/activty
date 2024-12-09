@@ -10,10 +10,15 @@ const instance = axios.create({
   },
 });
 
-// 请求拦截器
 instance.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem('atoken');
+    const token = localStorage.getItem('token');
+    
+    if (!token && !config.skipAuth) {
+      console.warn('Token 不存在，阻止未授权的请求');
+      return Promise.reject({ message: 'Unauthorized: Token is missing' });
+    }
+
     if (token) {
       config.headers['Authorization'] = `Bearer ${token}`;
     }
@@ -43,17 +48,17 @@ instance.interceptors.response.use(
   (error) => {
     if (error.response) {
       notification.error({
-        message: error.response.data.code,
+        message: "错误",
         description: error.response.data.msg,
     });
     } else if (error.request) {
       notification.error({
-        message: error.response.data.code,
+        message: "错误",
         description: error.response.data.msg,
     });
     } else {
       notification.error({
-        message: error.response.data.code,
+        message: "错误",
         description: error.response.data.msg,
     });
     }

@@ -36,7 +36,6 @@ func (p *UserController) Login(c *gin.Context) {
 			pkg.ResponseError(c, pkg.CodeServerBusy)
 			return
 		}
-
 		//初始化资产数据
 		asset := model.Assets{
 			Total:     0,

@@ -136,12 +136,20 @@ const ChessBoard = () => {
     };
 
     // 向左
-    const leftHandle = (blockId) => {
-        navigate(`/board/${blockId}`);
+    const leftHandle = (id) => {
+        console.log(id);
+        let nextId = id - 1
+        navigate(`/board/${nextId}`);
     }
     // 向右
-    const rightHandle = (blockId) => {
-        navigate(`/board/${blockId}`);
+    const rightHandle = (id) => {
+        console.log(id);
+        let nextId = id + 1
+        navigate(`/board/${nextId}`);
+    }
+
+    const goHome = () => {
+        navigate("/")
     }
 
     return (
@@ -149,11 +157,14 @@ const ChessBoard = () => {
             <UserInfo />
             <div className="container">
                 <div className="countdown-wrapper-son">
-                    <CaretLeftFilled onClick={leftHandle(blockId-1)}/>
+                    <CaretLeftFilled  />
+                    <button onClick={()=>leftHandle(blockId)}>向左</button>
                     <div className='total'>
                         <p>总金额: <strong>${totalAmount}</strong></p>
                     </div>
                     <p>当前位置： <strong>{blockId}</strong></p>
+                    <button onClick={()=>goHome}>返回主页</button>
+                    <button onClick={()=>leftHandle(blockId + 1)}>向右</button>
                     <CaretRightFilled onClick={rightHandle(blockId+1)}/>
                 </div>
                 <div className="grid-container" onMouseUp={handleMouseUp}>
