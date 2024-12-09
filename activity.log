@@ -480,3 +480,86 @@
 {"level":"INFO","time":"2024-12-06T18:16:21.953+0800","caller":"utils/init.go:149","msg":"init logger success"}
 {"level":"INFO","time":"2024-12-06T18:16:21.957+0800","caller":"utils/init.go:40","msg":"初始化logger成功"}
 {"level":"INFO","time":"2024-12-06T18:16:22.416+0800","caller":"utils/init.go:45","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-06T19:24:53.772+0800","caller":"utils/init.go:149","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-06T19:24:53.777+0800","caller":"utils/init.go:40","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-06T19:24:54.231+0800","caller":"utils/init.go:45","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-09T13:43:47.652+0800","caller":"utils/init.go:149","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-09T13:43:47.656+0800","caller":"utils/init.go:40","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-09T13:43:48.055+0800","caller":"utils/init.go:45","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-09T13:48:18.388+0800","caller":"utils/init.go:149","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-09T13:48:18.392+0800","caller":"utils/init.go:40","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-09T13:48:18.787+0800","caller":"utils/init.go:45","msg":"初始化mysql成功"}
+{"level":"ERROR","time":"2024-12-09T13:48:28.269+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:48:28.269+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:48:28.269+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:48:28.269+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:49:33.324+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:49:33.324+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:49:33.325+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:49:33.325+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:50:17.206+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:50:17.207+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:50:17.207+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:50:17.208+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:50:41.320+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:50:41.320+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:50:41.322+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:50:41.322+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:50:47.319+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:50:47.319+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:50:47.320+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:50:47.320+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:50:49.545+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:50:49.545+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:50:49.547+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:50:49.547+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:52:27.340+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:52:27.340+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:52:27.341+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:52:27.342+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:52:35.323+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:52:35.324+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:52:37.323+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:52:37.323+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:52:38.319+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:52:38.320+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:52:43.315+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:52:43.316+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:52:46.315+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:52:46.316+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:52:47.195+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:52:47.196+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:52:48.949+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:52:48.950+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:53:17.314+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:53:17.315+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:53:19.327+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T13:53:19.328+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"INFO","time":"2024-12-09T13:54:06.628+0800","caller":"utils/init.go:149","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-09T13:54:06.633+0800","caller":"utils/init.go:40","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-09T13:54:07.093+0800","caller":"utils/init.go:45","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-09T13:56:20.612+0800","caller":"utils/init.go:149","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-09T13:56:20.616+0800","caller":"utils/init.go:40","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-09T13:56:21.049+0800","caller":"utils/init.go:45","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-09T14:03:02.078+0800","caller":"utils/init.go:149","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-09T14:03:02.083+0800","caller":"utils/init.go:40","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-09T14:03:02.516+0800","caller":"utils/init.go:45","msg":"初始化mysql成功"}
+{"level":"ERROR","time":"2024-12-09T14:03:11.061+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T14:03:11.062+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T14:03:11.062+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T14:03:11.062+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T14:04:49.448+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T14:04:49.450+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T14:10:00.327+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T14:10:00.328+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T14:10:02.111+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-09T14:10:02.113+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"INFO","time":"2024-12-09T14:10:49.910+0800","caller":"utils/init.go:149","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-09T14:10:49.915+0800","caller":"utils/init.go:40","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-09T14:10:50.320+0800","caller":"utils/init.go:45","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-09T14:12:22.780+0800","caller":"utils/init.go:149","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-09T14:12:22.784+0800","caller":"utils/init.go:40","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-09T14:12:23.254+0800","caller":"utils/init.go:45","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-09T15:12:29.217+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=1)次上涨"}
+{"level":"INFO","time":"2024-12-09T16:12:30.082+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=2)次上涨"}
+{"level":"INFO","time":"2024-12-09T17:12:29.942+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=3)次上涨"}

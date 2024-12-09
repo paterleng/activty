@@ -15,7 +15,7 @@ const UserInfo = () => {
     const [image, setImage] = useState(0); // 用于控制头像使用哪一个
 
     const [userInfo, setUserInfo] = useState({
-        username: "pater",
+        user_name: "pater",
         total: 0,
         frozen: 0,
         available: 0,
@@ -23,12 +23,13 @@ const UserInfo = () => {
 
     useEffect(() => {
         const fetchUserInfo = async () => {
-            const response = await UserMessage()
-            setUserInfo(response.data)
-            console.log(response.data.avatar_id);
-            
-            setImage(response.data.avatar_id-1)
-            console.log(response.data)
+            // 当用户登录的时候才会调用
+            // if (localStorage.getItem("token")) {
+                const response = await UserMessage()
+                setUserInfo(response.data)
+                setImage(response.data.avatar_id-1)
+            // }
+        
         };
         fetchUserInfo();
     }, []); 
@@ -91,9 +92,9 @@ const UserInfo = () => {
             <p>冻结数：{userInfo.frozen}</p>
             <p>可用数：{userInfo.available}</p>
             <button>退款</button>
-            <button>充值</button>
-            <TransactionRecord />
+            
             <div>
+                <TransactionRecord />
                 <a>Dmail</a>
             </div>
             <Modal

@@ -24,8 +24,8 @@ const Expand = () => {
             <div className="main">
             <div className="container-block">
                 <div className="countdown-wrapper">
-                    <ConnectWallet />
-                    <UserInfo />
+                        <UserInfo />
+                        <ConnectWallet />
                     {/* <Countdown initialSeconds={1000} />    */}
                 </div>
                 

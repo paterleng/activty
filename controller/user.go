@@ -36,12 +36,12 @@ func (p *UserController) Login(c *gin.Context) {
 			pkg.ResponseError(c, pkg.CodeServerBusy)
 			return
 		}
-
 		//初始化资产数据
 		asset := model.Assets{
 			Total:     0,
 			Freeze:    0,
 			Available: 0,
+			Shield:    pkg.NOEXIST,
 			UserId:    user.UserId,
 		}
 		err = dao.GetDaoManager().CreateAssetInfo(asset)

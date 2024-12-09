@@ -33,6 +33,7 @@ type CheckerBoard interface {
 	GetRecord() ([]model.Record, error)
 	UpdateUserBoardInfo(user model.User) error
 	GetGaidInfoByGaidId(gaidId int) (model.CheckerBoard, error)
+	UpdateBoardShield(board model.CheckerBoard) error
 }
 
 type DaoManager interface {

@@ -86,3 +86,9 @@ func (p *CheckBoardDao) GetGaidInfoByGaidId(gaidId int) (model.CheckerBoard, err
 	err := p.DB.Where("id = ?", gaidId).First(&checkerBoard).Error
 	return checkerBoard, err
 }
+
+// UpdateBoardShield 更新格子的加盾信息
+func (p *CheckBoardDao) UpdateBoardShield(board model.CheckerBoard) error {
+	err := p.DB.Where("id = ?", board.ID).Updates(&board).Error
+	return err
+}

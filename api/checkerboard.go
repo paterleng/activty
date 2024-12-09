@@ -7,4 +7,5 @@ type CheckerboardInterface interface {
 	GetUserOperateRecords(c *gin.Context)
 	GetCheckBoardInfo(c *gin.Context)
 	GetRecords(c *gin.Context)
+	AddShield(c *gin.Context)
 }

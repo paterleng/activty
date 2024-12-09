@@ -1,16 +1,16 @@
 import instance from './api'; 
 
 // 登录
-export const loginUser = (loginData) => instance.post('login', loginData);
+export const loginUser = (loginData) => instance.post('login', loginData, { skipAuth: true });
 // 用户信息
 export const UserMessage = () => instance.get('user/userinfo') 
 // 棋盘信息
-export const BoardInfo = (block_id) => instance.get(`checkboard/boardInfo/${block_id}`,block_id)
+export const BoardInfo = (block_id) => instance.get(`checkboard/boardInfo/${block_id}`,block_id, { skipAuth: true })
 // 单个格子信息
-export const Board = (board_id) => instance.get(`checkboard/board?boardId=${board_id}`)
+export const Board = (board_id) => instance.get(`checkboard/board?boardId=${board_id}`, { skipAuth: true })
 // 押注记录
 export const Record = (page,size) => instance.get(`checkboard/record?page=${page}&size=${size}`)
 // 获取所有记录的前50条
-export const Records = () => instance.get('checkboard/records')
+export const Records = () => instance.get('checkboard/records', { skipAuth: true })
 // 修改用户信息
 export const UpdateUserInfo = (param) => instance.put('user/put/userinfo',param)

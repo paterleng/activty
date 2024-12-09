@@ -2,6 +2,7 @@ package controller
 
 import (
 	"activity/dao"
+	"activity/internal"
 	"activity/model"
 	"activity/pkg"
 	"activity/utils"
@@ -9,6 +10,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 	"strconv"
+	"time"
 )
 
 type CheckerBoardController struct {
@@ -199,4 +201,63 @@ func (p *CheckerBoardController) GetRecords(c *gin.Context) {
 		return
 	}
 	pkg.ResponseSuccess(c, records)
+}
+
+// AddShield 加盾
+func (p *CheckerBoardController) AddShield(c *gin.Context) {
+	/**
+	1、获取请求信息
+	2、判断用户盾是否足够
+	3、向格子加状态
+	4、更新用户盾数量
+	5、查询交易是否成功
+	*/
+	var data model.AddShield
+	if err := c.ShouldBind(&data); err != nil {
+		p.LG.Error("参数错误：", zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeParamError)
+		return
+	}
+	userId := c.GetString(pkg.USERID)
+	assetInfo, err := dao.GetDaoManager().GetUserAssetInfo(userId)
+	if err != nil {
+		p.LG.Error("获取用户资产信息失败：", zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeServerBusy)
+		return
+	}
+	if assetInfo.Shield < data.ShieldAmount {
+		pkg.ResponseError(c, pkg.CodeInsufficientBalance)
+		return
+	}
+	//获取格子信息
+	gridInfo, err := dao.GetDaoManager().GetGaidInfoByGaidId(data.GridId)
+	if err != nil {
+		p.LG.Error(fmt.Sprintf("获取格子%t失败，失败原因：%t"), zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeServerBusy)
+		return
+	}
+	if gridInfo.UserId != userId {
+		pkg.ResponseError(c, pkg.CodeUpdateError)
+		return
+	}
+	nowTime := time.Now()
+	if gridInfo.IsShield == pkg.EXIST {
+		gridInfo.EndShieldTime = gridInfo.EndShieldTime.Add(time.Duration(data.ShieldAmount) * time.Hour)
+	} else {
+		gridInfo.IsShield = pkg.EXIST
+		gridInfo.StartShieldTime = nowTime
+		gridInfo.EndShieldTime = nowTime.Add(time.Duration(data.ShieldAmount) * time.Hour)
+	}
+	//加盾
+	err = dao.GetDaoManager().UpdateBoardShield(gridInfo)
+	if err != nil {
+		p.LG.Error(fmt.Sprintf("加盾失败，失败格子id：%t"), zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeServerBusy)
+		return
+	}
+	//加盾成功后就创建一个定时器用于更新状态
+	err = internal.GetInternalManager().CreateTimer(userId, time.Duration(1))
+
+	//通知前端更新棋盘信息
+
 }

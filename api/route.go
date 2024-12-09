@@ -30,7 +30,13 @@ func ApiRoute(r *gin.Engine) {
 		board.GET("/records", GetApiManager().GetRecords)
 		//	获取棋盘信息
 		board.GET("/boardInfo/:block_id", GetApiManager().GetCheckBoardInfo)
+		//	加盾
+		board.POST("/add_shield")
 	}
+	//shield := api.Group("/shield")
+	//{
+	//	shield.POST()
+	//}
 	ws := api.Group("/ws")
 	{
 		ws.GET("/handle", GetApiManager().Connect)
