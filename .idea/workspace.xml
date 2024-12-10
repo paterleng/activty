@@ -5,32 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81e28f08-7929-4107-9a7a-4c51f856d31e" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/activity.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/activty.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/activity.log" beforeDir="false" afterPath="$PROJECT_DIR$/activity.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/interface.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/update_shield_state.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/shield.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/timer_manager.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/checkerboard.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/checkerboard.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/register.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/register.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/route.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/route.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/apis/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/apis/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/apis/manage.js" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/apis/manage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/TransactionRecord.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/TransactionRecord.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/chessboard/ChessBoard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/chessboard/ChessBoard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/userinfo/UserInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/userinfo/UserInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/web3wallet/Wallet.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/web3wallet/Wallet.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/pages/home/Expand.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/pages/home/Expand.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/checkerboard.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/checkerboard.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware/token.go" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/token.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/checkboard.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/checkboard.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/interface.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/interface.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/assets.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/assets.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/checkerboard.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/checkerboard.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/constant.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/constant.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/init.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
   </component>
   <component name="GOROOT" url="file://$PROJECT_DIR$/../../go" />
   <component name="Git.Settings">
@@ -53,12 +56,17 @@
   "associatedIndex": 5
 }]]></component>
   <component name="ProjectId" id="2pyWvBjgzzIABZWbACHGv74egaD" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "Go 构建.go build activity.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
@@ -67,9 +75,27 @@
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
     "last_opened_file_path": "C:/Users/Administrator",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="go build activity" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="activty" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="activity" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go 构建.go build activity" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

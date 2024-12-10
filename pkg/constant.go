@@ -11,3 +11,6 @@ const (
 
 // 每个格子的基础价格
 const BasePrice = 500
+
+const EXIST = 1
+const NOEXIST = 2

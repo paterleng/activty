@@ -41,6 +41,7 @@ func (p *UserController) Login(c *gin.Context) {
 			Total:     0,
 			Freeze:    0,
 			Available: 0,
+			Shield:    pkg.NOEXIST,
 			UserId:    user.UserId,
 		}
 		err = dao.GetDaoManager().CreateAssetInfo(asset)
