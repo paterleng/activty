@@ -563,3 +563,7 @@
 {"level":"INFO","time":"2024-12-09T15:12:29.217+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=1)次上涨"}
 {"level":"INFO","time":"2024-12-09T16:12:30.082+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=2)次上涨"}
 {"level":"INFO","time":"2024-12-09T17:12:29.942+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=3)次上涨"}
+{"level":"INFO","time":"2024-12-09T19:51:32.476+0800","caller":"utils/init.go:149","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-09T19:51:32.481+0800","caller":"utils/init.go:40","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-09T19:51:32.912+0800","caller":"utils/init.go:45","msg":"初始化mysql成功"}
+{"level":"ERROR","time":"2024-12-09T20:51:39.193+0800","caller":"handle/scheduledtasks.go:46","msg":"价格上涨时入库失败","error":"Error 1292 (22007): Incorrect datetime value: '0000-00-00' for column 'start_shield_time' at row 1"}

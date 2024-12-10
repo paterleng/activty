@@ -100,3 +100,9 @@ func (p *UserDao) PutUserInfo(user model.User) error {
 	err := p.DB.Where("user_id = ?", user.UserId).Updates(&user).Error
 	return err
 }
+
+// 更新用户的盾数量信息
+func (p *UserDao) UpdateAssetShildInfo(asset model.Assets) error {
+	err := p.DB.Where("user_id = ?", asset.UserId).Updates(&asset).Error
+	return err
+}

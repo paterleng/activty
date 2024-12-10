@@ -209,8 +209,9 @@ func (p *CheckerBoardController) AddShield(c *gin.Context) {
 	1、获取请求信息
 	2、判断用户盾是否足够
 	3、向格子加状态
-	4、更新用户盾数量
-	5、查询交易是否成功
+	4、创建定时器
+	5、更新用户盾数量
+	6、查询交易是否成功
 	*/
 	var data model.AddShield
 	if err := c.ShouldBind(&data); err != nil {
@@ -255,9 +256,22 @@ func (p *CheckerBoardController) AddShield(c *gin.Context) {
 		pkg.ResponseError(c, pkg.CodeServerBusy)
 		return
 	}
+	//计算时间
+	duration := gridInfo.EndShieldTime.Sub(nowTime)
 	//加盾成功后就创建一个定时器用于更新状态
-	err = internal.GetInternalManager().CreateTimer(userId, time.Duration(1))
-
+	internal.GetInternalManager().CreateTimer(gridInfo.ID, duration)
+	//更新盾数量
+	assetInfo.Shield = data.ShieldAmount
+	err = dao.GetDaoManager().UpdateAssetShildInfo(assetInfo)
+	if err != nil {
+		p.LG.Error(fmt.Sprintf("盾信息更细失败，失败格子id：%t"), zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeServerBusy)
+		return
+	}
 	//通知前端更新棋盘信息
-
+	var message model.Message
+	message.BlockId = gridInfo.BlockId
+	message.Type = 1
+	utils.ChMessage <- message
+	pkg.ResponseSuccess(c, pkg.CodeSuccess)
 }

@@ -12,7 +12,7 @@ type InternalController struct {
 }
 
 type TimerInterface interface {
-	CreateTimer(userId string, duration time.Duration) (err error)
+	CreateTimer(gridId uint, duration time.Duration)
 }
 
 type InternalManager interface {
