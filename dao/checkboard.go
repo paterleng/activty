@@ -98,3 +98,9 @@ func (p *CheckBoardDao) UpdateGridState(id uint, statue int) error {
 	return err
 
 }
+
+// 获取所有格子信息
+func (p *CheckBoardDao) GetAllGrid() (boards []model.CheckerBoard, err error) {
+	err = p.DB.Find(&boards).Error
+	return
+}

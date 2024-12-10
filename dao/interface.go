@@ -36,6 +36,7 @@ type CheckerBoard interface {
 	GetGaidInfoByGaidId(gaidId int) (model.CheckerBoard, error)
 	UpdateBoardShield(board model.CheckerBoard) error
 	UpdateGridState(id uint, statue int) error
+	GetAllGrid() ([]model.CheckerBoard, error)
 }
 
 type DaoManager interface {

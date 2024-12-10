@@ -243,11 +243,11 @@ func (p *CheckerBoardController) AddShield(c *gin.Context) {
 	}
 	nowTime := time.Now()
 	if gridInfo.IsShield == pkg.EXIST {
-		gridInfo.EndShieldTime = gridInfo.EndShieldTime.Add(time.Duration(data.ShieldAmount) * time.Hour)
+		gridInfo.EndShieldTime = gridInfo.EndShieldTime.Add(time.Duration(data.ShieldAmount) * time.Minute)
 	} else {
 		gridInfo.IsShield = pkg.EXIST
 		gridInfo.StartShieldTime = nowTime
-		gridInfo.EndShieldTime = nowTime.Add(time.Duration(data.ShieldAmount) * time.Hour)
+		gridInfo.EndShieldTime = nowTime.Add(time.Duration(data.ShieldAmount) * time.Minute)
 	}
 	//加盾
 	err = dao.GetDaoManager().UpdateBoardShield(gridInfo)
@@ -261,7 +261,7 @@ func (p *CheckerBoardController) AddShield(c *gin.Context) {
 	//加盾成功后就创建一个定时器用于更新状态
 	internal.GetInternalManager().CreateTimer(gridInfo.ID, duration)
 	//更新盾数量
-	assetInfo.Shield = data.ShieldAmount
+	assetInfo.Shield = assetInfo.Shield - data.ShieldAmount
 	err = dao.GetDaoManager().UpdateAssetShildInfo(assetInfo)
 	if err != nil {
 		p.LG.Error(fmt.Sprintf("盾信息更细失败，失败格子id：%t"), zap.Error(err))
