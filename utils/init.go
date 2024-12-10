@@ -59,10 +59,10 @@ func init() {
 	TimerController = NewTimerManager()
 }
 
-func NewTimerManager() *model.TimerManager {
-	return &model.TimerManager{
-		Timers:    make(map[int]*time.Timer),
-		Durations: make(map[int]time.Duration),
+func NewTimerManager() model.TimerManager {
+	return model.TimerManager{
+		Timers:    make(map[uint]*time.Timer),
+		Durations: make(map[uint]*time.Duration),
 	}
 }
 

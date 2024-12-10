@@ -92,3 +92,15 @@ func (p *CheckBoardDao) UpdateBoardShield(board model.CheckerBoard) error {
 	err := p.DB.Where("id = ?", board.ID).Updates(&board).Error
 	return err
 }
+
+func (p *CheckBoardDao) UpdateGridState(id uint, statue int) error {
+	err := p.DB.Model(model.CheckerBoard{}).Where("id = ?", id).Update("is_shield", statue).Error
+	return err
+
+}
+
+// 获取所有格子信息
+func (p *CheckBoardDao) GetAllGrid() (boards []model.CheckerBoard, err error) {
+	err = p.DB.Find(&boards).Error
+	return
+}

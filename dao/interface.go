@@ -20,6 +20,7 @@ type User interface {
 	GetUserAssetInfo(userId string) (model.Assets, error)
 	CreateAssetInfo(assets model.Assets) error
 	UpdateUserAssetInfo(chargeInfo model.RechargerRecord) error
+	UpdateAssetShildInfo(assets model.Assets) error
 	Register(user *model.User) error
 	PutUserInfo(user model.User) error
 }
@@ -34,6 +35,8 @@ type CheckerBoard interface {
 	UpdateUserBoardInfo(user model.User) error
 	GetGaidInfoByGaidId(gaidId int) (model.CheckerBoard, error)
 	UpdateBoardShield(board model.CheckerBoard) error
+	UpdateGridState(id uint, statue int) error
+	GetAllGrid() ([]model.CheckerBoard, error)
 }
 
 type DaoManager interface {

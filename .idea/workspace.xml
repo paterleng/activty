@@ -5,23 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81e28f08-7929-4107-9a7a-4c51f856d31e" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/internal/interface.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/update_shield_state.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/shield.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/timer_manager.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handle/create_shiled.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/checkerboard.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/checkerboard.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/register.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/register.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activity.log" beforeDir="false" afterPath="$PROJECT_DIR$/activity.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/route.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/route.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/checkerboard.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/checkerboard.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/user.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dao/checkboard.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/checkboard.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dao/interface.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/interface.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/assets.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/assets.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/checkerboard.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/checkerboard.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/constant.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/constant.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/init.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handle/run.go" beforeDir="false" afterPath="$PROJECT_DIR$/handle/run.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,22 +30,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "paterleng"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;paterleng&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/paterleng/activty.git",
-    "accountId": "22288506-2c1d-45f2-83d2-d70bceb08d1a"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/paterleng/activty.git&quot;,
+    &quot;accountId&quot;: &quot;22288506-2c1d-45f2-83d2-d70bceb08d1a&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 5
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2pyWvBjgzzIABZWbACHGv74egaD" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -63,23 +54,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultGoTemplateProperty": "Go File",
-    "Go 构建.go build activity.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "git-widget-placeholder": "work__branch",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "C:/Users/Administrator",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;Go 构建.go build activity.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;work__branch&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="go build activity" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="activty" />
@@ -107,6 +98,17 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
