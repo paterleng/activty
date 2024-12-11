@@ -1,8 +1,10 @@
 package controller
 
 import (
+	"activity/handle"
 	"activity/model"
 	"activity/pkg"
+	"activity/utils"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
@@ -53,4 +55,8 @@ func (p *WebSocketController) Connect(c *gin.Context) {
 	m[atoi] = client
 	p.ConnManager[userId] = m
 	mu.Unlock()
+	fmt.Println("连接管理的长度：", len(utils.ConnManager))
+	fmt.Println("数据", utils.ConnManager)
+	//	开启协程监听消息，用于关闭websocket连接及清理连接管理里面的资源
+	go handle.ReceiveWsMessage(client, atoi)
 }

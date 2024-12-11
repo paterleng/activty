@@ -3,22 +3,18 @@ import { createSlice } from '@reduxjs/toolkit';
 const walletSlice = createSlice({
   name: 'wallet',
   initialState: {
-    wallet: null, // 钱包信息
-    provider: null, // ethers.js 的 provider 实例
+    provider: null,  // 用来存储 provider
   },
   reducers: {
-    setWallet(state, action) {
-      state.wallet = action.payload;
-    },
-    setProvider(state, action) {
+    setProvider: (state, action) => {
       state.provider = action.payload;
     },
-    clearWallet(state) {
-      state.wallet = null;
+    clearProvider: (state) => {
       state.provider = null;
     },
   },
 });
 
-export const { setWallet, setProvider, clearWallet } = walletSlice.actions;
+export const { setProvider, clearProvider } = walletSlice.actions;
+
 export default walletSlice.reducer;

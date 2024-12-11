@@ -1,7 +1,7 @@
 import { useState, useRef, useMemo, useEffect} from 'react';
 import { useParams,useNavigate  } from 'react-router-dom';
 import { AntDesignOutlined } from '@ant-design/icons';
-import { Avatar,Button, Input, Space,InputNumber } from 'antd';
+import { Avatar,Button,Space,InputNumber,Spin } from 'antd';
 import './Chessboard.css';
 import {BoardInfo, SeizeGrid} from '../../apis/manage'
 import UserInfo from '../userinfo/UserInfo';
@@ -187,7 +187,7 @@ const ChessBoard = () => {
                             boxes.map((box) => (
                                 <div
                                     key={box.ID}
-                                    className={`grid-box ${selectedBoxes.includes(box.ID) ? 'selected' : ''}`}
+                                    className={`grid-box ${selectedBoxes.includes(box.ID) ? 'selected' : ''} ${box.status == 1 ? 'have' : `${box.status == 2 ? 'preempted':''}`}`}
                                     onMouseDown={(event) => handleMouseDown(box.ID, event)}
                                     onMouseEnter={(event) => handleMouseEnter(box.ID, event)}
                                     onClick={() => handleBoxClick(box)}
@@ -196,7 +196,7 @@ const ChessBoard = () => {
                                 </div>
                             ))
                         ) : (
-                            <p>加载中...</p>
+                            <Spin />
                         )}
                     </div>
                 </div>
@@ -205,7 +205,6 @@ const ChessBoard = () => {
                     {showPopup && (
                         <div className="popupStyle">
                             <div>
-                                {/* 头像 */}
                                 <Avatar
                                     size={{xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100}}
                                     icon={<AntDesignOutlined/>}
@@ -235,19 +234,14 @@ const ChessBoard = () => {
                                             seizeHandle();
                                         }}
                                     >
-                                        抢占
+                                        { message.status == 2 ? '还击':'抢占'}
                                     </Button>
                                 </Space>
-
-                                {/*<button onClick={()=>seizeHandle()}>抢占</button>*/}
-
                                 <button onClick={closePopup}>Close</button>
                             </div>
                         </div>
                     )}
                 </div>
-
-                {/*<button className="submit-button" onClick={handleSubmit}>提交</button>*/}
             </div>
         </>
     );
