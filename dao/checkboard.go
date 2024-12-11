@@ -38,7 +38,7 @@ func (p *CheckBoardDao) GetUserGrid(blockId string, userId string) ([]model.Chec
 // GerRecordGrid 查询用户之前拥有格子的信息
 func (p *CheckBoardDao) GerRecordGrid(blockId string, userId string) ([]model.Record, error) {
 	var records []model.Record
-	err := p.DB.Where("block_id = ? AND owner = ?", blockId, userId).Find(&records).Error
+	err := p.DB.Where("block_id = ? AND old_owner = ?", blockId, userId).Find(&records).Error
 	return records, err
 }
 

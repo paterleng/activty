@@ -628,3 +628,75 @@
 {"level":"INFO","time":"2024-12-10T19:29:52.286+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
 {"level":"INFO","time":"2024-12-10T19:29:52.752+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
 {"level":"INFO","time":"2024-12-10T19:29:58.440+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-11T14:12:58.609+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-11T14:12:58.613+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-11T14:13:00.579+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-11T14:13:32.137+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-11T14:14:13.628+0800","caller":"handle/wshandle.go:89","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"ERROR","time":"2024-12-11T14:15:43.129+0800","caller":"handle/wshandle.go:93","msg":"websocket接收到错误消息","error":"websocket: close 1005 (no status)"}
+{"level":"INFO","time":"2024-12-11T14:18:17.780+0800","caller":"handle/wshandle.go:89","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-11T14:45:44.367+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-11T14:45:44.372+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-11T14:45:44.848+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-11T14:45:52.980+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-11T14:46:18.438+0800","caller":"handle/wshandle.go:103","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-11T14:47:14.520+0800","caller":"handle/wshandle.go:103","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-11T14:47:27.734+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-11T14:47:27.739+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-11T14:47:29.413+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-11T14:48:21.263+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-11T14:48:21.267+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-11T14:48:23.274+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-11T14:48:51.971+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-11T14:50:11.942+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-11T14:50:11.947+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-11T14:50:12.428+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-11T14:52:24.923+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-11T14:52:24.927+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-11T14:52:27.190+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-11T14:52:45.211+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-11T14:53:00.334+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-11T14:55:34.989+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-11T14:55:50.988+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-11T14:55:55.264+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"ERROR","time":"2024-12-11T15:52:47.920+0800","caller":"handle/scheduledtasks.go:46","msg":"价格上涨时入库失败","error":"Error 1292 (22007): Incorrect datetime value: '0000-00-00' for column 'start_shield_time' at row 2"}
+{"level":"INFO","time":"2024-12-11T16:18:50.999+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=2)连接"}
+{"level":"INFO","time":"2024-12-11T16:21:41.851+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=2)连接"}
+{"level":"INFO","time":"2024-12-11T16:22:06.996+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=2)连接"}
+{"level":"INFO","time":"2024-12-11T16:22:16.981+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=2)连接"}
+{"level":"INFO","time":"2024-12-11T16:22:33.072+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=2)连接"}
+{"level":"INFO","time":"2024-12-11T16:24:20.008+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=2)连接"}
+{"level":"INFO","time":"2024-12-11T16:24:24.827+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=2)连接"}
+{"level":"INFO","time":"2024-12-11T16:24:27.221+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=2)连接"}
+{"level":"INFO","time":"2024-12-11T16:24:39.397+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-11T16:27:35.349+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-11T16:27:35.355+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-11T16:27:35.770+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-11T16:27:40.450+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-11T16:29:57.110+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-11T16:29:57.116+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-11T16:29:57.530+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-11T16:30:02.561+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-11T16:30:41.766+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-11T16:30:41.771+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-11T16:30:42.195+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-11T16:30:47.174+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-11T16:32:27.052+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-11T16:38:41.391+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-11T16:39:46.600+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-11T16:39:46.605+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-11T16:39:47.018+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-11T16:39:52.176+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-11T16:45:16.994+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-11T16:45:32.995+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-11T16:45:35.889+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-11T16:51:10.443+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-11T16:51:14.536+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=2)连接"}
+{"level":"INFO","time":"2024-12-11T16:51:20.833+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-11T16:51:24.888+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=2)连接"}
+{"level":"INFO","time":"2024-12-11T17:01:59.000+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-11T17:06:47.465+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-11T17:32:23.248+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-11T17:32:23.253+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-11T17:32:23.652+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-11T17:32:28.053+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}

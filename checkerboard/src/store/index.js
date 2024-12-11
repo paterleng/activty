@@ -3,7 +3,7 @@ import walletReducer from './wallet';
 
 const store = configureStore({
   reducer: {
-    wallet: walletReducer, // 注册钱包 slice
+    wallet: walletReducer,
   },
 });
 

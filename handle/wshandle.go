@@ -77,3 +77,27 @@ func checkHeartbeat(client model.Client) bool {
 	})
 	return true
 }
+
+// ReceiveWsMessage 接收websocket消息
+func ReceiveWsMessage(client model.Client, blockId int) {
+	for {
+		_, message, err := client.Conn.ReadMessage()
+		if err != nil {
+			if websocket.IsCloseError(err, websocket.CloseNormalClosure, websocket.CloseGoingAway, websocket.CloseNoStatusReceived) {
+				if c, exist := utils.ConnManager[client.UserId]; exist {
+					if _, exist := c[blockId]; exist {
+						delete(c, blockId)
+						if len(c) == 0 {
+							delete(utils.ConnManager, client.UserId)
+						}
+					}
+				}
+				utils.Tools.LG.Info(fmt.Sprintf("用户%s通过客户端主动关闭模块%t连接", client.UserId, blockId))
+				break
+			}
+			utils.Tools.LG.Error("websocket接收到错误消息", zap.Error(err))
+			break
+		}
+		fmt.Printf("Received message: %s\n", message)
+	}
+}

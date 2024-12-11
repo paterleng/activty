@@ -122,6 +122,14 @@
     box-shadow: 0px 4px 8px rgba(14, 153, 207, 0.5);
 }
 
+.grid-box.have {
+    border: 1px solid #0dec68;
+}
+.grid-box.preempted {
+    border: 1px solid #f40808;
+}
+
+
 .submit-button {
     text-align: center;
     width: 20px;

@@ -113,9 +113,6 @@ func (p *CheckerBoardController) GetUserOperateRecords(c *gin.Context) {
 	pageStr := c.Query("page")
 	size, _ := strconv.Atoi(sizeStr)
 	page, _ := strconv.Atoi(pageStr)
-
-	fmt.Println("size", size)
-	fmt.Println("page", page)
 	if size == 0 || page == 0 {
 		page = 1
 		size = 10
@@ -181,12 +178,12 @@ func (p *CheckerBoardController) GetCheckBoardInfo(c *gin.Context) {
 		oldGrid[uint(grid.GridId)] = true
 	}
 
-	for _, board := range boardInfo {
-		if oldGrid[board.ID] {
-			board.Status = pkg.PREEMPTED
+	for i := 0; i < len(boardInfo); i++ {
+		if oldGrid[boardInfo[i].ID] {
+			boardInfo[i].Status = pkg.PREEMPTED
 		}
-		if nowGrid[board.ID] {
-			board.Status = pkg.HAVE
+		if nowGrid[boardInfo[i].ID] {
+			boardInfo[i].Status = pkg.HAVE
 		}
 	}
 	pkg.ResponseSuccess(c, boardInfo)

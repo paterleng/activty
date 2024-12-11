@@ -20,6 +20,9 @@ const onboard = Onboard({
       rpcUrl: 'https://sepolia.infura.io/v3/512c7938c0084f22bc5369a77c5222ef', // 替换 ${INFURA_ID} 为实际 Infura 项目的 ID
     },
   ],
+  connect: {
+    autoConnectLastWallet: true
+  },
   i18n: {
     en: {
       connect: {
