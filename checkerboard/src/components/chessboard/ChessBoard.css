@@ -1,9 +1,9 @@
 .main {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-content: center;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -32,10 +32,10 @@
 }
 
 .countdown-wrapper {
-        display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
 }
 
 .countdown-wrapper-son{
@@ -47,7 +47,7 @@
 }
 
 .countdown-wrapper>* {
-    flex: 1, 1, auto;
+    flex: 1 1 auto;
 }
 
 .countdown-wrapper p {
@@ -93,12 +93,9 @@
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     gap: 5px;
-    width: 39vw;
-    height: 33vw;
+    width: 800px;
+    height: 600px;
     padding: 10px;
-    /* border: 2px solid #ddd; */
-    /* border-radius: 8px; */
-    /* background-color: #fafafa; */
 }
 
 .grid-box {
@@ -164,11 +161,9 @@
     background-color: white;
     border: 1px solid black;
     padding: 20px;
-    margin-left: 200px;
+    /*margin-left: 200px;*/
     z-index: 1200;
 }
-
-;
 
 @media (max-width: 50vw) {
     .grid-container {

@@ -590,3 +590,41 @@
 {"level":"INFO","time":"2024-12-10T15:36:07.674+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
 {"level":"INFO","time":"2024-12-10T15:36:08.117+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
 {"level":"INFO","time":"2024-12-10T15:36:13.391+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-10T15:37:38.147+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-10T15:37:38.151+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-10T15:37:38.574+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-10T15:37:43.726+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"ERROR","time":"2024-12-10T16:37:45.082+0800","caller":"handle/scheduledtasks.go:46","msg":"价格上涨时入库失败","error":"Error 1292 (22007): Incorrect datetime value: '0000-00-00' for column 'start_shield_time' at row 2"}
+{"level":"ERROR","time":"2024-12-10T17:37:45.222+0800","caller":"handle/scheduledtasks.go:46","msg":"价格上涨时入库失败","error":"Error 1292 (22007): Incorrect datetime value: '0000-00-00' for column 'start_shield_time' at row 2"}
+{"level":"ERROR","time":"2024-12-10T18:37:44.746+0800","caller":"handle/scheduledtasks.go:46","msg":"价格上涨时入库失败","error":"Error 1292 (22007): Incorrect datetime value: '0000-00-00' for column 'start_shield_time' at row 2"}
+{"level":"ERROR","time":"2024-12-10T18:49:48.982+0800","caller":"controller/checkerboard.go:31","msg":"参数绑定失败","error":"Key: 'Record.TransactionAmount' Error:Field validation for 'TransactionAmount' failed on the 'required' tag\nKey: 'Record.GridId' Error:Field validation for 'GridId' failed on the 'required' tag\nKey: 'Record.BlockId' Error:Field validation for 'BlockId' failed on the 'required' tag"}
+{"level":"ERROR","time":"2024-12-10T18:49:52.465+0800","caller":"controller/checkerboard.go:31","msg":"参数绑定失败","error":"Key: 'Record.TransactionAmount' Error:Field validation for 'TransactionAmount' failed on the 'required' tag\nKey: 'Record.GridId' Error:Field validation for 'GridId' failed on the 'required' tag\nKey: 'Record.BlockId' Error:Field validation for 'BlockId' failed on the 'required' tag"}
+{"level":"ERROR","time":"2024-12-10T18:49:53.904+0800","caller":"controller/checkerboard.go:31","msg":"参数绑定失败","error":"Key: 'Record.TransactionAmount' Error:Field validation for 'TransactionAmount' failed on the 'required' tag\nKey: 'Record.GridId' Error:Field validation for 'GridId' failed on the 'required' tag\nKey: 'Record.BlockId' Error:Field validation for 'BlockId' failed on the 'required' tag"}
+{"level":"ERROR","time":"2024-12-10T18:49:54.672+0800","caller":"controller/checkerboard.go:31","msg":"参数绑定失败","error":"Key: 'Record.TransactionAmount' Error:Field validation for 'TransactionAmount' failed on the 'required' tag\nKey: 'Record.GridId' Error:Field validation for 'GridId' failed on the 'required' tag\nKey: 'Record.BlockId' Error:Field validation for 'BlockId' failed on the 'required' tag"}
+{"level":"ERROR","time":"2024-12-10T18:49:55.232+0800","caller":"controller/checkerboard.go:31","msg":"参数绑定失败","error":"Key: 'Record.TransactionAmount' Error:Field validation for 'TransactionAmount' failed on the 'required' tag\nKey: 'Record.GridId' Error:Field validation for 'GridId' failed on the 'required' tag\nKey: 'Record.BlockId' Error:Field validation for 'BlockId' failed on the 'required' tag"}
+{"level":"ERROR","time":"2024-12-10T18:49:55.736+0800","caller":"controller/checkerboard.go:31","msg":"参数绑定失败","error":"Key: 'Record.TransactionAmount' Error:Field validation for 'TransactionAmount' failed on the 'required' tag\nKey: 'Record.GridId' Error:Field validation for 'GridId' failed on the 'required' tag\nKey: 'Record.BlockId' Error:Field validation for 'BlockId' failed on the 'required' tag"}
+{"level":"ERROR","time":"2024-12-10T18:49:56.175+0800","caller":"controller/checkerboard.go:31","msg":"参数绑定失败","error":"Key: 'Record.TransactionAmount' Error:Field validation for 'TransactionAmount' failed on the 'required' tag\nKey: 'Record.GridId' Error:Field validation for 'GridId' failed on the 'required' tag\nKey: 'Record.BlockId' Error:Field validation for 'BlockId' failed on the 'required' tag"}
+{"level":"ERROR","time":"2024-12-10T18:58:47.209+0800","caller":"controller/checkerboard.go:31","msg":"参数绑定失败","error":"Key: 'Record.BlockId' Error:Field validation for 'BlockId' failed on the 'required' tag"}
+{"level":"INFO","time":"2024-12-10T18:59:52.984+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-10T18:59:52.988+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-10T18:59:53.418+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-10T18:59:58.278+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"ERROR","time":"2024-12-10T19:00:09.454+0800","caller":"controller/checkerboard.go:62","msg":"用户提交的数据不足以买下"}
+{"level":"ERROR","time":"2024-12-10T19:01:18.976+0800","caller":"controller/checkerboard.go:62","msg":"用户提交的数据不足以买下"}
+{"level":"ERROR","time":"2024-12-10T19:01:25.197+0800","caller":"controller/checkerboard.go:62","msg":"用户提交的数据不足以买下"}
+{"level":"ERROR","time":"2024-12-10T19:01:29.369+0800","caller":"controller/checkerboard.go:62","msg":"用户提交的数据不足以买下"}
+{"level":"ERROR","time":"2024-12-10T19:21:13.390+0800","caller":"controller/checkerboard.go:62","msg":"用户提交的数据不足以买下"}
+{"level":"ERROR","time":"2024-12-10T19:21:19.138+0800","caller":"controller/checkerboard.go:62","msg":"用户提交的数据不足以买下"}
+{"level":"ERROR","time":"2024-12-10T19:21:22.806+0800","caller":"controller/checkerboard.go:62","msg":"用户提交的数据不足以买下"}
+{"level":"ERROR","time":"2024-12-10T19:23:10.219+0800","caller":"controller/checkerboard.go:62","msg":"用户提交的数据不足以买下"}
+
+
+
+
+
+
+
+{"level":"INFO","time":"2024-12-10T19:29:52.280+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-10T19:29:52.286+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-10T19:29:52.752+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-10T19:29:58.440+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
