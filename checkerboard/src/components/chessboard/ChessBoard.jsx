@@ -1,10 +1,11 @@
 import { useState, useRef, useMemo, useEffect} from 'react';
 import { useParams,useNavigate  } from 'react-router-dom';
-import { AntDesignOutlined,CaretLeftFilled,CaretRightFilled } from '@ant-design/icons';
-import { Avatar,Button, Input, Space } from 'antd';
+import { AntDesignOutlined } from '@ant-design/icons';
+import { Avatar,Button, Input, Space,InputNumber } from 'antd';
 import './Chessboard.css';
-import { BoardInfo } from '../../apis/manage'
+import {BoardInfo, SeizeGrid} from '../../apis/manage'
 import UserInfo from '../userinfo/UserInfo';
+import Header from "../header/Header.jsx";
 
 const ChessBoard = () => {
     const [selectedBoxes, setSelectedBoxes] = useState([]);
@@ -14,6 +15,7 @@ const ChessBoard = () => {
     const [ws, setWs] = useState(null);
     const [showPopup, setShowPopup] = useState(false); // 控制弹窗显示与否
     const [message, setMessage] = useState(null); // 存储弹窗信息
+    const [value, setValue] = useState('0');
     const { id } = useParams();
     const navigate = useNavigate();
 
@@ -37,17 +39,14 @@ const ChessBoard = () => {
         }
         getBoardInfo()
         if (blockId) {
-            // 创建 WebSocket 连接
             const socket = new WebSocket(`ws://localhost:9990/api/ws/handle?blockId=${blockId}`);
             setWs(socket);
             socket.onopen = () => {
                 console.log('WebSocket Connected');
             };
             socket.onmessage = (event) => {
-                // 当数据发生变化时，就去请求接口，更新页面数据
                 const data = JSON.parse(event.data);
-                // 调用接口更新数据
-                console.log("调用接口", data)
+                console.log(data);
                 getInfo(blockId)
             };
 
@@ -121,6 +120,8 @@ const ChessBoard = () => {
 
     // 选择一个格子并显示其信息
     const handleBoxClick = (box) => {
+        box.price>box.price_increase ?(setValue(box.price)):(setValue(box.price_increase))
+
         setMessage(box); 
         setShowPopup(true);
         if (showPopup) {
@@ -134,6 +135,18 @@ const ChessBoard = () => {
         setSelectedBoxes([]);
         setShowPopup(false);
     };
+
+    const seizeHandle = async () => {
+        const data = {
+            "transaction_amount": value,
+            "grid_id":message.ID,
+        }
+        const response = await SeizeGrid(data)
+        if (response.code == 200) {
+            setSelectedBoxes([]);
+            setShowPopup(false);
+        }
+    }
 
     // 向左
     const leftHandle = (id) => {
@@ -153,80 +166,90 @@ const ChessBoard = () => {
     }
 
     return (
-        <div className='main'>
-            <UserInfo />
-            <div className="container">
-                <div className="countdown-wrapper-son">
-                    <CaretLeftFilled  />
-                    <button onClick={()=>leftHandle(blockId)}>向左</button>
-                    <div className='total'>
-                        <p>总金额: <strong>${totalAmount}</strong></p>
+        <>
+            <div>
+                <Header />
+            </div>
+            <div className='main'>
+                <UserInfo/>
+                <div className="container">
+                    <div className="countdown-wrapper-son">
+                        <button onClick={() => leftHandle(blockId)}>向左</button>
+                        <div className='total'>
+                            <p>总金额: <strong>{totalAmount}</strong></p>
+                        </div>
+                        <p>当前位置： <strong>{blockId}</strong></p>
+                        <button onClick={goHome}>返回主页</button>
+                        <button onClick={() => rightHandle(blockId)}>向右</button>
                     </div>
-                    <p>当前位置： <strong>{blockId}</strong></p>
-                    <button onClick={()=>goHome}>返回主页</button>
-                    <button onClick={()=>leftHandle(blockId + 1)}>向右</button>
-                    <CaretRightFilled onClick={rightHandle(blockId+1)}/>
+                    <div className="grid-container" onMouseUp={handleMouseUp}>
+                        {boxes && boxes.length > 0 ? (
+                            boxes.map((box) => (
+                                <div
+                                    key={box.ID}
+                                    className={`grid-box ${selectedBoxes.includes(box.ID) ? 'selected' : ''}`}
+                                    onMouseDown={(event) => handleMouseDown(box.ID, event)}
+                                    onMouseEnter={(event) => handleMouseEnter(box.ID, event)}
+                                    onClick={() => handleBoxClick(box)}
+                                >
+                                    <div>{box.price}</div>
+                                </div>
+                            ))
+                        ) : (
+                            <p>加载中...</p>
+                        )}
+                    </div>
                 </div>
-                <div className="grid-container" onMouseUp={handleMouseUp}>
-                    {boxes && boxes.length > 0 ? (
-                        boxes.map((box) => (
-                            <div
-                                key={box.ID}
-                                className={`grid-box ${selectedBoxes.includes(box.ID) ? 'selected' : ''}`}
-                                onMouseDown={(event) => handleMouseDown(box.ID, event)}
-                                onMouseEnter={(event) => handleMouseEnter(box.ID, event)}
-                                onClick={() => handleBoxClick(box)}
-                            >
-                                <div>{box.price}</div>
+
+                <div>
+                    {showPopup && (
+                        <div className="popupStyle">
+                            <div>
+                                {/* 头像 */}
+                                <Avatar
+                                    size={{xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100}}
+                                    icon={<AntDesignOutlined/>}
+                                    src="/images/avatar/1.png"
+                                />
+                                {/* owner为空的话就展示未被占领 */}
+                                {message.owner != "" ? (
+                                    <p>{message.owner}</p>
+                                ) : (
+                                    <p>未被占领</p>
+                                )}
+                                {/* 哪个价格高展示哪个 */}
+                                {message.price > message.price_increase ? (
+                                    <div>
+                                        <p>{message.price}</p>
+                                    </div>
+                                ) : (
+                                    <div>
+                                        <p>{message.price_increase}</p>
+                                    </div>
+                                )}
+                                <Space>
+                                    <InputNumber min={1} max={100000000} value={value} onChange={setValue}/>
+                                    <Button
+                                        type="primary"
+                                        onClick={() => {
+                                            seizeHandle();
+                                        }}
+                                    >
+                                        抢占
+                                    </Button>
+                                </Space>
+
+                                {/*<button onClick={()=>seizeHandle()}>抢占</button>*/}
+
+                                <button onClick={closePopup}>Close</button>
                             </div>
-                        ))
-                    ) : (
-                        <p>加载中...</p>
+                        </div>
                     )}
                 </div>
-            </div>
 
-            <div>
-                {showPopup && (
-                    <div className="popupStyle">
-                        <div>
-                            {/* 头像 */}
-                            <Avatar
-                                size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }}
-                                icon={<AntDesignOutlined />}
-                                src="/images/avatar/1.png"
-                            />
-                            {/* owner为空的话就展示未被占领 */}
-                            {message.owner != "" ? (
-                                <p>{ message.owner}</p>
-                            ): (
-                               <p>未被占领</p>     
-                            )}
-                            {/* 哪个价格高展示哪个 */}
-                            {message.price > message.price_increase ? (
-                            <div>
-                                <Space.Compact
-                                    style={{
-                                    width: '100%',
-                                    }}
-                                >
-                                    <Input defaultValue={ message.price } />
-                                    <Button type="primary">Submit</Button>
-                                </Space.Compact>
-                                <p>{ message.price}</p>
-                            </div>
-                            ): (
-                               <p>{ message.price_increase}</p>     
-                            )}
-                            
-                            <button onClick={closePopup}>Close</button>
-                        </div>
-                    </div>
-                )}
+                {/*<button className="submit-button" onClick={handleSubmit}>提交</button>*/}
             </div>
-
-            <button className="submit-button" onClick={handleSubmit}>提交</button>
-        </div>
+        </>
     );
 };
 

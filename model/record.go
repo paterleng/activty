@@ -12,6 +12,6 @@ type Record struct {
 	OldAmount         float64 `json:"old_amount" gorm:"column:old_amount"`                                    // 成交前价格
 	TransactionAmount float64 `json:"transaction_amount" gorm:"column:transaction_amount" binding:"required"` // 成交金额
 	GridId            int     `json:"grid_id" gorm:"column:grid_id" binding:"required"`                       // 格子id
-	BlockId           int     `json:"block_id" gorm:"column:block_id" binding:"required"`                     // 块id
+	BlockId           int     `json:"block_id" gorm:"column:block_id"`                                        // 块id
 	Total             int     `json:"total" gorm:"-"`
 }

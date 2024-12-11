@@ -5,7 +5,6 @@ import ChessBoard from './components/chessboard/ChessBoard';
 import RegisterForm from './pages/RegisterForm';
 import LoginForm from './pages/login/LoginForm';
 import Rule from './components/Rule';
-import USDTTransactionComponent from './components/web3wallet/TestWallet'
 
 
 // 创建 AuthContext 用于管理用户登录状态
@@ -16,8 +15,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   
   return (
-    <> 
-    {/* <USDTTransactionComponent />   */}
+    <>
        <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
         <Router>
           <Routes>

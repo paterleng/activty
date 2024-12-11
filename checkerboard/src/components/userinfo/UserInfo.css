@@ -1,24 +1,20 @@
 .user-info {
-    width: 400px;
     display: flex;
-    justify-content: center;
-    align-content: flex-start;
+    width: 344px;
     align-items: flex-start;
     flex-direction: column;
+    border: 1px solid #352e2e;
+    margin-right: 30px;
+    flex-wrap: wrap;
+    align-content: space-around;
 }
 
 .info-row {
     position: relative;
-    display: inline-block;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
 }
-
-.info-row p {
-    margin-right: 10px;
-}
-
 
 .image-grid-container {
     display: grid;
@@ -53,9 +49,9 @@
 
 .icon-container {
     position: absolute;
-        bottom: 0;
-        right: 0;
-        z-index: 1;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
 }
 
 .edit-icon {

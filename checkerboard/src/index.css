@@ -2,12 +2,10 @@ html,
 body {
   display: flex;
   place-items: center;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
   height: 100%;
   width: 100%;
-  /* overflow: hidden; */
+  align-items: stretch;
+  justify-content: space-evenly;
 }

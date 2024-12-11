@@ -92,7 +92,6 @@ const UserInfo = () => {
             <p>冻结数：{userInfo.frozen}</p>
             <p>可用数：{userInfo.available}</p>
             <button>退款</button>
-            
             <div>
                 <TransactionRecord />
                 <a>Dmail</a>

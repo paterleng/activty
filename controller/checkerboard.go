@@ -94,7 +94,7 @@ func (p *CheckerBoardController) UserBetting(c *gin.Context) {
 	把消息写入管道
 	*/
 	var message model.Message
-	message.BlockId = bet.BlockId
+	message.BlockId = checkerBoard.BlockId
 	message.Type = 1
 	utils.ChMessage <- message
 	pkg.ResponseSuccess(c, pkg.CodeSuccess)

@@ -1,29 +1,35 @@
 .header-box {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 10px;
-    flex-direction: row;
-    align-items: center;
+    border: 1px solid #010101;
     width: 100%;
-}
-
-.left-box,
-.right-box {
-    width: 50%;
-    /* 设置子盒子的宽度 */
-    background-color: lightblue;
-    /* 背景色，用于区分盒子 */
-    padding: 20px;
-    /* 内边距 */
-    text-align: center;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    align-content: stretch;
+    flex-wrap: wrap;
 }
 
 .left-box {
-    background-color: lightcoral;
-    /* 左侧盒子的背景色 */
+    display: flex;
+    align-items: center;
+}
+
+
+.left-box a {
+    margin-right: 10px;
 }
 
 .right-box {
-    background-color: lightgreen;
-    /* 右侧盒子的背景色 */
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.token-div {
+    border: 1px solid #010101;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 20px;
+
 }
