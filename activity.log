@@ -700,3 +700,20 @@
 {"level":"INFO","time":"2024-12-11T17:32:23.253+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
 {"level":"INFO","time":"2024-12-11T17:32:23.652+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
 {"level":"INFO","time":"2024-12-11T17:32:28.053+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-11T18:15:12.204+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-11T18:15:12.210+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-11T18:15:12.630+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-11T18:15:17.254+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"ERROR","time":"2024-12-11T19:15:17.752+0800","caller":"handle/scheduledtasks.go:46","msg":"价格上涨时入库失败","error":"Error 1292 (22007): Incorrect datetime value: '0000-00-00' for column 'start_shield_time' at row 2"}
+{"level":"INFO","time":"2024-12-11T19:30:48.442+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-11T19:30:48.448+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-11T19:30:48.851+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-11T19:30:53.091+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-11T20:13:55.017+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-11T20:15:42.777+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-11T20:16:00.120+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-11T20:18:07.473+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-11T20:20:31.062+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-11T20:20:41.454+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-11T20:20:42.572+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"ERROR","time":"2024-12-11T20:30:53.779+0800","caller":"handle/scheduledtasks.go:46","msg":"价格上涨时入库失败","error":"Error 1292 (22007): Incorrect datetime value: '0000-00-00' for column 'start_shield_time' at row 2"}
