@@ -24,12 +24,11 @@ const UserInfo = () => {
     useEffect(() => {
         const fetchUserInfo = async () => {
             // 当用户登录的时候才会调用
-            // if (localStorage.getItem("token")) {
+            if (localStorage.getItem("token")) {
                 const response = await UserMessage()
                 setUserInfo(response.data)
                 setImage(response.data.avatar_id-1)
-            // }
-        
+            }
         };
         fetchUserInfo();
     }, []); 
@@ -76,46 +75,51 @@ const UserInfo = () => {
   ];
 
     return (
-        <div className="user-info">
-            <div className="info-row">
-                <Avatar
-                    size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }}
-                    icon={<AntDesignOutlined />}
-                    src={ images[image]}
-                />
-                <div className="icon-container">
-                    <EditTwoTone className="edit-icon"  onClick={showModal}/>
+        <div className={`user-info ${localStorage.getItem("token") ? '' : ''}`}>
+                <div className="info-row">
+                    <Avatar
+                        size={{xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100}}
+                        icon={<AntDesignOutlined/>}
+                        src={images[image]}
+                    />
+                    <div className="icon-container">
+                        <EditTwoTone className="edit-icon" onClick={showModal}/>
+                    </div>
                 </div>
-            </div>
-            <p>{ userInfo.user_name}</p>
-            <p>{ t('total')}：{userInfo.total}</p>
-            <p>冻结数：{userInfo.frozen}</p>
-            <p>可用数：{userInfo.available}</p>
-            <button>退款</button>
-            <div>
-                <TransactionRecord />
-                <a>Dmail</a>
-            </div>
-            <Modal
-                title="头像"
-                open={open}
-                cancelText="取消"
-                okText="修改"
-                onOk={handleOk}
-                confirmLoading={confirmLoading}
-                onCancel={handleCancel}
-            >
-                <div className="image-grid-container">
-                    {images.map((image, index) => (
-                        <div
-                            className={`image-box ${selectedIndex === index ? "selected" : ""}`}
-                            key={index}
-                            onClick={() => divClickHandle(index + 1)}>
-                            <img src={image} alt={`image-${index}` } />
-                        </div>
-                    ))}
+                <p>{userInfo.user_name}</p>
+                <p>{t('total')}：{userInfo.total}</p>
+                <p>冻结数：{userInfo.frozen}</p>
+                <p>可用数：{userInfo.available}</p>
+                <button>退款</button>
+                <div>
+                    <TransactionRecord/>
+                    <a>Dmail</a>
                 </div>
-            </Modal>
+                <Modal
+                    title="头像"
+                    open={open}
+                    cancelText="取消"
+                    okText="修改"
+                    onOk={handleOk}
+                    confirmLoading={confirmLoading}
+                    onCancel={handleCancel}
+                >
+                    <div className="image-grid-container">
+                        {images.map((image, index) => (
+                            <div
+                                className={`image-box ${selectedIndex === index ? "selected" : ""}`}
+                                key={index}
+                                onClick={() => divClickHandle(index + 1)}>
+                                <img src={image} alt={`image-${index}`}/>
+                            </div>
+                        ))}
+                    </div>
+                </Modal>
+            {localStorage.getItem("token") && (
+                <div className="overlay-box">
+                    <button>登录</button>
+                </div>
+            )}
         </div>
     );
 };

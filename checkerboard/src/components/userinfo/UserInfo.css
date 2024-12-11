@@ -1,12 +1,32 @@
 .user-info {
     display: flex;
-    width: 344px;
+    position: relative;
+    width: 300px;
+    height: 500px;
     align-items: flex-start;
     flex-direction: column;
     border: 1px solid #352e2e;
     margin-right: 30px;
     flex-wrap: wrap;
     align-content: space-around;
+    z-index: 1;
+}
+
+/* 半透明遮罩层 */
+.overlay-box {
+    position: absolute; /* 覆盖在底层盒子上 */
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 500px;
+    background: rgba(0, 0, 0, 0.6); /* 半透明黑色遮罩 */
+    z-index: 2; /* 层级高于底层内容盒子 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    /*pointer-events: none; !* 遮罩层不会阻止底层点击 *!*/
 }
 
 .info-row {
@@ -63,3 +83,6 @@
     font-size: 30px;
     color: #1890ff;
 }
+
+
+
