@@ -23,9 +23,8 @@ type CheckerBoard struct {
 }
 
 type Board struct {
-	Record    Record
-	UserName  string
-	Freeze    float64
-	Available float64
-	AvatarId  int
+	Record        []Record
+	CheckerBoards []CheckerBoard
+	Freeze        float64
+	Available     float64
 }

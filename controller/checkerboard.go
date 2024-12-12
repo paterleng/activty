@@ -26,13 +26,31 @@ func (p *CheckerBoardController) UserBetting(c *gin.Context) {
 		return
 	}
 	//获取交易信息
-	var bet model.Record
+	var bet []model.Record
 	if err := c.ShouldBind(&bet); err != nil {
 		p.LG.Error("参数绑定失败", zap.Error(err))
 		pkg.ResponseError(c, pkg.CodeParamError)
 		return
 	}
-	bet.Owner = userId
+	//先计算需要多少
+	assetInfo, err := dao.GetDaoManager().GetUserAssetInfo(userId)
+	if err != nil {
+		p.LG.Error("获取用户资产信息失败", zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeServerBusy)
+		return
+	}
+	total := 0.00
+	gaidsId := make([]int, len(bet))
+	for i := 0; i < len(bet); i++ {
+		total = total + bet[i].TransactionAmount
+		gaidsId[i] = bet[i].GridId
+		bet[i].Owner = userId
+	}
+	if assetInfo.Available < total {
+		p.LG.Error("用户可用余额不足", zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeInsufficientBalance)
+		return
+	}
 	/**
 	1、查询用户余额是否足够
 	2、生成交易记录
@@ -40,28 +58,23 @@ func (p *CheckerBoardController) UserBetting(c *gin.Context) {
 	4、扣除用户金额
 	5、返还被抢用户的钱
 	*/
-	assetInfo, err := dao.GetDaoManager().GetUserAssetInfo(userId)
-	if err != nil {
-		p.LG.Error("获取用户资产信息失败", zap.Error(err))
-		pkg.ResponseError(c, pkg.CodeServerBusy)
-		return
-	}
-	if assetInfo.Available < bet.TransactionAmount {
-		p.LG.Error("用户可用余额不足", zap.Error(err))
-		pkg.ResponseError(c, pkg.CodeInsufficientBalance)
-		return
-	}
 	//获取当前格子的信息，判断该用户提交的金额是否符合要求
-	checkerBoard, err := dao.GetDaoManager().GetGaidInfoByGaidId(bet.GridId)
+	checkerBoards, err := dao.GetDaoManager().GetGaidInfoByGaidsId(gaidsId)
 	if err != nil {
 		p.LG.Error("获取格子信息失败", zap.Error(err))
 		pkg.ResponseError(c, pkg.CodeServerBusy)
 		return
 	}
-	if checkerBoard.PriceIncrease >= bet.TransactionAmount || checkerBoard.Price >= bet.TransactionAmount {
-		p.LG.Error("用户提交的数据不足以买下", zap.Error(err))
-		pkg.ResponseError(c, pkg.CodePriceError)
-		return
+	betMap := make(map[int]model.Record)
+	for i := 0; i < len(bet); i++ {
+		betMap[bet[i].GridId] = bet[i]
+	}
+	for i := 0; i < len(checkerBoards); i++ {
+		if checkerBoards[i].PriceIncrease >= betMap[int(checkerBoards[i].ID)].TransactionAmount || checkerBoards[i].Price >= betMap[int(checkerBoards[i].ID)].TransactionAmount {
+			p.LG.Error("用户提交的数据不足以买下", zap.Error(err))
+			pkg.ResponseError(c, pkg.CodePriceError)
+			return
+		}
 	}
 
 	//查询用户信息
@@ -73,15 +86,27 @@ func (p *CheckerBoardController) UserBetting(c *gin.Context) {
 	}
 	var board model.Board
 	//在记录中记录用户名用于前端展示
-	bet.OldAmount = checkerBoard.Price
-	bet.Name = userInfo.UserName
-	bet.OldName = checkerBoard.Owner
-	bet.OldOwner = checkerBoard.UserId
+	record := map[uint]model.CheckerBoard{}
+	for i := 0; i < len(checkerBoards); i++ {
+		record[checkerBoards[i].ID] = checkerBoards[i]
+	}
+
+	//创建交易记录及更新格子信息
+	for i := 0; i < len(bet); i++ {
+		bet[i].OldAmount = record[uint(bet[i].GridId)].Price
+		bet[i].OldName = record[uint(bet[i].GridId)].Owner
+		bet[i].OldOwner = record[uint(bet[i].GridId)].UserId
+		bet[i].Name = userInfo.UserName
+		//更新格子信息
+		checkerBoards[i].Owner = userInfo.UserName
+		checkerBoards[i].UserId = userId
+		checkerBoards[i].Price = betMap[int(checkerBoards[i].ID)].TransactionAmount
+		checkerBoards[i].AvatarId = userInfo.AvatarId
+	}
 	board.Record = bet
-	board.UserName = userInfo.UserName
-	board.Freeze = assetInfo.Freeze + bet.TransactionAmount
-	board.Available = assetInfo.Available - bet.TransactionAmount
-	board.AvatarId = userInfo.AvatarId
+	board.CheckerBoards = checkerBoards
+	board.Freeze = assetInfo.Freeze + total
+	board.Available = assetInfo.Available - total
 	//数据入库
 	err = dao.GetDaoManager().CreateGridRecord(board)
 	if err != nil {
@@ -94,7 +119,7 @@ func (p *CheckerBoardController) UserBetting(c *gin.Context) {
 	把消息写入管道
 	*/
 	var message model.Message
-	message.BlockId = checkerBoard.BlockId
+	message.BlockId = checkerBoards[0].BlockId
 	message.Type = 1
 	utils.ChMessage <- message
 	pkg.ResponseSuccess(c, pkg.CodeSuccess)
@@ -170,6 +195,11 @@ func (p *CheckerBoardController) GetCheckBoardInfo(c *gin.Context) {
 	}
 	// 获取到用户之前的操作记录信息，找到用户之前有过哪些格子，根据块id查询
 	recordGrid, err := dao.GetDaoManager().GerRecordGrid(blockId, userId)
+	if err != nil {
+		p.LG.Error("查询用户格子信息失败", zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeServerBusy)
+		return
+	}
 
 	for _, grid := range userGrid {
 		nowGrid[grid.ID] = true

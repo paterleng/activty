@@ -77,7 +77,7 @@ const ConnectWallet = () => {
   
   return (
     <div>
-      {!localStorage.getItem("token") && !provider ? (
+      {!localStorage.getItem("token") || !localStorage.getItem("onboard.js:last_connected_wallet") ? (
         <button onClick={connect}>连接钱包</button>
       ) : (
         <div>

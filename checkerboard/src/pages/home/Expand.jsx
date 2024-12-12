@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import UserInfo from '../../components/userinfo/UserInfo'
 import RecordTable from '../../components/table/RecordTable';
-import ConnectWallet from '../../components/web3wallet/Wallet';
 import '../../components/chessboard/ChessBoard.css'
 import './Expand.css'
 import Header from '../../components/header/Header';
@@ -23,7 +22,6 @@ const Expand = () => {
             <div className="container-block">
                 <div className="countdown-wrapper">
                         <UserInfo />
-                        <ConnectWallet />
                     {/* <Countdown initialSeconds={1000} />    */}
                 </div>
                 

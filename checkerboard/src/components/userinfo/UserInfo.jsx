@@ -5,6 +5,7 @@ import { UserMessage,UpdateUserInfo } from '../../apis/manage';
 import { useTranslation } from 'react-i18next';
 import TransactionRecord from "../TransactionRecord";
 import './UserInfo.css'
+import ConnectWallet from "../web3wallet/Wallet.jsx";
 
 const UserInfo = () => {
     const { t } = useTranslation();
@@ -13,6 +14,7 @@ const UserInfo = () => {
     const [avatar, setAvatar] = useState(0)
     const [selectedIndex, setSelectedIndex] = useState(null); // 用于跟踪选中的头像索引
     const [image, setImage] = useState(0); // 用于控制头像使用哪一个
+    const [wallet, setWallet] = useState(false);
 
     const [userInfo, setUserInfo] = useState({
         user_name: "pater",
@@ -39,6 +41,10 @@ const UserInfo = () => {
     
     const handleOk = async () => {
         setConfirmLoading(true);
+        // 获取到钱包信息，改变状态
+        if (!localStorage.getItem("onboard.js:last_connected_wallet")) {
+            setWallet(true);
+        }
         // 调用修改用户信息接口
         const data = {
             "user_name": userInfo.user_name,
@@ -86,10 +92,10 @@ const UserInfo = () => {
                         <EditTwoTone className="edit-icon" onClick={showModal}/>
                     </div>
                 </div>
-                <p>{userInfo.user_name}</p>
-                <p>{t('total')}：{userInfo.total}</p>
-                <p>冻结数：{userInfo.frozen}</p>
-                <p>可用数：{userInfo.available}</p>
+                <div>{userInfo.user_name}</div>
+                <div>{t('total')}：{userInfo.total}</div>
+                <div>冻结数：{userInfo.frozen}</div>
+                <div>可用数：{userInfo.available}</div>
                 <button>退款</button>
                 <div>
                     <TransactionRecord/>
@@ -103,6 +109,8 @@ const UserInfo = () => {
                     onOk={handleOk}
                     confirmLoading={confirmLoading}
                     onCancel={handleCancel}
+                    destroyOnClose={true}
+                    loading={true}
                 >
                     <div className="image-grid-container">
                         {images.map((image, index) => (
@@ -116,8 +124,13 @@ const UserInfo = () => {
                     </div>
                 </Modal>
             {localStorage.getItem("token") && (
+                <div>
+                    <ConnectWallet />
+                </div>
+            )}
+            {!localStorage.getItem("token")||wallet && (
                 <div className="overlay-box">
-                    <button>登录</button>
+                    <ConnectWallet />
                 </div>
             )}
         </div>
