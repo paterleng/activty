@@ -8,4 +8,5 @@ body {
   width: 100%;
   align-items: stretch;
   justify-content: flex-start;
+  overflow-x: hidden;
 }

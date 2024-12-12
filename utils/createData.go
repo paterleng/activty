@@ -3,6 +3,7 @@ package utils
 import (
 	"activity/model"
 	"fmt"
+	"time"
 )
 
 // CreateBoardData 创建棋盘数据
@@ -23,6 +24,7 @@ func CreateBoardData() {
 	先创建第一块然后一块插入进去
 	*/
 	//外层盒子
+	nowTime := time.Now()
 	for i := 1; i <= 9; i++ {
 		if i == 5 {
 			continue
@@ -38,7 +40,11 @@ func CreateBoardData() {
 				board.RowId = j
 				board.LineId = k
 				board.Price = 500
+				board.EndShieldTime = nowTime
+				board.StartShieldTime = nowTime
+				board.IsShield = 2
 				boards = append(boards, board)
+
 			}
 		}
 		//	入库

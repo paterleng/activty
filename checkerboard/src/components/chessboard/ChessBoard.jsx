@@ -9,6 +9,9 @@ import Header from "../header/Header.jsx";
 
 const ChessBoard = () => {
     const [selectedBoxes, setSelectedBoxes] = useState([]);
+    const [detailBoxes, setDetailBoxes] = useState([]);// 记录多选盒子的详细信息
+    const [multipleChoice, setMultipleChoice] = useState(false);
+    const [increaseValue, setIncreaseValue] = useState(10); // 用于记录多选状态下的上涨值
     const isDragging = useRef(false); // 是否处于拖动状态
     const [blockId, setBlockId] = useState(null);
     const [boxes, setBoxes] = useState(null);
@@ -71,9 +74,14 @@ const ChessBoard = () => {
     const totalAmount = useMemo(() => {
         return selectedBoxes.reduce((sum, boxId) => {
             const box = boxes.find((b) => b.ID === boxId);
-            return sum + (box ? box.price : 0);
+            return sum + (box ? (box.price>box.price_increase ? box.price : box.price_increase) : 0);
         }, 0);
     }, [selectedBoxes, boxes]);
+
+    // 计算加价后的金额
+    const totalIncreaseAmount = useMemo(() =>{
+        return totalAmount+increaseValue*detailBoxes.length;
+    })
 
     // 切换盒子的选中状态
     const toggleBoxSelection = (boxId) => {
@@ -89,11 +97,16 @@ const ChessBoard = () => {
         event.preventDefault();
         isDragging.current = true;
         toggleBoxSelection(boxId);
+        const hoveredBox = boxes.find((box) => box.ID === boxId);
+        if (hoveredBox) {
+            setDetailBoxes([hoveredBox]);
+        }
     };
 
     // 鼠标进入盒子时，如果该盒子已经选中，则取消选中
     const handleMouseEnter = (boxId, event) => {
         if (isDragging.current) {
+            setMultipleChoice(true)
             setSelectedBoxes((prevSelected) => {
                 if (prevSelected.includes(boxId)) {
                     // 如果该盒子已选中，取消选中
@@ -101,6 +114,16 @@ const ChessBoard = () => {
                 } else {
                     // 否则选中该盒子
                     return [...prevSelected, boxId];
+                }
+            });
+            const hoveredBox = boxes.find((box) => box.ID === boxId);
+            setDetailBoxes((prevHovered) => {
+                if (prevHovered.some((box) => box.ID === hoveredBox.ID)) {
+                    // 如果已经存在，移除这个盒子
+                    return prevHovered.filter((box) => box.ID !== hoveredBox.ID);
+                } else {
+                    // 如果不存在，添加这个盒子
+                    return [...prevHovered, hoveredBox];
                 }
             });
         }
@@ -111,11 +134,7 @@ const ChessBoard = () => {
     const handleMouseUp = (event) => {
         event.preventDefault();
         isDragging.current = false;
-    };
 
-    // 提交选中的数据
-    const handleSubmit = () => {
-        setSelectedBoxes([]);
     };
 
     // 选择一个格子并显示其信息
@@ -134,20 +153,46 @@ const ChessBoard = () => {
     const closePopup = () => {
         setSelectedBoxes([]);
         setShowPopup(false);
+        setMultipleChoice(false)
     };
 
+    // 提交单个格子数据
     const seizeHandle = async () => {
-        const data = {
+        var data=new Array();
+        const a = {
             "transaction_amount": value,
             "grid_id":message.ID,
         }
+        data.push(a)
         const response = await SeizeGrid(data)
         if (response.code == 200) {
             setSelectedBoxes([]);
             setShowPopup(false);
         }
     }
+    // 批量提交
+    const batchHandle = async () => {
+        if (increaseValue<10) {
+            return
+        }
+        var data=new Array();
+        detailBoxes.forEach((box) => {
+            const temp  = {
+                "transaction_amount": box.price+increaseValue,
+                "grid_id":box.ID,
+            }
+            if (box.price <box.price_increase){
+                temp.transaction_amount = box.price_increase+increaseValue;
+            }
+            data.push(temp);
 
+        });
+        const response = await SeizeGrid(data)
+        if (response.code == 200) {
+            setSelectedBoxes([]);
+            setMultipleChoice(false)
+        }
+    }
     // 向左
     const leftHandle = (id) => {
         console.log(id);
@@ -192,7 +237,7 @@ const ChessBoard = () => {
                                     onMouseEnter={(event) => handleMouseEnter(box.ID, event)}
                                     onClick={() => handleBoxClick(box)}
                                 >
-                                    <div>{box.price}</div>
+                                    <div>{box.price>box.price_increase ? box.price:box.price_increase}</div>
                                 </div>
                             ))
                         ) : (
@@ -200,7 +245,34 @@ const ChessBoard = () => {
                         )}
                     </div>
                 </div>
-
+                {/*多选状态下的侧边*/}
+                <div>
+                    {multipleChoice && (
+                        <div className="popupStyle">
+                            <div>
+                                {/*总金额*/}
+                                <div>
+                                    当前总金额:{totalAmount}
+                                </div>
+                                <Space>
+                                    <InputNumber min={10} max={100000000} value={increaseValue}
+                                                 onChange={setIncreaseValue}/>
+                                    <Button
+                                        type="primary"
+                                        onClick={() => {
+                                            batchHandle();
+                                        }}
+                                    >
+                                        提交
+                                    </Button>
+                                </Space>
+                                <div>加价后金额:{totalIncreaseAmount}</div>
+                                <button onClick={closePopup}>Close</button>
+                            </div>
+                        </div>
+                    )}
+                </div>
+                {/*单选状态下的侧边*/}
                 <div>
                     {showPopup && (
                         <div className="popupStyle">

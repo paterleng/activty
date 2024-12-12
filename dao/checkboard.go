@@ -2,6 +2,7 @@ package dao
 
 import (
 	"activity/model"
+	"fmt"
 	"gorm.io/gorm"
 )
 
@@ -39,6 +40,7 @@ func (p *CheckBoardDao) GetUserGrid(blockId string, userId string) ([]model.Chec
 func (p *CheckBoardDao) GerRecordGrid(blockId string, userId string) ([]model.Record, error) {
 	var records []model.Record
 	err := p.DB.Where("block_id = ? AND old_owner = ?", blockId, userId).Find(&records).Error
+	fmt.Println(p.DB.Where("block_id = ? AND old_owner = ?", blockId, userId).Find(&records).Logger)
 	return records, err
 }
 
@@ -51,13 +53,13 @@ func (p *CheckBoardDao) CreateGridRecord(board model.Board) error {
 		return err
 	}
 	//更新格子信息
-	err := tx.Where("id = ? ", board.Record.GridId).Updates(model.CheckerBoard{UserId: board.Record.Owner, Owner: board.UserName, Price: board.Record.TransactionAmount, AvatarId: board.AvatarId}).Error
+	err := tx.Model(model.CheckerBoard{}).Save(&board.CheckerBoards).Error
 	if err != nil {
 		tx.Rollback()
 		return err
 	}
 	//扣除用户金额
-	err = tx.Where("user_id = ?", board.Record.Owner).Updates(model.Assets{Freeze: board.Freeze, Available: board.Available}).Error
+	err = tx.Where("user_id = ?", board.Record[0].Owner).Updates(model.Assets{Freeze: board.Freeze, Available: board.Available}).Error
 	if err != nil {
 		tx.Rollback()
 		return err
@@ -81,6 +83,14 @@ func (p *CheckBoardDao) UpdateUserBoardInfo(user model.User) error {
 	return err
 }
 
+// GetGaidInfoByGaidsId 获取多个格子信息
+func (p *CheckBoardDao) GetGaidInfoByGaidsId(gaidsId []int) ([]model.CheckerBoard, error) {
+	var checkerBoards []model.CheckerBoard
+	err := p.DB.Where("id in ?", gaidsId).Find(&checkerBoards).Error
+	return checkerBoards, err
+}
+
+// GetGaidInfoByGaidId 获取单个格子信息
 func (p *CheckBoardDao) GetGaidInfoByGaidId(gaidId int) (model.CheckerBoard, error) {
 	var checkerBoard model.CheckerBoard
 	err := p.DB.Where("id = ?", gaidId).First(&checkerBoard).Error

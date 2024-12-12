@@ -33,6 +33,7 @@ type CheckerBoard interface {
 	CreateGridRecord(board model.Board) error
 	GetRecord() ([]model.Record, error)
 	UpdateUserBoardInfo(user model.User) error
+	GetGaidInfoByGaidsId(gaidsId []int) ([]model.CheckerBoard, error)
 	GetGaidInfoByGaidId(gaidId int) (model.CheckerBoard, error)
 	UpdateBoardShield(board model.CheckerBoard) error
 	UpdateGridState(id uint, statue int) error
