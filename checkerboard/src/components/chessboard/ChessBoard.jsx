@@ -99,10 +99,12 @@ const ChessBoard = () => {
     const handleMouseDown = (boxId, event) => {
         event.preventDefault();
         isDragging.current = true;
+        setDetailBoxes([])
+        setSelectedBoxes([])
         const hoveredBox = boxes.find((box) => box.ID === boxId);
         if (hoveredBox) {
-            toggleBoxSelection(boxId);
-            if (hoveredBox.is_shield !== 1) {
+            if (hoveredBox.is_shield !== 1||isChoiceing.current === false){
+                toggleBoxSelection(boxId);
                 setDetailBoxes([hoveredBox]);
             }
         }
