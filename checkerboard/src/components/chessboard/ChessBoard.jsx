@@ -1,11 +1,13 @@
 import { useState, useRef, useMemo, useEffect} from 'react';
 import { useParams,useNavigate  } from 'react-router-dom';
-import { AntDesignOutlined } from '@ant-design/icons';
+import { AntDesignOutlined,StopTwoTone } from '@ant-design/icons';
 import { Avatar,Button,Space,InputNumber,Spin } from 'antd';
 import './Chessboard.css';
 import {BoardInfo, SeizeGrid} from '../../apis/manage'
 import UserInfo from '../userinfo/UserInfo';
 import Header from "../header/Header.jsx";
+import Countdown from "../Countdown.jsx";
+import {timeValue} from "../common/common.js";
 
 const ChessBoard = () => {
     const [selectedBoxes, setSelectedBoxes] = useState([]);
@@ -97,10 +99,12 @@ const ChessBoard = () => {
     const handleMouseDown = (boxId, event) => {
         event.preventDefault();
         isDragging.current = true;
-        toggleBoxSelection(boxId);
         const hoveredBox = boxes.find((box) => box.ID === boxId);
         if (hoveredBox) {
-            setDetailBoxes([hoveredBox]);
+            toggleBoxSelection(boxId);
+            if (hoveredBox.is_shield !== 1) {
+                setDetailBoxes([hoveredBox]);
+            }
         }
     };
 
@@ -111,15 +115,6 @@ const ChessBoard = () => {
             setShowPopup(false)
             isChoiceing.current = true
             setMultipleChoice(true)
-            setSelectedBoxes((prevSelected) => {
-                if (prevSelected.includes(boxId)) {
-                    // 如果该盒子已选中，取消选中
-                    return prevSelected.filter((id) => id !== boxId);
-                } else {
-                    // 否则选中该盒子
-                    return [...prevSelected, boxId];
-                }
-            });
             const hoveredBox = boxes.find((box) => box.ID === boxId);
             setDetailBoxes((prevHovered) => {
                 if (prevHovered.some((box) => box.ID === hoveredBox.ID)) {
@@ -127,9 +122,26 @@ const ChessBoard = () => {
                     return prevHovered.filter((box) => box.ID !== hoveredBox.ID);
                 } else {
                     // 如果不存在，添加这个盒子
-                    return [...prevHovered, hoveredBox];
+                    if (hoveredBox.is_shield != 1) {
+                        return [...prevHovered, hoveredBox];
+                    }
+                    return prevHovered;
                 }
             });
+            setSelectedBoxes((prevSelected) => {
+                if (prevSelected.includes(boxId)) {
+                    // 如果该盒子已选中，取消选中
+                    return prevSelected.filter((id) => id !== boxId);
+                } else {
+                    // 否则选中该盒子
+                    if (hoveredBox.is_shield != 1) {
+                        return [...prevSelected, boxId];
+                    }
+                    return prevSelected;
+
+                }
+            });
+
         }
         event.preventDefault();
     };
@@ -153,11 +165,11 @@ const ChessBoard = () => {
             setSelectedBoxes([]);
             toggleBoxSelection(box.ID);
         }
-        if (selectedBoxes.length ==1){
+        if (selectedBoxes.length ===1){
             setMultipleChoice(false)
             isChoiceing.current=false
         }
-        if (selectedBoxes.length==0) {
+        if (selectedBoxes.length===0) {
             setSelectedBoxes([])
             isChoiceing.current=false
             setShowPopup(false)
@@ -183,7 +195,7 @@ const ChessBoard = () => {
         }
         data.push(a)
         const response = await SeizeGrid(data)
-        if (response.code == 200) {
+        if (response.code === 200) {
             setSelectedBoxes([]);
             setShowPopup(false);
         }
@@ -205,7 +217,7 @@ const ChessBoard = () => {
             data.push(temp);
         });
         const response = await SeizeGrid(data)
-        if (response.code == 200) {
+        if (response.code === 200) {
             setSelectedBoxes([]);
             setMultipleChoice(false)
             setDetailBoxes([])
@@ -228,6 +240,7 @@ const ChessBoard = () => {
     const goHome = () => {
         navigate("/")
     }
+
 
     return (
         <>
@@ -256,6 +269,7 @@ const ChessBoard = () => {
                                     onMouseEnter={(event) => handleMouseEnter(box.ID, event)}
                                     onClick={() => handleBoxClick(box)}
                                 >
+                                    {box.is_shield == 1? <StopTwoTone />:''}
                                     <div>{box.price>box.price_increase ? box.price:box.price_increase}</div>
                                 </div>
                             ))
@@ -300,6 +314,7 @@ const ChessBoard = () => {
                                     icon={<AntDesignOutlined/>}
                                     src="/images/avatar/1.png"
                                 />
+                                {message.is_shield === 1? <StopTwoTone />:''}
                                 {/* owner为空的话就展示未被占领 */}
                                 {message.owner != "" ? (
                                     <p>{message.owner}</p>
@@ -316,17 +331,20 @@ const ChessBoard = () => {
                                         <p>{message.price_increase}</p>
                                     </div>
                                 )}
-                                <Space>
-                                    <InputNumber min={1} max={100000000} value={value} onChange={setValue}/>
-                                    <Button
-                                        type="primary"
-                                        onClick={() => {
-                                            seizeHandle();
-                                        }}
-                                    >
-                                        { message.status == 2 ? '还击':'抢占'}
-                                    </Button>
-                                </Space>
+                                {message.is_shield == 1?
+                                    <Countdown initialSeconds={timeValue(message.end_shield_time)} />:
+                                    <Space>
+                                        <InputNumber min={1} max={100000000} value={value} onChange={setValue}/>
+                                        <Button
+                                            type="primary"
+                                            onClick={() => {
+                                                seizeHandle();
+                                            }}
+                                        >
+                                            { message.status == 2 ? '还击':'抢占'}
+                                        </Button>
+                                </Space>}
+
                                 <button onClick={closePopup}>Close</button>
                             </div>
                         </div>
