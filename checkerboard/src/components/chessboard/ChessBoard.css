@@ -161,6 +161,7 @@
 
 .popupStyle {
     position: fixed;
+    right: -50px;
     transform: translate(-50%, -50%);
     width: 250px;
     height: 400px;
@@ -169,8 +170,20 @@
     background-color: white;
     border: 1px solid black;
     padding: 20px;
-    /*margin-left: 200px;*/
-    z-index: 1200;
+    z-index: 1;
+}
+.testStyle{
+    position: fixed;
+    right: -50px;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 20px;
+    z-index: 1;
 }
 
 @media (max-width: 50vw) {

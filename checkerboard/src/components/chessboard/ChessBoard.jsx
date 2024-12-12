@@ -12,6 +12,7 @@ const ChessBoard = () => {
     const [detailBoxes, setDetailBoxes] = useState([]);// 记录多选盒子的详细信息
     const [multipleChoice, setMultipleChoice] = useState(false);
     const [increaseValue, setIncreaseValue] = useState(10); // 用于记录多选状态下的上涨值
+    const isChoiceing = useRef(false) // 是否处于多选状态
     const isDragging = useRef(false); // 是否处于拖动状态
     const [blockId, setBlockId] = useState(null);
     const [boxes, setBoxes] = useState(null);
@@ -106,6 +107,9 @@ const ChessBoard = () => {
     // 鼠标进入盒子时，如果该盒子已经选中，则取消选中
     const handleMouseEnter = (boxId, event) => {
         if (isDragging.current) {
+            // 在单选状态下进行多选,就去掉单选框
+            setShowPopup(false)
+            isChoiceing.current = true
             setMultipleChoice(true)
             setSelectedBoxes((prevSelected) => {
                 if (prevSelected.includes(boxId)) {
@@ -134,19 +138,31 @@ const ChessBoard = () => {
     const handleMouseUp = (event) => {
         event.preventDefault();
         isDragging.current = false;
-
     };
 
     // 选择一个格子并显示其信息
     const handleBoxClick = (box) => {
-        box.price>box.price_increase ?(setValue(box.price)):(setValue(box.price_increase))
+        if (selectedBoxes.length>1&&isChoiceing.current){
+            return
+        }
 
+        box.price>box.price_increase ?(setValue(box.price)):(setValue(box.price_increase))
         setMessage(box); 
         setShowPopup(true);
         if (showPopup) {
             setSelectedBoxes([]);
             toggleBoxSelection(box.ID);
-        }  
+        }
+        if (selectedBoxes.length ==1){
+            setMultipleChoice(false)
+            isChoiceing.current=false
+        }
+        if (selectedBoxes.length==0) {
+            setSelectedBoxes([])
+            isChoiceing.current=false
+            setShowPopup(false)
+            setMultipleChoice(false)
+        }
     };
 
     // 关闭弹窗
@@ -154,6 +170,8 @@ const ChessBoard = () => {
         setSelectedBoxes([]);
         setShowPopup(false);
         setMultipleChoice(false)
+        setDetailBoxes([])
+        isChoiceing.current = false;
     };
 
     // 提交单个格子数据
@@ -185,12 +203,13 @@ const ChessBoard = () => {
                 temp.transaction_amount = box.price_increase+increaseValue;
             }
             data.push(temp);
-
         });
         const response = await SeizeGrid(data)
         if (response.code == 200) {
             setSelectedBoxes([]);
             setMultipleChoice(false)
+            setDetailBoxes([])
+            isChoiceing.current = false;
         }
     }
     // 向左
@@ -248,14 +267,13 @@ const ChessBoard = () => {
                 {/*多选状态下的侧边*/}
                 <div>
                     {multipleChoice && (
-                        <div className="popupStyle">
+                        <div className="testStyle">
                             <div>
-                                {/*总金额*/}
                                 <div>
                                     当前总金额:{totalAmount}
                                 </div>
                                 <Space>
-                                    <InputNumber min={10} max={100000000} value={increaseValue}
+                                    <InputNumber min={10} max={1000000} value={increaseValue}
                                                  onChange={setIncreaseValue}/>
                                     <Button
                                         type="primary"
