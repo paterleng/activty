@@ -123,16 +123,19 @@ const UserInfo = () => {
                         ))}
                     </div>
                 </Modal>
-            {localStorage.getItem("token") && (
+            {/*{localStorage.getItem("token") && (*/}
                 <div>
                     <ConnectWallet />
                 </div>
-            )}
-            {!localStorage.getItem("token")||wallet && (
-                <div className="overlay-box">
-                    <ConnectWallet />
-                </div>
-            )}
+            {/*// )}*/}
+            {/*{!localStorage.getItem("token")||wallet && (*/}
+            {/*    <div className="overlay-box">*/}
+            {/*        <ConnectWallet />*/}
+            {/*    </div>*/}
+            {/*)}*/}
+            {
+
+            }
         </div>
     );
 };

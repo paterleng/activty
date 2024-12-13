@@ -24,7 +24,8 @@ const ConnectWallet = () => {
             wallets[0].provider,
             'any',
         );
-        console.log('connected wallets: ', wallets);
+        // 获取一个token
+
         setProvider(ethersProvider);
         wallets[0].provider.on('disconnect', handleDisconnect);
       }
@@ -77,7 +78,7 @@ const ConnectWallet = () => {
   
   return (
     <div>
-      {!localStorage.getItem("token") || !localStorage.getItem("onboard.js:last_connected_wallet") ? (
+      {!provider ? (
         <button onClick={connect}>连接钱包</button>
       ) : (
         <div>

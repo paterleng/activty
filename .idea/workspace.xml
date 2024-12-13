@@ -5,9 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81e28f08-7929-4107-9a7a-4c51f856d31e" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/checkerboard/src/components/web3wallet/test.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/activity.log" beforeDir="false" afterPath="$PROJECT_DIR$/activity.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/route.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/route.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkerboard/src/components/chessboard/ChessBoard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/chessboard/ChessBoard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/userinfo/UserInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/userinfo/UserInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/web3wallet/TestWallet.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/web3wallet/Wallet.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/web3wallet/Wallet.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +60,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultGoTemplateProperty": "Go File",
-    "Go 构建.go build activity.executor": "Debug",
+    "Go 构建.go build activity.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",

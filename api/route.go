@@ -19,6 +19,8 @@ func ApiRoute(r *gin.Engine) {
 		user.PUT("/put/userinfo", GetApiManager().PutUserInfo)
 		//	充值信息
 		user.POST("/recharge", GetApiManager().Recharge)
+		//	claim操作
+		//user.POST()
 	}
 	board := api.Group("/checkboard")
 	{
