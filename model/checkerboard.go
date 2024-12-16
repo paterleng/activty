@@ -28,3 +28,9 @@ type Board struct {
 	Freeze        float64
 	Available     float64
 }
+
+// Settlement 用于结算使用
+type Settlement struct {
+	UserId string  `json:"user_id"` // 结算地址
+	Total  float64 `json:"total"`   // 结算金额
+}

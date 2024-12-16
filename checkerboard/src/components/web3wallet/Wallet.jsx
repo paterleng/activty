@@ -1,89 +1,120 @@
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 import onboard from './WebOnboard';
-import { ethers } from 'ethers';
-import usdtAbi from "./useABI.json";
 import {connectWallet} from "../common/common.js";
+import {Connection, PublicKey, SystemProgram, Transaction} from "@solana/web3.js";
+import {ReCharge} from "../../apis/manage.js";
+
+const connection = new Connection('https://api.devnet.solana.com', 'confirmed');
+
+
 
 const ConnectWallet = () => {
-  const [provider, setProvider] = useState(null);
-  // 在组件加载时设置语言和重连钱包
+  // 在组件加载时设置语言
   useEffect(() => {
     onboard.state.actions.setLocale('zh')
-    const restoreWallet = async () => {
-      const previouslyConnectedWallets = JSON.parse(
-          window.localStorage.getItem('onboard.js:last_connected_wallet') || '[]'
-      );
-      if (previouslyConnectedWallets.length > 0) {
-        const wallets = await onboard.connectWallet({
-          autoSelect: {
-            label: previouslyConnectedWallets[0],
-            disableModals: true, // 禁用弹窗
-          },
-        });
-        const ethersProvider = new ethers.providers.Web3Provider(
-            wallets[0].provider,
-            'any',
-        );
-        // 获取一个token
-
-        setProvider(ethersProvider);
-        wallets[0].provider.on('disconnect', handleDisconnect);
-      }
-    };
-    restoreWallet();
   }, []);
 
   // 连接钱包
    const connect = async () => {
-      var wallets,ethersProvider = connectWallet();
-      setProvider(ethersProvider);
-      // 设置事件监听器
-     wallets[0].provider.on('disconnect', handleDisconnect);
+     var wallets = connectWallet();
+     console.log(wallets)
   };
 
-  // 处理主动断开连接事件
-  const handleDisconnect = () => {
-    setProvider(null);
-    console.log('钱包主动断开连接');
-  };
-  
-  const sendUSDTTransaction = async (amount) => {
-    if (!provider) {
-        alert("请先连接钱包");
-        return;
-    }  
+// 动态设置 provider
+  let currentProvider = null;
 
+  function setProvider(provider) {
+    currentProvider = provider;
+    console.log("钱包已设置为: ", provider);
+  }
+
+  async function sendTransaction(recipientAddress, amount) {
     try {
-      const signer = provider.getSigner();
-      const network = await provider.getNetwork();
-      console.log(network)
-      // switch (network) {
-      //   case
-      // }
-      const usdtContractAddress = "0xdAC17F958D2ee523a2206206994597C13D831ec7"; // USDT 智能合约地址
-      const usdtContract = new ethers.Contract(
-        usdtContractAddress,
-        usdtAbi,
-        signer
+      if (!window.solana) {
+        console.error("Solana 钱包未检测到");
+        return;
+      }
+      if (!window.solana.isPhantom && !window.backpack) {
+        console.error("不支持的 Solana 钱包");
+        return;
+      }
+      const wallet = JSON.parse(localStorage.getItem("onboard.js:last_connected_wallet"));
+      switch (wallet?.[0]) {
+        case "Backpack":
+          if (window.backpack?.solana) {
+            setProvider(window.backpack.solana);
+          } else {
+            console.error("Backpack 钱包未准备好");
+            return;
+          }
+          break;
+        case "Phantom":
+          if (window.phantom?.solana) {
+            setProvider(window.phantom.solana);
+          } else {
+            console.error("Phantom 钱包未准备好");
+            return;
+          }
+          break;
+        default:
+          console.error("当前钱包类型不受支持");
+          return;
+      }
+      if (!currentProvider) {
+        console.error("当前 provider 未设置");
+        return;
+      }
+      // 确保连接钱包
+      if (!currentProvider.isConnected) {
+        await currentProvider.connect();
+      }
+
+      const senderPublicKey = currentProvider.publicKey;
+      const recipientPublicKey = new PublicKey(recipientAddress);
+      const lamports = amount * 1e9; // 转换为 lamports
+
+      const transaction = new Transaction().add(
+          SystemProgram.transfer({
+            fromPubkey: senderPublicKey,
+            toPubkey: recipientPublicKey,
+            lamports,
+          })
       );
 
-      const amountInWei = ethers.utils.parseUnits(amount.toString(), 6); // 转换金额格式到 USDT 小数点位
-      const tx = await usdtContract.transfer("0x1510472bB6718ca4fb62FA3Bbe9072978EEfd0da", amountInWei);
-      const receipt = await tx.wait();
-      alert(`转账成功！Transaction Hash: ${receipt.transactionHash}`);
+      const latestBlockhash = await connection.getLatestBlockhash();
+      transaction.recentBlockhash = latestBlockhash.blockhash;
+      transaction.feePayer = senderPublicKey;
+
+      // 签名
+      const signedTransaction = await currentProvider.signTransaction(transaction);
+      // 创建交易
+      const txId = await connection.sendRawTransaction(signedTransaction.serialize());
+      // 检测交易是否成功
+      await connection.confirmTransaction(txId, 'confirmed');
+      console.log("交易已确认，交易 ID：", txId);
+      const data = {
+        "transaction_hash": txId,
+      }
+      await ReCharge(data)
     } catch (error) {
-      alert(`转账失败: ${error.message}`);
+      console.error("交易失败:", error);
     }
-  };
-  
+  }
+
+  // 处理主动断开连接事件
+  // const handleDisconnect = () => {
+  //   setProvider(null);
+  //   console.log('钱包主动断开连接');
+  // };
+
   return (
     <div>
-      {!provider ? (
-        <button onClick={connect}>连接钱包</button>
-      ) : (
+      {/*使用token控制展示不展示*/}
+      {!localStorage.getItem("token") ? (
+          <button onClick={connect}>连接钱包</button>
+        ) : (
         <div>
-          {/*<p>钱包信息: {wallet.accounts[0].address}</p>*/}
-          <button onClick={()=>sendUSDTTransaction(0.001)}>充值</button>
+          <button onClick={()=>sendTransaction("Y7oMKu2H2iidZVUGGmMpzWLmeRJ4KBXngr6THrL9AqS",1)}>充值</button>
         </div>
       )}
     </div>

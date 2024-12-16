@@ -5,17 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81e28f08-7929-4107-9a7a-4c51f856d31e" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/checkerboard/src/components/web3wallet/test.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/http/airdrop.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/http/reimburse.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/solana_handle.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/activity.log" beforeDir="false" afterPath="$PROJECT_DIR$/activity.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/route.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/route.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/user.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkerboard/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkerboard/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkerboard/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/chessboard/ChessBoard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/chessboard/ChessBoard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/userinfo/UserInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/userinfo/UserInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/web3wallet/TestWallet.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/apis/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/apis/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/apis/manage.js" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/apis/manage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/common/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/common/common.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkerboard/src/components/web3wallet/Wallet.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/web3wallet/Wallet.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/web3wallet/WebOnboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/web3wallet/WebOnboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/web3wallet/test.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/web3wallet/test.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/vite.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/checkboard.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/checkboard.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/interface.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/interface.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/assets.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/assets.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/checkerboard.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/checkerboard.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/rechargerecord.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/rechargerecord.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/constant.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/constant.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +62,10 @@
     &quot;accountId&quot;: &quot;22288506-2c1d-45f2-83d2-d70bceb08d1a&quot;
   }
 }</component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
@@ -60,7 +81,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultGoTemplateProperty": "Go File",
-    "Go 构建.go build activity.executor": "Run",
+    "Go 构建.go build activity.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",

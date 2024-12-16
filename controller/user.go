@@ -2,8 +2,10 @@ package controller
 
 import (
 	"activity/dao"
+	"activity/http"
 	"activity/model"
 	"activity/pkg"
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 	"gorm.io/gorm"
@@ -131,6 +133,14 @@ func (p *UserController) Recharge(c *gin.Context) {
 	/**
 	1、更新之前先查看这笔交易是否存在，确认是否是直接调用的api
 	*/
+	//transactionInfo, err := internal.GetTransactionInfo(chargeInfo.TransactionHash)
+	//if err != nil {
+	//	p.LG.Error("查询交易记录失败", zap.Error(err))
+	//	pkg.ResponseError(c, pkg.CodeServerBusy)
+	//	return
+	//}
+	//chargeInfo.BlockNumber = transactionInfo.Slot
+	chargeInfo.ToUser = pkg.SYSTEMUSER
 
 	//2、充值过程中，先更新资产表再更新充值记录表
 	err := dao.GetDaoManager().UpdateUserAssetInfo(chargeInfo)
@@ -183,6 +193,86 @@ func (p *UserController) PutUserInfo(c *gin.Context) {
 		pkg.ResponseError(c, pkg.CodeUpdateError)
 		return
 	}
+
+	pkg.ResponseSuccess(c, pkg.CodeSuccess)
+}
+
+// GetReChangeRecord 获取用户的充值记录
+func (p *UserController) GetReChangeRecord(c *gin.Context) {
+	/**
+	获取用户的充值记录，然后计算用户充了多少，剩余多少
+	*/
+	userId := c.GetString(pkg.USERID)
+	chargeRecord, err := dao.GetDaoManager().GetReChargeRecord(userId)
+	if err != nil {
+		p.LG.Error("获取用户充值记录失败", zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeServerBusy)
+		return
+	}
+	pkg.ResponseSuccess(c, chargeRecord)
+}
+
+// Claim 用户确认签发token
+func (p *UserController) Claim(c *gin.Context) {
+	userId := c.GetString(pkg.USERID)
+	/**
+	1、查询用户所拥有的格子
+	2、计算用户能拿到多少代币
+	3、调用api发放代币，并返还用户剩余的钱
+	*/
+	userGrids, err := dao.GetDaoManager().GetAllUserGrid(userId)
+	if err != nil {
+		p.LG.Error("用户获取自己所有格子失败", zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeServerBusy)
+		return
+	}
+	totalToken := 0.00
+	for _, grid := range userGrids {
+		if grid.Price < grid.PriceIncrease {
+			totalToken += grid.PriceIncrease
+		} else {
+			totalToken += grid.Price
+		}
+	}
+	strTotalToken := fmt.Sprintf("%f", totalToken)
+	data := [][]string{
+		{userId, strTotalToken},
+	}
+	http.Airdrop(data)
+	pkg.ResponseSuccess(c, pkg.CodeSuccess)
+}
+
+// Reimburse 退款
+func (p *UserController) Reimburse(c *gin.Context) {
+	//	获取到退款金额
+	userId := c.GetString(pkg.USERID)
+	var amount model.ReimburseResp
+	if err := c.ShouldBind(&amount); err != nil {
+		p.LG.Error("退款参数绑定失败", zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeServerBusy)
+		return
+	}
+	//	查询用户资产
+	assetInfo, err := dao.GetDaoManager().GetUserAssetInfo(userId)
+	if err != nil {
+		p.LG.Error("获取用户资产失败", zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeServerBusy)
+		return
+	}
+	if assetInfo.Available < amount.Amount {
+		p.LG.Error("用户退款提交余额不足", zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeInsufficientBalance)
+		return
+	}
+	//调用api退款
+	err = http.Reimburse([]string{})
+	if err != nil {
+		p.LG.Error("用户退款失败", zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeServerBusy)
+		return
+	}
+	//更新数据库信息，防止用户多次退款，改变用户资产
+	//更新用户资产
 
 	pkg.ResponseSuccess(c, pkg.CodeSuccess)
 }

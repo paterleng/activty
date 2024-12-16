@@ -16,3 +16,5 @@ export const Records = () => instance.get('checkboard/records', { skipAuth: true
 export const UpdateUserInfo = (param) => instance.put('user/put/userinfo',param)
 // 抢占单个格子
 export const SeizeGrid = (param) => instance.post('checkboard/betting',param)
+// 用户充值记录
+export const ReCharge = (param) => instance.post('user/recharge',param)

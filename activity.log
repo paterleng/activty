@@ -1062,3 +1062,52 @@
 {"level":"INFO","time":"2024-12-13T18:05:38.974+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
 {"level":"INFO","time":"2024-12-13T18:05:57.360+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
 {"level":"INFO","time":"2024-12-13T19:00:23.666+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=4)次上涨"}
+{"level":"INFO","time":"2024-12-16T14:57:56.511+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-16T14:57:56.516+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-16T14:57:56.899+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-16T14:58:01.901+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-16T15:16:03.530+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=7)连接"}
+{"level":"INFO","time":"2024-12-16T15:58:02.612+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=1)次上涨"}
+{"level":"INFO","time":"2024-12-16T16:07:23.253+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-16T16:08:29.498+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-16T16:50:54.566+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=4)连接"}
+{"level":"INFO","time":"2024-12-16T16:51:18.563+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=4)连接"}
+{"level":"INFO","time":"2024-12-16T16:56:36.890+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=4)连接"}
+{"level":"INFO","time":"2024-12-16T16:56:44.586+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=4)连接"}
+{"level":"INFO","time":"2024-12-16T16:57:29.098+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=4)连接"}
+{"level":"INFO","time":"2024-12-16T16:57:38.585+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=4)连接"}
+{"level":"INFO","time":"2024-12-16T16:57:44.476+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=4)连接"}
+{"level":"INFO","time":"2024-12-16T16:58:02.275+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=4)连接"}
+{"level":"INFO","time":"2024-12-16T16:58:03.513+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=2)次上涨"}
+{"level":"INFO","time":"2024-12-16T17:27:54.992+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=4)连接"}
+{"level":"INFO","time":"2024-12-16T17:29:12.177+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-16T17:29:12.181+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-16T17:29:12.571+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-16T17:29:17.216+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"ERROR","time":"2024-12-16T17:29:58.422+0800","caller":"controller/user.go:138","msg":"查询交易记录失败","error":"rpc: call error, err: failed to do request, err: Post \"https://api.devnet.solana.com\": dial tcp 157.240.3.50:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond., body: "}
+{"level":"ERROR","time":"2024-12-16T17:31:31.204+0800","caller":"controller/user.go:138","msg":"查询交易记录失败","error":"rpc: call error, err: failed to do request, err: Post \"https://api.devnet.solana.com\": dial tcp 157.240.3.50:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond., body: "}
+{"level":"ERROR","time":"2024-12-16T17:37:45.435+0800","caller":"controller/user.go:138","msg":"查询交易记录失败","error":"rpc: call error, err: failed to do request, err: Post \"https://api.devnet.solana.com\": dial tcp 157.240.3.50:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond., body: "}
+{"level":"INFO","time":"2024-12-16T18:29:17.981+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=1)次上涨"}
+{"level":"INFO","time":"2024-12-16T19:29:18.152+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=2)次上涨"}
+{"level":"INFO","time":"2024-12-16T19:33:47.005+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-16T19:33:47.009+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-16T19:33:47.478+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-16T19:33:52.793+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-16T19:40:52.001+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-16T19:40:52.006+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-16T19:40:52.400+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-16T19:40:56.942+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-16T20:40:57.866+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=1)次上涨"}
+{"level":"INFO","time":"2024-12-16T20:52:33.187+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-16T20:52:33.193+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-16T20:52:33.650+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-16T20:52:38.871+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-16T20:56:09.757+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-16T20:56:09.763+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-16T20:56:10.245+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-16T20:56:16.493+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"ERROR","time":"2024-12-16T20:56:37.543+0800","caller":"controller/user.go:148","msg":"充值接口数据库写入失败","error":"WHERE conditions required"}
+{"level":"INFO","time":"2024-12-16T20:57:31.087+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-16T20:57:31.093+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-16T20:57:31.527+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-16T20:57:36.751+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}

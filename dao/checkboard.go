@@ -114,3 +114,9 @@ func (p *CheckBoardDao) GetAllGrid() (boards []model.CheckerBoard, err error) {
 	err = p.DB.Find(&boards).Error
 	return
 }
+
+// GetAllUserGrid 获取用户所有格子信息
+func (p *CheckBoardDao) GetAllUserGrid(userId string) (boards []model.CheckerBoard, err error) {
+	err = p.DB.Where("user_id = ?", userId).Find(&boards).Error
+	return
+}

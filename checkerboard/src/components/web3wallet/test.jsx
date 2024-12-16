@@ -28,7 +28,7 @@ const Home = () => {
             <WalletProvider wallets={wallets} autoConnect>
                 <WalletModalProvider>
                     <WalletMultiButton />
-                    {/* 应用的其余部分 */}
+                    123
                 </WalletModalProvider>
             </WalletProvider>
         </ConnectionProvider>

@@ -55,7 +55,7 @@ func (p *UserDao) UpdateUserAssetInfo(chargeInfo model.RechargerRecord) error {
 	//更新用户资产
 	total := asset.Total + chargeInfo.Amount
 	available := asset.Available + chargeInfo.Amount
-	err = db.Table("assets").Updates(model.Assets{Total: total, Available: available}).Where("user_id = ?", chargeInfo.FromUser).Error
+	err = db.Table("assets").Where("user_id = ?", chargeInfo.FromUser).Updates(model.Assets{Total: total, Available: available}).Error
 	if err != nil {
 		db.Rollback()
 		return err
@@ -66,6 +66,39 @@ func (p *UserDao) UpdateUserAssetInfo(chargeInfo model.RechargerRecord) error {
 		db.Rollback()
 		return err
 	}
+	//提交事务
+	err = db.Commit().Error
+	if err != nil {
+		return errors.New(fmt.Sprintf("事务提交失败", err))
+	}
+	return nil
+}
+
+// UpdateAssetInfo 在用户退款时更新用户资产信息，并生成交易记录
+func (p *UserDao) UpdateAssetInfo(userId string, amount float64) error {
+	//开启事务
+	db := p.DB.Begin()
+	//先获取用户的原有资产
+	var asset model.Assets
+	err := db.Where("user_id = ?", userId).Find(&asset).Error
+	if err != nil {
+		db.Rollback()
+		return err
+	}
+	//更新用户资产
+	total := asset.Total - amount
+	available := asset.Available - amount
+	err = db.Table("assets").Updates(model.Assets{Total: total, Available: available}).Where("user_id = ?", userId).Error
+	if err != nil {
+		db.Rollback()
+		return err
+	}
+	//生成充值记录
+	//err = db.Create(&chargeInfo).Error
+	//if err != nil {
+	//	db.Rollback()
+	//	return err
+	//}
 	//提交事务
 	err = db.Commit().Error
 	if err != nil {
@@ -105,4 +138,11 @@ func (p *UserDao) PutUserInfo(user model.User) error {
 func (p *UserDao) UpdateAssetShildInfo(asset model.Assets) error {
 	err := p.DB.Where("user_id = ?", asset.UserId).Updates(&asset).Error
 	return err
+}
+
+// GetReChargeRecord 获取用户充值记录
+func (p *UserDao) GetReChargeRecord(userId string) ([]model.RechargerRecord, error) {
+	var rechargerRecord []model.RechargerRecord
+	err := p.DB.Where("user_id = ?", userId).Find(&rechargerRecord).Error
+	return rechargerRecord, err
 }

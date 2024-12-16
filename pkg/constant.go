@@ -14,3 +14,6 @@ const BasePrice = 500
 
 const EXIST = 1
 const NOEXIST = 2
+
+// 系统用户
+const SYSTEMUSER = "system_user"

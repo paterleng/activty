@@ -1,23 +1,30 @@
 // src/web3Onboard.js
 import Onboard from '@web3-onboard/core';
 import injectedModule from '@web3-onboard/injected-wallets';
-
+import phantomModule from '@web3-onboard/phantom'
+import ledgerModule from '@web3-onboard/ledger'
+const phantom = phantomModule()
 const injected = injectedModule();
 
+const ledger = ledgerModule({
+  /**
+   * Project ID associated with [WalletConnect account](https://cloud.walletconnect.com)
+   */
+  projectId: 'abc123...',
+  /**
+   * Chains required to be supported by all wallets connecting to your DApp
+   */
+  requiredChains: [1, 137]
+})
+
 const onboard = Onboard({
-  wallets: [injected],
+  wallets: [injected,phantom,ledger],
   chains: [
     {
-      id: 1,
-      token: 'ETH',
-      label: 'Ethereum Mainnet',
-      rpcUrl: 'https://sepolia.infura.io/v3/512c7938c0084f22bc5369a77c5222ef',
-    },
-    {
-      id: 11155111, 
+      id: 11155111,
       token: 'SEP-ETH',
       label: 'Sepolia Testnet',
-      rpcUrl: 'https://sepolia.infura.io/v3/512c7938c0084f22bc5369a77c5222ef', // 替换 ${INFURA_ID} 为实际 Infura 项目的 ID
+      rpcUrl: 'https://sepolia.infura.io/v3/512c7938c0084f22bc5369a77c5222ef',
     },
   ],
   connect: {

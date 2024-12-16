@@ -49,17 +49,17 @@ instance.interceptors.response.use(
     if (error.response) {
       notification.error({
         message: "错误",
-        description: error.response.data.msg,
+        description: error.response,
     });
     } else if (error.request) {
       notification.error({
         message: "错误",
-        description: error.response.data.msg,
+        description: error.response,
     });
     } else {
       notification.error({
         message: "错误",
-        description: error.response.data.msg,
+        description: error.response,
     });
     }
     return Promise.reject(error);

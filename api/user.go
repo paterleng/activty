@@ -8,4 +8,7 @@ type UserInterface interface {
 	PutUserInfo(c *gin.Context)
 	GetUserInfo(c *gin.Context)
 	Recharge(c *gin.Context)
+	GetReChangeRecord(c *gin.Context)
+	Claim(c *gin.Context)
+	Reimburse(c *gin.Context)
 }
