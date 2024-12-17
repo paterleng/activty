@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import TransactionRecord from "../TransactionRecord";
 import './UserInfo.css'
 import ConnectWallet from "../web3wallet/Wallet.jsx";
+import {useSelector  } from 'react-redux';
 
 const UserInfo = () => {
     const { t } = useTranslation();
@@ -15,6 +16,8 @@ const UserInfo = () => {
     const [selectedIndex, setSelectedIndex] = useState(null); // 用于跟踪选中的头像索引
     const [image, setImage] = useState(0); // 用于控制头像使用哪一个
     const [wallet, setWallet] = useState(false);
+
+    const token = useSelector((state) => state.token);
 
     const [userInfo, setUserInfo] = useState({
         user_name: "pater",
@@ -33,7 +36,7 @@ const UserInfo = () => {
             }
         };
         fetchUserInfo();
-    }, []); 
+    }, [token]);
   
     const showModal = () => {
         setOpen(true);
@@ -110,12 +113,11 @@ const UserInfo = () => {
                     confirmLoading={confirmLoading}
                     onCancel={handleCancel}
                     destroyOnClose={true}
-                    loading={true}
                 >
                     <div className="image-grid-container">
                         {images.map((image, index) => (
                             <div
-                                className={`image-box ${selectedIndex === index ? "selected" : ""}`}
+                                className={`image-box ${selectedIndex == index ? "selected" : ""}`}
                                 key={index}
                                 onClick={() => divClickHandle(index + 1)}>
                                 <img src={image} alt={`image-${index}`}/>
@@ -123,19 +125,16 @@ const UserInfo = () => {
                         ))}
                     </div>
                 </Modal>
-            {/*{localStorage.getItem("token") && (*/}
+            {localStorage.getItem("token") && (
                 <div>
                     <ConnectWallet />
                 </div>
-            {/*// )}*/}
-            {/*{!localStorage.getItem("token")||wallet && (*/}
-            {/*    <div className="overlay-box">*/}
-            {/*        <ConnectWallet />*/}
-            {/*    </div>*/}
-            {/*)}*/}
-            {
-
-            }
+             )}
+            {!localStorage.getItem("token") && (
+                <div className="overlay-box">
+                    <ConnectWallet />
+                </div>
+            )}
         </div>
     );
 };

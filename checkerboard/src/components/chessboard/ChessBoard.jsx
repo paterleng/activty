@@ -8,6 +8,7 @@ import UserInfo from '../userinfo/UserInfo';
 import Header from "../header/Header.jsx";
 import Countdown from "../Countdown.jsx";
 import {timeValue} from "../common/common.js";
+import {useSelector} from "react-redux";
 
 const ChessBoard = () => {
     const [selectedBoxes, setSelectedBoxes] = useState([]);
@@ -24,6 +25,7 @@ const ChessBoard = () => {
     const [value, setValue] = useState('0');
     const { id } = useParams();
     const navigate = useNavigate();
+    const token = useSelector((state) => state.token);
 
     const getInfo = async (blockId) => {
         const response = await BoardInfo(blockId)
@@ -71,7 +73,7 @@ const ChessBoard = () => {
                 }
             };
         }
-    }, [blockId]);
+    }, [blockId,token]);
 
     // 计算选中盒子的总金额
     const totalAmount = useMemo(() => {

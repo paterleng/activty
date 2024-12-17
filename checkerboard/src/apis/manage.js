@@ -1,4 +1,4 @@
-import instance from './api'; 
+import instance from './api/'; 
 
 // 登录
 export const loginUser = (loginData) => instance.post('login', loginData, { skipAuth: true });
@@ -11,7 +11,7 @@ export const Board = (board_id) => instance.get(`checkboard/board?boardId=${boar
 // 押注记录
 export const Record = (page,size) => instance.get(`checkboard/record?page=${page}&size=${size}`)
 // 获取所有记录的前50条
-export const Records = () => instance.get('checkboard/records', { skipAuth: true })
+export const Records = () => instance.get('records', { skipAuth: true })
 // 修改用户信息
 export const UpdateUserInfo = (param) => instance.put('user/put/userinfo',param)
 // 抢占单个格子

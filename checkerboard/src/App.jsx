@@ -1,5 +1,4 @@
 import { createContext, useContext, useState } from 'react';
-import  Home from "./components/web3wallet/test.jsx";
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Expand from './pages/home/Expand';
 import ChessBoard from './components/chessboard/ChessBoard';
@@ -17,7 +16,6 @@ function App() {
   
   return (
     <>
-        {/*<Home />*/}
        <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
         <Router>
           <Routes>

@@ -10,6 +10,7 @@ func ApiRoute(r *gin.Engine) {
 	api := r.Group("/api")
 	api.POST("/login", GetApiManager().Login)
 	api.POST("/register", GetApiManager().Register)
+	api.GET("/records", GetApiManager().GetRecords)
 	api.Use(middleware.JWTAuthMiddleware())
 	user := api.Group("/user")
 	{
@@ -33,7 +34,7 @@ func ApiRoute(r *gin.Engine) {
 		//  获取用户的押注记录
 		board.GET("/record", GetApiManager().GetUserOperateRecords)
 		//  获取交易记录的前50条
-		board.GET("/records", GetApiManager().GetRecords)
+		//board.GET("/records", GetApiManager().GetRecords)
 		//	获取棋盘信息
 		board.GET("/boardInfo/:block_id", GetApiManager().GetCheckBoardInfo)
 		//	加盾
