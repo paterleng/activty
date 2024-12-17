@@ -1153,3 +1153,77 @@
 {"level":"INFO","time":"2024-12-17T15:46:10.066+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
 {"level":"ERROR","time":"2024-12-17T15:46:20.544+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
 {"level":"ERROR","time":"2024-12-17T15:48:35.196+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"INFO","time":"2024-12-17T15:56:34.318+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-17T15:56:34.323+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-17T15:56:34.747+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-17T15:56:39.804+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"ERROR","time":"2024-12-17T16:04:28.695+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-17T16:07:45.016+0800","caller":"controller/checkerboard.go:50","msg":"用户可用余额不足"}
+{"level":"ERROR","time":"2024-12-17T16:08:00.664+0800","caller":"controller/checkerboard.go:50","msg":"用户可用余额不足"}
+{"level":"ERROR","time":"2024-12-17T16:09:53.639+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-17T16:09:59.867+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-17T16:10:11.306+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-17T16:10:38.548+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-17T16:12:47.149+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-17T16:14:28.130+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-17T16:15:21.606+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-17T16:17:00.644+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-17T16:18:04.311+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-17T16:18:12.392+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-17T16:18:41.396+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-17T16:19:15.831+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-17T16:26:14.490+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-17T16:30:46.695+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"ERROR","time":"2024-12-17T16:30:58.037+0800","caller":"middleware/token.go:16","msg":"请求中auth为空","error":"token不存在"}
+{"level":"INFO","time":"2024-12-17T16:31:08.067+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-17T16:31:08.072+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-17T16:31:08.501+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-17T16:31:13.624+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"ERROR","time":"2024-12-17T16:31:19.113+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"INFO","time":"2024-12-17T16:32:12.991+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-17T16:33:05.887+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-17T16:33:21.907+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"ERROR","time":"2024-12-17T16:33:22.990+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"INFO","time":"2024-12-17T16:34:34.801+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-17T16:36:53.249+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-17T16:36:53.254+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-17T16:36:53.675+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-17T16:36:58.360+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-17T16:39:35.425+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-17T16:39:35.431+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-17T16:39:35.862+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-17T16:39:41.047+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-17T16:40:07.946+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-17T16:40:07.951+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-17T16:40:08.381+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-17T16:40:13.938+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-17T16:43:09.199+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-17T16:43:09.205+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-17T16:43:09.668+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-17T16:43:15.339+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-17T16:43:53.038+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-17T16:43:53.044+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-17T16:43:53.466+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-17T16:43:58.412+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-17T16:44:27.972+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-17T16:44:27.978+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-17T16:44:28.457+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-17T16:44:33.832+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-17T16:48:49.495+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-17T16:48:49.499+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-17T16:48:49.937+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-17T16:48:55.316+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-17T16:49:45.272+0800","caller":"handle/wshandle.go:95","msg":"用户0x7D24a4398d5b9138451e6d16de31A45521CaACf4通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"ERROR","time":"2024-12-17T16:49:46.426+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"INFO","time":"2024-12-17T16:55:59.170+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-17T16:56:46.175+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-17T17:04:19.484+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-17T17:08:21.481+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-17T17:08:31.881+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"ERROR","time":"2024-12-17T17:08:33.252+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"ERROR","time":"2024-12-17T17:11:06.501+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"ERROR","time":"2024-12-17T17:12:08.485+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"ERROR","time":"2024-12-17T17:12:58.486+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"ERROR","time":"2024-12-17T17:13:05.476+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"ERROR","time":"2024-12-17T17:13:13.469+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"ERROR","time":"2024-12-17T17:13:20.546+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}

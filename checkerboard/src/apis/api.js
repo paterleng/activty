@@ -16,7 +16,7 @@ instance.interceptors.request.use(
     
     if (!token && !config.skipAuth) {
       console.warn('Token 不存在，阻止未授权的请求');
-      return Promise.reject({ message: 'Unauthorized: Token is missing' });
+      return Promise.reject({ message: 'token不存在' });
     }
 
     if (token) {
