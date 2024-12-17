@@ -159,6 +159,31 @@ func (p *CheckerBoardController) GetUserOperateRecords(c *gin.Context) {
 	pkg.ResponseSuccess(c, data)
 }
 
+// GetBoardInfoNoLogin 获取棋盘信息，用户未登录状态
+func (p *CheckerBoardController) GetBoardInfoNoLogin(c *gin.Context) {
+	//接收一个模块id，然后查数据返回
+	blockIdStr := c.Param("block_id")
+	if blockIdStr == "" {
+		p.LG.Error("模块id为空不展示数据")
+		pkg.ResponseError(c, pkg.CodeParamError)
+		return
+	}
+	blockId, err := strconv.Atoi(blockIdStr)
+	if err != nil {
+		p.LG.Error("块id类型转换失败", zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeParamError)
+		return
+	}
+
+	boardInfo, err := dao.GetDaoManager().GetBoardInfo(blockId)
+	if err != nil {
+		p.LG.Error("查询棋盘信息失败", zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeServerBusy)
+		return
+	}
+	pkg.ResponseSuccess(c, boardInfo)
+}
+
 // GetCheckBoardInfo 获取棋盘信息
 func (p *CheckerBoardController) GetCheckBoardInfo(c *gin.Context) {
 	userId := c.GetString(pkg.USERID)
@@ -168,10 +193,15 @@ func (p *CheckerBoardController) GetCheckBoardInfo(c *gin.Context) {
 		return
 	}
 	//接收一个模块id，然后查数据返回
-	blockId := c.Param("block_id")
-	fmt.Println(blockId)
-	if blockId == "" {
+	blockIdStr := c.Param("block_id")
+	if blockIdStr == "" {
 		p.LG.Error("模块id为空不展示数据")
+		pkg.ResponseError(c, pkg.CodeParamError)
+		return
+	}
+	blockId, err := strconv.Atoi(blockIdStr)
+	if err != nil {
+		p.LG.Error("块id类型转换失败", zap.Error(err))
 		pkg.ResponseError(c, pkg.CodeParamError)
 		return
 	}

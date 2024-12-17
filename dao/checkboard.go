@@ -2,7 +2,6 @@ package dao
 
 import (
 	"activity/model"
-	"fmt"
 	"gorm.io/gorm"
 )
 
@@ -23,24 +22,23 @@ func (p *CheckBoardDao) GetRecordByUserId(userId string, page, size int) ([]mode
 }
 
 // GetBoardInfo 根据块id查询棋盘信息
-func (p *CheckBoardDao) GetBoardInfo(boardId string) ([]model.CheckerBoard, error) {
+func (p *CheckBoardDao) GetBoardInfo(boardId int) ([]model.CheckerBoard, error) {
 	var checkerBoards []model.CheckerBoard
 	err := p.DB.Where("block_id = ?", boardId).Find(&checkerBoards).Error
 	return checkerBoards, err
 }
 
 // GetUserGrid 获取用户在某一块拥有的格子信息
-func (p *CheckBoardDao) GetUserGrid(blockId string, userId string) ([]model.CheckerBoard, error) {
+func (p *CheckBoardDao) GetUserGrid(blockId int, userId string) ([]model.CheckerBoard, error) {
 	var checkerBoards []model.CheckerBoard
 	err := p.DB.Where("block_id = ? AND user_id = ?", blockId, userId).Find(&checkerBoards).Error
 	return checkerBoards, err
 }
 
 // GerRecordGrid 查询用户之前拥有格子的信息
-func (p *CheckBoardDao) GerRecordGrid(blockId string, userId string) ([]model.Record, error) {
+func (p *CheckBoardDao) GerRecordGrid(blockId int, userId string) ([]model.Record, error) {
 	var records []model.Record
 	err := p.DB.Where("block_id = ? AND old_owner = ?", blockId, userId).Find(&records).Error
-	fmt.Println(p.DB.Where("block_id = ? AND old_owner = ?", blockId, userId).Find(&records).Logger)
 	return records, err
 }
 

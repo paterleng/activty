@@ -3,7 +3,7 @@ import { useParams,useNavigate  } from 'react-router-dom';
 import { AntDesignOutlined,StopTwoTone } from '@ant-design/icons';
 import { Avatar,Button,Space,InputNumber,Spin } from 'antd';
 import './Chessboard.css';
-import {BoardInfo, SeizeGrid} from '../../apis/manage'
+import {BoardInfo, BoardInfoNoLogin, SeizeGrid} from '../../apis/manage'
 import UserInfo from '../userinfo/UserInfo';
 import Header from "../header/Header.jsx";
 import Countdown from "../Countdown.jsx";
@@ -41,13 +41,19 @@ const ChessBoard = () => {
                 console.error('Failed to parse URL hash data:', error);
             }
             if (blockId) {
-                const response = await BoardInfo(blockId);
-                setBoxes(response.data);
+                if (localStorage.getItem("token")) {
+                    const response = await BoardInfo(blockId);
+                    setBoxes(response.data);
+                }else{
+                    console.log("进来了")
+                    const response = await BoardInfoNoLogin(blockId);
+                    setBoxes(response.data);
+                }
             }
         }
         getBoardInfo()
-        if (blockId) {
-            const socket = new WebSocket(`ws://localhost:9990/api/ws/handle?blockId=${blockId}`);
+        if (blockId && localStorage.getItem("token")) {
+            const socket = new WebSocket(`ws://localhost:9990/api/ws/handle?blockId=${blockId}&token=${localStorage.getItem('token')}`);
             setWs(socket);
             socket.onopen = () => {
                 console.log('WebSocket Connected');
@@ -196,6 +202,7 @@ const ChessBoard = () => {
         const a = {
             "transaction_amount": value,
             "grid_id":message.ID,
+            "block_id": message.block_id
         }
         data.push(a)
         const response = await SeizeGrid(data)
@@ -214,6 +221,7 @@ const ChessBoard = () => {
             const temp  = {
                 "transaction_amount": box.price+increaseValue,
                 "grid_id":box.ID,
+                "block_id": box.block_id
             }
             if (box.price <box.price_increase){
                 temp.transaction_amount = box.price_increase+increaseValue;
@@ -228,6 +236,7 @@ const ChessBoard = () => {
             isChoiceing.current = false;
         }
     }
+
     // 向左
     const leftHandle = (id) => {
         console.log(id);

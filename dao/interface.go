@@ -29,9 +29,9 @@ type User interface {
 
 type CheckerBoard interface {
 	GetRecordByUserId(userId string, page, size int) ([]model.Record, int64, error)
-	GetBoardInfo(blockId string) ([]model.CheckerBoard, error)
-	GetUserGrid(blockId string, userId string) ([]model.CheckerBoard, error)
-	GerRecordGrid(blockId string, userId string) ([]model.Record, error)
+	GetBoardInfo(blockId int) ([]model.CheckerBoard, error)
+	GetUserGrid(blockId int, userId string) ([]model.CheckerBoard, error)
+	GerRecordGrid(blockId int, userId string) ([]model.Record, error)
 	CreateGridRecord(board model.Board) error
 	GetRecord() ([]model.Record, error)
 	UpdateUserBoardInfo(user model.User) error

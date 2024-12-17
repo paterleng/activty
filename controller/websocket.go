@@ -20,7 +20,6 @@ type WebSocketController struct {
 }
 
 func (p *WebSocketController) Connect(c *gin.Context) {
-	fmt.Println("WebSocketController Connect")
 	upgrader := websocket.Upgrader{
 		CheckOrigin: func(r *http.Request) bool { return true },
 	}
@@ -30,12 +29,20 @@ func (p *WebSocketController) Connect(c *gin.Context) {
 		pkg.ResponseError(c, pkg.CodeServerBusy)
 		return
 	}
+	//获取token
+	token := c.Query("token")
+	mc, err := pkg.ParseToken(token)
+	if err != nil {
+		utils.Tools.LG.Error("token 无效", zap.Error(err))
+		//不建立连接
+		return
+	}
 	blockId := c.Query("blockId")
 	fmt.Println("块id", blockId)
 	//  创建连接对象客户端
 	var client model.Client
 	client.Conn = conn
-	userId := c.GetString(pkg.USERID)
+	userId := mc.UserID
 	if userId == "" {
 		p.LG.Error("用户id在上下文中未找到")
 		pkg.ResponseError(c, pkg.CodeNeedLogin)
