@@ -3,7 +3,7 @@ import './index.css'
 import './config/i18n.js'
 import App from './App.jsx'
 import { Provider } from 'react-redux'
-import store from './store/index.js';
+import store from './store/store.js';
 import { Buffer } from 'buffer';
 window.Buffer = Buffer;
 

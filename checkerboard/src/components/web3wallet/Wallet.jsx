@@ -1,31 +1,51 @@
 import {useEffect} from 'react';
 import onboard from './WebOnboard';
-import {connectWallet} from "../common/common.js";
 import {Connection, PublicKey, SystemProgram, Transaction} from "@solana/web3.js";
-import {ReCharge} from "../../apis/manage.js";
-
+import {loginUser, ReCharge} from "../../apis/manage.js";
+import {useDispatch, useSelector} from "react-redux";
+import {setToken} from "../../store/store.js";
 const connection = new Connection('https://api.devnet.solana.com', 'confirmed');
 
-
-
 const ConnectWallet = () => {
+  const dispatch = useDispatch();
+  const token = useSelector((state) => state.token);
   // 在组件加载时设置语言
   useEffect(() => {
     onboard.state.actions.setLocale('zh')
-  }, []);
+  }, [token]);
 
   // 连接钱包
-   const connect = async () => {
-     var wallets = connectWallet();
-     console.log(wallets)
+  const connect = async () => {
+       const wallets = await onboard.connectWallet();
+       if (wallets && wallets.length > 0) {
+         const user = {
+           user_id: wallets[0].accounts[0].address,
+           user_name: "",
+           wallet_adr: wallets[0].accounts[0].address,
+           wallet_platform: wallets[0].label
+         };
+         const response = await loginUser(user)
+         // 存储token
+         if (response.code == 200) {
+           localStorage.setItem("token",response.data);
+           dispatch(setToken(response.data));
+         }
+       }
+    // 连接成功后设置监听事件
+    // wallets[0].provider.on('disconnect', handleDisconnect());
   };
+
+
+  // 处理主动断开连接事件
+  // const handleDisconnect = () => {
+  //   dispatch(setToken(null));
+  //   console.log('钱包主动断开连接');
+  // };
 
 // 动态设置 provider
   let currentProvider = null;
-
   function setProvider(provider) {
     currentProvider = provider;
-    console.log("钱包已设置为: ", provider);
   }
 
   async function sendTransaction(recipientAddress, amount) {
@@ -57,7 +77,7 @@ const ConnectWallet = () => {
           }
           break;
         default:
-          console.error("当前钱包类型不受支持");
+          await connect()
           return;
       }
       if (!currentProvider) {
@@ -101,15 +121,8 @@ const ConnectWallet = () => {
     }
   }
 
-  // 处理主动断开连接事件
-  // const handleDisconnect = () => {
-  //   setProvider(null);
-  //   console.log('钱包主动断开连接');
-  // };
-
   return (
     <div>
-      {/*使用token控制展示不展示*/}
       {!localStorage.getItem("token") ? (
           <button onClick={connect}>连接钱包</button>
         ) : (
