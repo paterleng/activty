@@ -1,33 +1,29 @@
 .user-info {
     display: flex;
     flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 420px;
+    height: 620px;
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+    background: #262626;
+    z-index: 1;
+}
+
+.user-info-internal{
+    display: flex;
+    flex-wrap: wrap;
     align-content: space-around;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
-    position: relative;
-    width: 300px;
-    height: 500px;
-    flex-direction: column;
-    border: 1px solid #352e2e;
-    margin-right: 32px;
-    z-index: 1;
-}
-
-
-.overlay-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 300px;
-    height: 500px;
-    background: rgba(83, 76, 76, 0.6);
+    width: 400px;
+    height: 600px;
+    clip-path: polygon(0 0, 99% 0, 89% 100%, 0 100%);
+    background: #191919;
     z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 16px;
 }
 
 .info-row {
@@ -65,7 +61,6 @@
 
 .image-box.selected {
     border: 2px solid blue;
-    /* 选中时的边框颜色 */
 }
 
 .icon-container {

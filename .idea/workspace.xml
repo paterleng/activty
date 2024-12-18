@@ -5,18 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81e28f08-7929-4107-9a7a-4c51f856d31e" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/checkerboard/src/components/showde/SlideShow.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkerboard/src/components/showde/SlideShow.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/activity.log" beforeDir="false" afterPath="$PROJECT_DIR$/activity.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/checkerboard.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/checkerboard.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/route.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/route.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/apis/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/apis/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/apis/manage.js" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/apis/manage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/chessboard/ChessBoard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/chessboard/ChessBoard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/checkerboard.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/checkerboard.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/websocket.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/websocket.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/checkboard.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/checkboard.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/interface.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/interface.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/record.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/record.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/userinfo/UserInfo.css" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/userinfo/UserInfo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/userinfo/UserInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/userinfo/UserInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/pages/home/Expand.css" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/pages/home/Expand.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/pages/home/Expand.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/pages/home/Expand.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/user.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,27 +65,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultGoTemplateProperty": "Go File",
-    "Go 构建.go build activity.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "git-widget-placeholder": "work__branch",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "C:/Users/Administrator",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
-    "ts.external.directory.path": "D:\\GoLand 2024.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;Go 构建.go build activity.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;work__branch&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\GoLand 2024.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\GoCode\activty\checkerboard\public" />

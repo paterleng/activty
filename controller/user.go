@@ -141,6 +141,7 @@ func (p *UserController) Recharge(c *gin.Context) {
 	//}
 	//chargeInfo.BlockNumber = transactionInfo.Slot
 	chargeInfo.ToUser = pkg.SYSTEMUSER
+	chargeInfo.TransationType = 2
 
 	//2、充值过程中，先更新资产表再更新充值记录表
 	err := dao.GetDaoManager().UpdateUserAssetInfo(chargeInfo)
@@ -273,6 +274,12 @@ func (p *UserController) Reimburse(c *gin.Context) {
 	}
 	//更新数据库信息，防止用户多次退款，改变用户资产
 	//更新用户资产
+	err = dao.GetDaoManager().UpdateAssetInfo(userId, amount.Amount)
+	if err != nil {
+		p.LG.Error("用户退款失败", zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeServerBusy)
+		return
+	}
 
 	pkg.ResponseSuccess(c, pkg.CodeSuccess)
 }
