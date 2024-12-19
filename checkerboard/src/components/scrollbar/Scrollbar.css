@@ -1,10 +1,10 @@
 /* 外层容器 */
 .custom-scroll-container {
     display: flex;
-    width: 800px; /* 根据需求调整宽度 */
-    height: 500px; /* 根据需求调整高度 */
-    background-color: #191919; /* 背景色 */
-    overflow: hidden; /* 避免滚动条溢出容器 */
+    width: 800px;
+    height: 500px;
+    background-color: #191919;
+    overflow: hidden;
     position: relative;
 }
 
@@ -15,7 +15,7 @@
     overflow-y: scroll; /* 纵向滚动 */
     padding-right: 15px; /* 给滚动条留出空间 */
     box-sizing: border-box;
-    scrollbar-width: none; /* 隐藏默认滚动条 (针对 Firefox) */
+    scrollbar-width: none;
 }
 
 .content::-webkit-scrollbar {

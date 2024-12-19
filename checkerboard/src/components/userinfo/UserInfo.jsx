@@ -78,7 +78,6 @@ const UserInfo = () => {
     '/images/avatar/7.png',
     '/images/avatar/8.png',
   ];
-
     return (
         <div className="user-info">
             <div className={`user-info-internal ${localStorage.getItem("token") ? '' : ''}`}>
@@ -111,17 +110,22 @@ const UserInfo = () => {
                     confirmLoading={confirmLoading}
                     onCancel={handleCancel}
                     destroyOnClose={true}
+                    maskStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.7)' }}
+                    width={1000}
+                    className='user-info-model-external'
                 >
-                    <div className="image-grid-container">
-                        {images.map((image, index) => (
-                            <div
-                                className={`image-box ${selectedIndex == index ? "selected" : ""}`}
-                                key={index}
-                                onClick={() => divClickHandle(index + 1)}>
-                                <img src={image} alt={`image-${index}`}/>
+                        <div className="user-info-model-internal">
+                            <div className="image-grid-container">
+                                {images.map((image, index) => (
+                                    <div
+                                        className={`image-box ${selectedIndex == index ? "selected" : ""}`}
+                                        key={index}
+                                        onClick={() => divClickHandle(index + 1)}>
+                                        <img src={image} alt={`image-${index}`}/>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
-                    </div>
+                        </div>
                 </Modal>
                 {!localStorage.getItem("token") && (
                     <div className="overlay-box">

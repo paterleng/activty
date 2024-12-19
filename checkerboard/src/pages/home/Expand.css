@@ -12,7 +12,7 @@
     justify-content: center;
     width: 920px;
     height: 720px;
-    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
     background: #262626;
     z-index: 1;
 
@@ -27,7 +27,7 @@
     justify-content: center;
     width: 900px;
     height: 700px;
-    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
     background: #030303;
     z-index: 1;
 }
