@@ -4,9 +4,22 @@ import RecordTable from '../../components/table/RecordTable';
 import '../../components/chessboard/ChessBoard.css'
 import './Expand.css'
 import Header from '../../components/header/Header';
+import Countdown from "../../components/Countdown.jsx";
+import {useEffect, useState} from "react";
+import {GetAmountTotal} from "../../apis/manage.js";
 
 const Expand = () => {
     const navigate = useNavigate();
+    const [total, setTotal] = useState(0.00);
+    useEffect(() => {
+        const getAmountTotal = async () => {
+            const response = await GetAmountTotal()
+            if (response.code === 200){
+                setTotal(response.data)
+            }
+        }
+        getAmountTotal()
+    }, []);
     const handleClick = (index) => {
         navigate(`/board/${index + 1}`);
     };
@@ -26,6 +39,8 @@ const Expand = () => {
                 </div>
                 <div className="grid-style-external">
                     <div className="grid-style-internal">
+                        <div>{total}</div>
+                        <Countdown initialSeconds={ 3600} />
                         <div className='gridStyle'>
                             {Array(9).fill().map((_, index) => (
                                 <div
@@ -39,8 +54,6 @@ const Expand = () => {
                         </div>
                     </div>
                 </div>
-
-
                 <div className='right-dev'>
                     <div className='record-table-dev'>
                         <RecordTable/>

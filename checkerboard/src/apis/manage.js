@@ -4,6 +4,8 @@ import instance from './api/';
 export const loginUser = (loginData) => instance.post('login', loginData, { skipAuth: true });
 // 用户信息
 export const UserMessage = () => instance.get('user/userinfo');
+// 获取总价值
+export const GetAmountTotal = () => instance.get('amount/total');
 // 获取棋盘信息，未登录状态下
 export const BoardInfoNoLogin = (block_id) => instance.get(`boardInfo/${block_id}`,block_id, { skipAuth: true });
 // 棋盘信息,登录状态下

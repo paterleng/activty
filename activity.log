@@ -1304,3 +1304,21 @@
 {"level":"INFO","time":"2024-12-19T14:25:01.712+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
 {"level":"INFO","time":"2024-12-19T14:27:17.062+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=1)连接"}
 {"level":"INFO","time":"2024-12-19T14:30:40.568+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-19T14:42:55.714+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-19T14:42:55.718+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-19T14:42:56.165+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-19T14:43:01.635+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-19T14:50:15.275+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-19T15:01:30.397+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-19T15:01:30.401+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-19T15:01:30.838+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-19T15:01:35.524+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-19T15:02:12.042+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-19T15:02:12.046+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-19T15:02:12.452+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-19T15:02:17.909+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"ERROR","time":"2024-12-19T15:02:55.279+0800","caller":"middleware/activity_end.go:20","msg":"活动结束"}
+{"level":"INFO","time":"2024-12-19T15:07:37.899+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-19T15:07:37.903+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-19T15:07:38.314+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-19T15:07:43.164+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
