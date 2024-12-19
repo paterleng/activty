@@ -1322,3 +1322,10 @@
 {"level":"INFO","time":"2024-12-19T15:07:37.903+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
 {"level":"INFO","time":"2024-12-19T15:07:38.314+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
 {"level":"INFO","time":"2024-12-19T15:07:43.164+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-19T15:27:13.545+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-19T15:27:13.549+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-19T15:27:13.963+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-19T15:27:18.867+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"ERROR","time":"2024-12-19T15:27:41.268+0800","caller":"controller/checkerboard.go:30","msg":"活动结束"}
+{"level":"ERROR","time":"2024-12-19T15:27:44.675+0800","caller":"controller/checkerboard.go:30","msg":"活动结束"}
+{"level":"INFO","time":"2024-12-19T15:28:08.016+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=2)连接"}

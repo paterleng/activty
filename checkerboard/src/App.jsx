@@ -5,7 +5,7 @@ import Expand from './pages/home/Expand';
 import ChessBoard from './components/chessboard/ChessBoard';
 import RegisterForm from './pages/RegisterForm';
 import LoginForm from './pages/login/LoginForm';
-import Rule from './components/Rule';
+import Rule from './components/rule/Rule.jsx';
 
 
 // 创建 AuthContext 用于管理用户登录状态
