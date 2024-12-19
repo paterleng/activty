@@ -34,18 +34,14 @@ func ApiRoute(r *gin.Engine) {
 	board.Use(middleware.JWTAuthMiddleware())
 	{
 		//  押注
-		board.POST("/betting", GetApiManager().UserBetting)
+		board.POST("/betting", GetApiManager().UserBetting, middleware.ActivityEnd())
 		//  获取用户的押注记录
 		board.GET("/record", GetApiManager().GetUserOperateRecords)
 		//	获取棋盘信息
 		board.GET("/boardInfo/:block_id", GetApiManager().GetCheckBoardInfo)
 		//	加盾
-		board.POST("/add_shield", GetApiManager().AddShield)
+		board.POST("/add_shield", GetApiManager().AddShield, middleware.ActivityEnd())
 	}
-	//shield := api.Group("/shield")
-	//{
-	//	shield.POST()
-	//}
 	ws := api.Group("/ws")
 	{
 		ws.GET("/handle", GetApiManager().Connect)

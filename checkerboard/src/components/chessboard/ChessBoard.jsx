@@ -43,11 +43,10 @@ const ChessBoard = () => {
             if (blockId) {
                 if (localStorage.getItem("token")) {
                     const response = await BoardInfo(blockId);
-                    setBoxes(response.data);
+                    setBoxes(response.data.boards);
                 }else{
-                    console.log("进来了")
                     const response = await BoardInfoNoLogin(blockId);
-                    setBoxes(response.data);
+                    setBoxes(response.data.boards);
                 }
             }
         }
