@@ -1,9 +1,5 @@
 html,
 body {
-  display: flex;
-  place-items: center;
-  flex-wrap: nowrap;
-  flex-direction: column;
   height: 100%;
   width: 100%;
   color: #f9f9f9;
@@ -11,4 +7,5 @@ body {
   align-items: stretch;
   justify-content: flex-start;
   overflow-x: hidden;
+  overflow: hidden;
 }

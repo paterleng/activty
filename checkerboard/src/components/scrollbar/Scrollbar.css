@@ -1,0 +1,45 @@
+/* 外层容器 */
+.custom-scroll-container {
+    display: flex;
+    width: 800px; /* 根据需求调整宽度 */
+    height: 500px; /* 根据需求调整高度 */
+    background-color: #191919; /* 背景色 */
+    overflow: hidden; /* 避免滚动条溢出容器 */
+    position: relative;
+}
+
+/* 内容区域 */
+.content {
+    flex: 1; /* 占据全部宽度 */
+    height: 100%; /* 高度填满容器 */
+    overflow-y: scroll; /* 纵向滚动 */
+    padding-right: 15px; /* 给滚动条留出空间 */
+    box-sizing: border-box;
+    scrollbar-width: none; /* 隐藏默认滚动条 (针对 Firefox) */
+}
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-track {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 80%;
+    background-color: #292929;
+}
+
+.scrollbar-thumb {
+    position: absolute;
+    width: 30px; /* 滑块宽度与轨道一致 */
+    background-color: #ffffff; /* 滑块颜色 */
+    border-radius: 5px; /* 滑块圆角 */
+    cursor: pointer; /* 鼠标指针样式 */
+    transition: background-color 0.3s; /* 鼠标悬停动画 */
+}
+
+.scrollbar-thumb:hover {
+    background-color: #555; /* 鼠标悬停时滑块颜色 */
+}

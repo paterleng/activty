@@ -32,11 +32,12 @@ const RecordTable = () => {
     <div
       id="scrollableDiv"
       style={{
-        height: 400,
-        width: 400,
+        height: 500,
+        width: 300,
         overflow: 'hidden',  // 隐藏超出边框的内容
         padding: '0 16px',
         position: 'relative',
+        background: '#191919',
       }}
     >
       <div
@@ -66,7 +67,7 @@ const RecordTable = () => {
             <List
               dataSource={data}
               renderItem={(item) => (
-                <List.Item style={{ margin: 0 }}>
+                <List.Item style={{ margin: 0 ,color: 'white'}}>
                   <div>{item.owner} Occupied {item.old_owner} Altar with {item.transaction_amount} USDT!</div>
                 </List.Item>
               )}
@@ -93,7 +94,7 @@ const RecordTable = () => {
             <List
               dataSource={data}
               renderItem={(item) => (
-                <List.Item style={{ margin: 0 }}>
+                <List.Item style={{ margin: 0 ,color: 'white' }}>
                   <div>{item.owner} Occupied {item.old_owner} Altar with {item.transaction_amount} USDT!</div>
                 </List.Item>
               )}

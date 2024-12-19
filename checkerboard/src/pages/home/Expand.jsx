@@ -32,31 +32,32 @@ const Expand = () => {
         <div className='page'>
             <Header />
             <div className="main">
-            <div className="container-block">
-                <div className="countdown-wrapper">
-                        <UserInfo />
-                    {/* <Countdown initialSeconds={1000} />    */}
-                </div>
-                <div className="grid-style-external">
-                    <div className="grid-style-internal">
-                        <div>{total}</div>
-                        <Countdown initialSeconds={ 3600} />
-                        <div className='gridStyle'>
-                            {Array(9).fill().map((_, index) => (
-                                <div
-                                    key={index}
-                                    className='cellStyle'
-                                    onClick={index !== 4 ? () => handleClick(index) : undefined}
-                                >
-                                    1
-                                </div>
-                            ))}
+                <div className="container-block">
+                    <div className="countdown-wrapper">
+                        <UserInfo/>
+                    </div>
+                    <div className="grid-style-external">
+                        <div className="grid-style-internal">
+                            <div>{total}</div>
+                            <Countdown initialSeconds={3600}/>
+                            <div className='gridStyle'>
+                                {Array(9).fill().map((_, index) => (
+                                    <div
+                                        key={index}
+                                        className='cellStyle'
+                                        onClick={index !== 4 ? () => handleClick(index) : undefined}
+                                    >
+                                        1
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className='right-dev'>
-                    <div className='record-table-dev'>
-                        <RecordTable/>
+                    <div className='right-dev'>
+                        <div className='record-table-dev'>
+                            <RecordTable/>
+                        </div>
+
                     </div>
                     <div>
                         <div onClick={ruleClickHandle}>
@@ -64,7 +65,6 @@ const Expand = () => {
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
         </div>
 
