@@ -181,7 +181,20 @@ func (p *CheckerBoardController) GetBoardInfoNoLogin(c *gin.Context) {
 		pkg.ResponseError(c, pkg.CodeServerBusy)
 		return
 	}
-	pkg.ResponseSuccess(c, boardInfo)
+	total, err := utils.Amonent()
+	if err != nil {
+		p.LG.Error("查询用户总金额失败", zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeServerBusy)
+		return
+	}
+	data := struct {
+		Total  float64              `json:"total"`
+		Boards []model.CheckerBoard `json:"boards"`
+	}{
+		Total:  total,
+		Boards: boardInfo,
+	}
+	pkg.ResponseSuccess(c, data)
 }
 
 // GetCheckBoardInfo 获取棋盘信息
@@ -246,7 +259,20 @@ func (p *CheckerBoardController) GetCheckBoardInfo(c *gin.Context) {
 			boardInfo[i].Status = pkg.HAVE
 		}
 	}
-	pkg.ResponseSuccess(c, boardInfo)
+	total, err := utils.Amonent()
+	if err != nil {
+		p.LG.Error("查询用户总金额失败", zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeServerBusy)
+		return
+	}
+	data := struct {
+		Total  float64              `json:"total"`
+		Boards []model.CheckerBoard `json:"boards"`
+	}{
+		Total:  total,
+		Boards: boardInfo,
+	}
+	pkg.ResponseSuccess(c, data)
 }
 
 // GetRecords 获取前50条记录

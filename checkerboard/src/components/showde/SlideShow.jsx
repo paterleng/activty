@@ -1,4 +1,3 @@
-import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';  // 样式文件
 import './SlideShow.css';
@@ -47,7 +46,7 @@ const SlideShow = () => {
                 transitionDuration={1000}     // 每次过渡的时间（毫秒）
                 slidesToShow={1}              // 每次显示一个幻灯片
                 infinite={false}
-                {...properties}// 不无限循环
+                {...properties} //箭头样式
             >
                 {slides}
             </Slide>
