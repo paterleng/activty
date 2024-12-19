@@ -19,6 +19,18 @@ type CheckerBoardController struct {
 
 // UserBetting 押注
 func (p *CheckerBoardController) UserBetting(c *gin.Context) {
+	//计算总金额，如果大于100万，就结束，阻止请求
+	amountTotal, err := utils.Amount()
+	if err != nil {
+		utils.Tools.LG.Error("计算总金额失败", zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeActivityEnd)
+		return
+	}
+	if amountTotal >= 1000000 {
+		utils.Tools.LG.Error("活动结束", zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeActivityEnd)
+		return
+	}
 	userId := c.GetString(pkg.USERID)
 	if userId == "" {
 		p.LG.Error("用户id在上下文中未找到")
@@ -181,7 +193,7 @@ func (p *CheckerBoardController) GetBoardInfoNoLogin(c *gin.Context) {
 		pkg.ResponseError(c, pkg.CodeServerBusy)
 		return
 	}
-	total, err := utils.Amonent()
+	total, err := utils.Amount()
 	if err != nil {
 		p.LG.Error("查询用户总金额失败", zap.Error(err))
 		pkg.ResponseError(c, pkg.CodeServerBusy)
@@ -259,7 +271,7 @@ func (p *CheckerBoardController) GetCheckBoardInfo(c *gin.Context) {
 			boardInfo[i].Status = pkg.HAVE
 		}
 	}
-	total, err := utils.Amonent()
+	total, err := utils.Amount()
 	if err != nil {
 		p.LG.Error("查询用户总金额失败", zap.Error(err))
 		pkg.ResponseError(c, pkg.CodeServerBusy)
@@ -296,6 +308,18 @@ func (p *CheckerBoardController) AddShield(c *gin.Context) {
 	5、更新用户盾数量
 	6、查询交易是否成功
 	*/
+	//计算总金额，如果大于100万，就结束，阻止请求
+	amountTotal, err := utils.Amount()
+	if err != nil {
+		utils.Tools.LG.Error("计算总金额失败", zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeActivityEnd)
+		return
+	}
+	if amountTotal >= 1000000 {
+		utils.Tools.LG.Error("活动结束", zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeActivityEnd)
+		return
+	}
 	var data model.AddShield
 	if err := c.ShouldBind(&data); err != nil {
 		p.LG.Error("参数错误：", zap.Error(err))
@@ -357,4 +381,15 @@ func (p *CheckerBoardController) AddShield(c *gin.Context) {
 	message.Type = 1
 	utils.ChMessage <- message
 	pkg.ResponseSuccess(c, pkg.CodeSuccess)
+}
+
+// GetAmountTotal 获取总价值
+func (p *CheckerBoardController) GetAmountTotal(c *gin.Context) {
+	total, err := utils.Amount()
+	if err != nil {
+		p.LG.Error("获取总价值失败", zap.Error(err))
+		pkg.ResponseError(c, pkg.CodeServerBusy)
+		return
+	}
+	pkg.ResponseSuccess(c, total)
 }

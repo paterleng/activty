@@ -4,7 +4,7 @@ import (
 	"activity/model"
 )
 
-func Amonent() (total float64, err error) {
+func Amount() (total float64, err error) {
 	var boards []model.CheckerBoard
 	err = Tools.DB.Find(&boards).Error
 	if err != nil {

@@ -14,6 +14,7 @@ func ApiRoute(r *gin.Engine) {
 	api.GET("/records", GetApiManager().GetRecords)
 	//用户未登录时获取棋盘信息
 	api.GET("/boardInfo/:block_id", GetApiManager().GetBoardInfoNoLogin)
+	api.GET("/amount/total", GetApiManager().GetAmountTotal)
 	user := api.Group("/user")
 	user.Use(middleware.JWTAuthMiddleware())
 	{
@@ -34,13 +35,13 @@ func ApiRoute(r *gin.Engine) {
 	board.Use(middleware.JWTAuthMiddleware())
 	{
 		//  押注
-		board.POST("/betting", GetApiManager().UserBetting, middleware.ActivityEnd())
+		board.POST("/betting", GetApiManager().UserBetting)
 		//  获取用户的押注记录
 		board.GET("/record", GetApiManager().GetUserOperateRecords)
 		//	获取棋盘信息
 		board.GET("/boardInfo/:block_id", GetApiManager().GetCheckBoardInfo)
 		//	加盾
-		board.POST("/add_shield", GetApiManager().AddShield, middleware.ActivityEnd())
+		board.POST("/add_shield", GetApiManager().AddShield)
 	}
 	ws := api.Group("/ws")
 	{

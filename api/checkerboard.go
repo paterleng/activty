@@ -9,4 +9,5 @@ type CheckerboardInterface interface {
 	GetCheckBoardInfo(c *gin.Context)
 	GetRecords(c *gin.Context)
 	AddShield(c *gin.Context)
+	GetAmountTotal(c *gin.Context)
 }
