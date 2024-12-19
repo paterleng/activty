@@ -81,4 +81,34 @@
 }
 
 
+.user-info-model-external {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    height: 720px;
+    width: 1020px;
+    clip-path: polygon(10% 0, 90% 10%, 100% 90%, 0 100%);
+    z-index: 1;
+    flex-direction: row;
+}
+
+.user-info-model-internal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+    width: 1000px;
+    height: 700px;
+    clip-path: polygon(10% 0, 90% 10%, 100% 90%, 0 100%);
+    background: #191919;
+    z-index: 2;
+}
+
+
+.custom-modal .ant-modal-content {
+    padding: 20px;
+    background-color: #191919;  /* 设置模态框内容区域的背景颜色 */
+}
+
 

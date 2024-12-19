@@ -1329,3 +1329,6 @@
 {"level":"ERROR","time":"2024-12-19T15:27:41.268+0800","caller":"controller/checkerboard.go:30","msg":"活动结束"}
 {"level":"ERROR","time":"2024-12-19T15:27:44.675+0800","caller":"controller/checkerboard.go:30","msg":"活动结束"}
 {"level":"INFO","time":"2024-12-19T15:28:08.016+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=2)连接"}
+{"level":"INFO","time":"2024-12-19T15:52:49.188+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=2)连接"}
+{"level":"INFO","time":"2024-12-19T16:27:19.774+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=1)次上涨"}
+{"level":"INFO","time":"2024-12-19T17:27:19.616+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=2)次上涨"}
