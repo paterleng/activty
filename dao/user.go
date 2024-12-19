@@ -93,12 +93,19 @@ func (p *UserDao) UpdateAssetInfo(userId string, amount float64) error {
 		db.Rollback()
 		return err
 	}
-	//生成充值记录
-	//err = db.Create(&chargeInfo).Error
-	//if err != nil {
-	//	db.Rollback()
-	//	return err
-	//}
+	chargeInfo := model.RechargerRecord{
+		FromUser: "system",
+		ToUser:   userId,
+		Amount:   amount,
+		//TransactionHash: tx,
+		TransationType: 2,
+	}
+	//生成退款记录
+	err = db.Create(&chargeInfo).Error
+	if err != nil {
+		db.Rollback()
+		return err
+	}
 	//提交事务
 	err = db.Commit().Error
 	if err != nil {

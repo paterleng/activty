@@ -3,11 +3,39 @@
     flex-direction: column;
     align-items: center;
 }
+.grid-style-external{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 620px;
+    height: 820px;
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+    background: #262626;
+    z-index: 1;
+
+}
+
+.grid-style-internal {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 600px;
+    height: 800px;
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+    background: #030303;
+    z-index: 1;
+}
 
 .gridStyle{
     display: grid;
-    grid-template-columns: repeat(3, 200px);
-    grid-template-rows: repeat(3, 200px);
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
     gap: 5px;
     border-radius: 6px;
     border: 1px solid black;
@@ -15,8 +43,8 @@
 }
 
 .cellStyle {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height:150px;
     border-radius: 6px;
     border: 1px solid black;
     display: flex;

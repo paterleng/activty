@@ -1227,3 +1227,45 @@
 {"level":"ERROR","time":"2024-12-17T17:13:05.476+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
 {"level":"ERROR","time":"2024-12-17T17:13:13.469+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
 {"level":"ERROR","time":"2024-12-17T17:13:20.546+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"INFO","time":"2024-12-17T17:13:29.949+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-17T17:13:29.954+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-17T17:13:30.445+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-17T17:13:35.532+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"ERROR","time":"2024-12-17T17:14:09.812+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"ERROR","time":"2024-12-17T17:14:42.158+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"ERROR","time":"2024-12-17T17:14:44.338+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"ERROR","time":"2024-12-17T17:14:51.065+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"ERROR","time":"2024-12-17T17:16:19.371+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"ERROR","time":"2024-12-17T17:16:45.485+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"ERROR","time":"2024-12-17T17:16:49.055+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"ERROR","time":"2024-12-17T17:17:08.770+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"ERROR","time":"2024-12-17T17:17:32.493+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"ERROR","time":"2024-12-17T17:18:46.151+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"ERROR","time":"2024-12-17T17:19:11.013+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"ERROR","time":"2024-12-17T17:19:13.567+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"ERROR","time":"2024-12-17T17:19:21.950+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"ERROR","time":"2024-12-17T17:19:55.479+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"ERROR","time":"2024-12-17T17:19:58.449+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"ERROR","time":"2024-12-17T17:20:15.321+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"ERROR","time":"2024-12-17T17:22:38.490+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"ERROR","time":"2024-12-17T17:23:26.909+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"ERROR","time":"2024-12-17T17:24:17.782+0800","caller":"controller/websocket.go:36","msg":"token 无效","error":"token is malformed: token contains an invalid number of segments"}
+{"level":"INFO","time":"2024-12-17T17:30:41.051+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-17T17:30:50.350+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-17T18:13:36.529+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=1)次上涨"}
+{"level":"INFO","time":"2024-12-17T18:42:56.650+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-17T18:43:06.422+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-17T18:48:48.668+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-17T19:13:36.999+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=2)次上涨"}
+{"level":"INFO","time":"2024-12-17T19:48:16.418+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=2)连接"}
+{"level":"INFO","time":"2024-12-17T19:48:23.860+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=1)连接"}
+{"level":"INFO","time":"2024-12-17T20:13:36.408+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=3)次上涨"}
+{"level":"INFO","time":"2024-12-17T21:13:36.319+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=4)次上涨"}
+{"level":"INFO","time":"2024-12-17T22:13:36.296+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=5)次上涨"}
+{"level":"INFO","time":"2024-12-17T23:13:36.286+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=6)次上涨"}
+{"level":"INFO","time":"2024-12-18T00:13:36.188+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=7)次上涨"}
+{"level":"INFO","time":"2024-12-18T01:13:36.246+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=8)次上涨"}
+{"level":"INFO","time":"2024-12-18T02:13:36.176+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=9)次上涨"}
+{"level":"INFO","time":"2024-12-18T03:13:36.159+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=10)次上涨"}
+{"level":"INFO","time":"2024-12-18T04:13:36.229+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=11)次上涨"}
+{"level":"INFO","time":"2024-12-18T05:13:36.188+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=12)次上涨"}

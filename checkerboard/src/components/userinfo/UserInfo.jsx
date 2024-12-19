@@ -15,7 +15,6 @@ const UserInfo = () => {
     const [avatar, setAvatar] = useState(0)
     const [selectedIndex, setSelectedIndex] = useState(null); // 用于跟踪选中的头像索引
     const [image, setImage] = useState(0); // 用于控制头像使用哪一个
-    const [wallet, setWallet] = useState(false);
 
     const token = useSelector((state) => state.token);
 
@@ -36,7 +35,7 @@ const UserInfo = () => {
             }
         };
         fetchUserInfo();
-    }, [token]);
+    }, [token,image]);
   
     const showModal = () => {
         setOpen(true);
@@ -44,10 +43,6 @@ const UserInfo = () => {
     
     const handleOk = async () => {
         setConfirmLoading(true);
-        // 获取到钱包信息，改变状态
-        if (!localStorage.getItem("onboard.js:last_connected_wallet")) {
-            setWallet(true);
-        }
         // 调用修改用户信息接口
         const data = {
             "user_name": userInfo.user_name,
@@ -57,6 +52,7 @@ const UserInfo = () => {
         if (response.code == 200) {
             setOpen(false);
             setConfirmLoading(false);
+            setImage(avatar)
         } else {
             setConfirmLoading(false);
             console.log(response)
@@ -84,7 +80,9 @@ const UserInfo = () => {
   ];
 
     return (
-        <div className={`user-info ${localStorage.getItem("token") ? '' : ''}`}>
+        <div className="user-info">
+            <div className={`user-info-internal ${localStorage.getItem("token") ? '' : ''}`}>
+                <h1>CHIHUAHUA</h1>
                 <div className="info-row">
                     <Avatar
                         size={{xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100}}
@@ -125,17 +123,14 @@ const UserInfo = () => {
                         ))}
                     </div>
                 </Modal>
-            {localStorage.getItem("token") && (
-                <div>
-                    <ConnectWallet />
-                </div>
-             )}
-            {!localStorage.getItem("token") && (
-                <div className="overlay-box">
-                    <ConnectWallet />
-                </div>
-            )}
+                {!localStorage.getItem("token") && (
+                    <div className="overlay-box">
+                        <ConnectWallet/>
+                    </div>
+                )}
+            </div>
         </div>
+
     );
 };
 

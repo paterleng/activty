@@ -1,7 +1,7 @@
 import Translation from '../translation/Translation';
 import './header.css'
-import {AntDesignOutlined} from "@ant-design/icons";
 import {Avatar} from "antd";
+import ConnectWallet from "../web3wallet/Wallet.jsx";
 
 
 const Header = () => {
@@ -38,7 +38,9 @@ const Header = () => {
 
             </div>
             <div className='right-box'>
-                <div className="token-div">Get Token!</div>
+                <div className="token-div">
+                    <ConnectWallet/>
+                </div>
                 <div>
                     <Translation/>
                 </div>
