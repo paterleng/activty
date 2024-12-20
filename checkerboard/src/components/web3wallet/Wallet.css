@@ -1,0 +1,14 @@
+.wallet-button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 206px;
+    height: 40px;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: #3c342f;
+    border: 1px solid #3c342f;
+    color: white;
+    margin-right: 10px;
+}

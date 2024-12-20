@@ -2,13 +2,42 @@
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    border: 1px solid #010101;
     width: 100%;
     box-sizing: border-box;
     margin-bottom: 10px;
     align-content: stretch;
     flex-wrap: wrap;
+    background-color: #191919;
 }
+
+.left-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 446px;
+    height: 40px;
+    background-color: #3c342f;
+    border-radius: 12px;
+}
+
+.logo-span{
+    color: white;
+    transform: scale(1,0.7);
+    font-weight: bolder;
+}
+
+.left-box-img {
+    margin-left: 10px;
+}
+
 
 .left-box {
     display: flex;
@@ -23,7 +52,19 @@
 .right-box {
     display: flex;
     align-items: center;
-    padding: 10px;
+    height: 88px;
+    /*padding: 10px;*/
+}
+
+.dig-for{
+    background-color: #2ff519;
+    height: 40px;
+    width: 240px;
+    border-radius: 12px;
+    font-weight: bolder;
+    border: 1px solid #2ff519;
+    cursor: pointer;
+    margin-right: 10px;
 }
 
 .token-div {

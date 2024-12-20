@@ -19,13 +19,17 @@ const TransactionRecord = () => {
                 个人战报
             </Button>
             <Modal
-                title={<p>交易记录</p>}
                 open={open}
                 onCancel={() => setOpen(false)}
-                width={800}
-                footer={null} 
+                destroyOnClose={true}
+                maskStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.7)' }}
+                className='user-info-model'
+                width="auto"
+                height="auto"
+                footer={null}
+                centered
             >  
-                <UserRecordTable />
+                <UserRecordTable></UserRecordTable>
             </Modal>
         </>
     );

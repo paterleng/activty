@@ -3,7 +3,7 @@ body {
   height: 100%;
   width: 100%;
   color: #f9f9f9;
-  background-color: #352e2e;
+  /*background-color: #352e2e;*/
   align-items: stretch;
   justify-content: flex-start;
   overflow-x: hidden;
