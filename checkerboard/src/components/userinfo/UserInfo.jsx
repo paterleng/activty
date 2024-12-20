@@ -53,12 +53,14 @@ const UserInfo = () => {
             setOpen(false);
             setConfirmLoading(false);
             setImage(avatar)
+            setSelectedIndex(null);
         } else {
             setConfirmLoading(false);
-            console.log(response)
         }
     };
+
     const handleCancel = () => {
+        setSelectedIndex(null);
         setOpen(false);
     };
 
@@ -102,7 +104,6 @@ const UserInfo = () => {
                     <a>Dmail</a>
                 </div>
                 <Modal
-                    title="头像"
                     open={open}
                     cancelText="取消"
                     okText="修改"
@@ -111,10 +112,15 @@ const UserInfo = () => {
                     onCancel={handleCancel}
                     destroyOnClose={true}
                     maskStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.7)' }}
-                    width={1000}
-                    className='user-info-model-external'
+                    className='user-info-model'
+                    width="auto"
+                    height="auto"
+                    footer={null}
+                    centered
                 >
+                    <div className='user-info-model-external'>
                         <div className="user-info-model-internal">
+                            <div className="font-style">Change your avatar</div>
                             <div className="image-grid-container">
                                 {images.map((image, index) => (
                                     <div
@@ -126,6 +132,11 @@ const UserInfo = () => {
                                 ))}
                             </div>
                         </div>
+                    </div>
+                    <div className="button-div-style">
+                        <button className="buttom-update" onClick={handleOk} >Update</button>
+                        <button className="buttom-confirm" onClick={handleCancel}>Confirm</button>
+                    </div>
                 </Modal>
                 {!localStorage.getItem("token") && (
                     <div className="overlay-box">
