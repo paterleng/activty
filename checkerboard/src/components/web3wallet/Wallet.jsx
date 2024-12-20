@@ -4,6 +4,7 @@ import {Connection, PublicKey, SystemProgram, Transaction} from "@solana/web3.js
 import {loginUser, ReCharge} from "../../apis/manage.js";
 import {useDispatch, useSelector} from "react-redux";
 import {setToken} from "../../store/store.js";
+import './Wallet.css'
 const connection = new Connection('https://api.devnet.solana.com', 'confirmed');
 
 const ConnectWallet = () => {
@@ -122,16 +123,31 @@ const ConnectWallet = () => {
   }
 
   return (
-    <div>
-      {!localStorage.getItem("token") ? (
-          <button onClick={connect}>连接钱包</button>
-        ) : (
+  <>
+    {!localStorage.getItem("token") ? (
+        <button className="wallet-button" onClick={connect}>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M15 13V13.8333C15 14.75 14.25 15.5 13.3333 15.5H1.66667C0.741667 15.5 0 14.75 0 13.8333V2.16667C0 1.25 0.741667 0.5 1.66667 0.5H13.3333C14.25 0.5 15 1.25 15 2.16667V3H7.5C6.575 3 5.83333 3.75 5.83333 4.66667V11.3333C5.83333 12.25 6.575 13 7.5 13H15ZM7.5 11.3333H15.8333V4.66667H7.5V11.3333ZM10.8333 9.25C10.1417 9.25 9.58333 8.69167 9.58333 8C9.58333 7.30833 10.1417 6.75 10.8333 6.75C11.525 6.75 12.0833 7.30833 12.0833 8C12.0833 8.69167 11.525 9.25 10.8333 9.25Z"
+                fill="white"/>
+          </svg>
+          <span style={{marginLeft:'10px'}}>Connect Wallet</span>
+        </button>
+    ) : (
         <div>
-          <button onClick={()=>sendTransaction("Y7oMKu2H2iidZVUGGmMpzWLmeRJ4KBXngr6THrL9AqS",1)}>充值</button>
+          <button className='wallet-button' onClick={() => sendTransaction("Y7oMKu2H2iidZVUGGmMpzWLmeRJ4KBXngr6THrL9AqS", 1)}>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                  d="M15 13V13.8333C15 14.75 14.25 15.5 13.3333 15.5H1.66667C0.741667 15.5 0 14.75 0 13.8333V2.16667C0 1.25 0.741667 0.5 1.66667 0.5H13.3333C14.25 0.5 15 1.25 15 2.16667V3H7.5C6.575 3 5.83333 3.75 5.83333 4.66667V11.3333C5.83333 12.25 6.575 13 7.5 13H15ZM7.5 11.3333H15.8333V4.66667H7.5V11.3333ZM10.8333 9.25C10.1417 9.25 9.58333 8.69167 9.58333 8C9.58333 7.30833 10.1417 6.75 10.8333 6.75C11.525 6.75 12.0833 7.30833 12.0833 8C12.0833 8.69167 11.525 9.25 10.8333 9.25Z"
+                  fill="white"/>
+            </svg>
+            <span style={{marginLeft:'10px'}}>充值</span>
+          </button>
         </div>
-      )}
-    </div>
-  );
+    )}
+  </>
+  )
+      ;
 };
 
 export default ConnectWallet;

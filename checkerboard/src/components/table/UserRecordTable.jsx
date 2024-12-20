@@ -51,17 +51,38 @@ const UserRecordTable = () => {
   ];
 
   return (
-    <Table
-      columns={columns}
-      dataSource={data}
-      pagination={pagination}
-      loading={loading}
-      onChange={handleTableChange}
-      showSorterTooltip={{
-        target: 'sorter-icon',
-      }}
-    />
-  );
+
+      <div className='user-info-model-external'>
+        <div className="user-info-model-internal">
+          <div>
+            {data.map((item, index) => (
+                <div key={index}>
+                  <div>
+                    <span>{item.CreatedAt}</span>
+                    <span>
+                    You Occupied {item.owner} sacred food pit with {item.transaction_amount} SOL! All hail the God O'Dogs!
+                  </span>
+
+                  </div>
+                </div>
+            ))}
+          </div>
+
+
+        </div>
+      </div>
+  // <Table
+  //     columns={columns}
+  //     dataSource={data}
+  //     pagination={pagination}
+  //     loading={loading}
+  //     onChange={handleTableChange}
+  //     showSorterTooltip={{
+  //       target: 'sorter-icon',
+  //     }}
+  // />
+)
+  ;
 };
 
 export default UserRecordTable;

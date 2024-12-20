@@ -10,13 +10,10 @@ function Translation() {
   };
 
   return (
-    <div className="language-switcher-container">
-      <label htmlFor="language-select">{ t("change")}</label>
-      <select id="language-select" onChange={handleLanguageChange}>
-        <option value="en">English</option>
+      <select className='language-switcher-select' id="language-select" onChange={handleLanguageChange}>
+        <option value="en">EN</option>
         <option value="zh">中文</option>
       </select>
-    </div>
   );
 };
 

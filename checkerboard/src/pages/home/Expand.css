@@ -2,6 +2,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #6b3737;
+    background-image: url('./images/bg-image/bg.png');
+
 }
 .grid-style-external{
     display: flex;
@@ -10,10 +13,10 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    width: 920px;
-    height: 720px;
-    clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
-    background: #262626;
+    width: 1024px;
+    height: 820px;
+    clip-path: polygon(5% 0, 90% 0, 100% 100%, 0 100%);
+    background: #191919;
     z-index: 1;
 
 }
@@ -25,10 +28,10 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    width: 900px;
-    height: 700px;
-    clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
-    background: #030303;
+    width: 1000px;
+    height: 800px;
+    clip-path: polygon(5% 0, 90% 0, 100% 100%, 0 100%);
+    background: #292929;
     z-index: 1;
 }
 
