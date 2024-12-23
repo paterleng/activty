@@ -53,20 +53,38 @@
     display: grid;
     grid-template-columns: repeat(3, 150px);
     grid-template-rows: repeat(3, 150px);
-    gap: 5px;
+    gap: 20px;
     border-radius: 6px;
-    border: 1px solid black;
-    padding: 10px;
     margin-left: 160px;
 }
 
 .cellStyle {
     width: 150px;
     height: 150px;
-    border-radius: 6px;
-    border: 1px solid black;
+    border-radius: 15px;
+    border: 1px solid #3b332e;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    background-color: #2b2522;
+    .price {
+        margin-bottom: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        /* 设置渐变色 */
+        background: -webkit-linear-gradient(45deg, #35f419, #e7d91b);
+        /* 将背景应用到文本上 */
+        -webkit-background-clip: text;
+        /* 使文本颜色透明，以显示背景 */
+        color: transparent;
+        /* 使文本颜色透明，以显示背景 */
+        -webkit-text-fill-color: transparent;
+        /* 使渐变效果只应用于这个元素 */
+        display: inline-block;
+    }
+    .cellTitle {
+        margin-top: 5px;
+    }
 }
