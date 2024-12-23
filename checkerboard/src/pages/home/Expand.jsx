@@ -93,8 +93,8 @@ const Expand = () => {
                     <div className="grid-style-external">
                         <div className="grid-style-internal">
                             <div className='grid-style-margin'>
-                                <div className='title'>Total Bones Count:</div>
-                                <div className='content'>{total}K/1M</div>
+                                <div className='total-title'>Total Bones Count:</div>
+                                <div className='total-content'>{total}K/1M</div>
                             </div>
                             <div className='grid-style-margin'>
                                 <div className='title'>Countdown unitl Next boost:</div>
