@@ -2,40 +2,54 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #6b3737;
+    /* background-color: #6b3737; */
     background-image: url('./images/bg-image/bg.png');
-
 }
-.grid-style-external{
+
+.grid-style-external {
     display: flex;
     flex-wrap: wrap;
     align-content: center;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    width: 1024px;
-    height: 820px;
-    clip-path: polygon(5% 0, 90% 0, 100% 100%, 0 100%);
-    background: #191919;
+    width: 1224px;
+    height: 720px;
+    clip-path: polygon(10% 0, 85% 0, 100% 100%, 0 100%);
+    background: #000000;
+    margin-top: 40px;
     z-index: 1;
-
 }
 
 .grid-style-internal {
     display: flex;
     flex-wrap: wrap;
-    align-content: center;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
-    width: 1000px;
-    height: 800px;
-    clip-path: polygon(5% 0, 90% 0, 100% 100%, 0 100%);
-    background: #292929;
+    justify-content: space-evenly;
+    width: 1200px;
+    height: 700px;
+    clip-path: polygon(10% 0, 85% 0, 100% 100%, 0 100%);
+    background: #191919;
     z-index: 1;
 }
 
-.gridStyle{
+.grid-style-margin {
+    margin-left: 160px;
+}
+
+.title {
+    color: #393939;
+    margin-bottom: 5px;
+}
+
+.content {
+    font-size: 42px;
+    font-weight: 800;
+    color: #f5df1b;
+}
+
+.gridStyle {
     display: grid;
     grid-template-columns: repeat(3, 150px);
     grid-template-rows: repeat(3, 150px);
@@ -43,16 +57,16 @@
     border-radius: 6px;
     border: 1px solid black;
     padding: 10px;
+    margin-left: 160px;
 }
 
 .cellStyle {
     width: 150px;
-    height:150px;
+    height: 150px;
     border-radius: 6px;
     border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor:pointer;
+    cursor: pointer;
 }
-

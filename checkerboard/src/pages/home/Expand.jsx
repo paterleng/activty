@@ -10,7 +10,7 @@ import {GetAmountTotal} from "../../apis/manage.js";
 
 const Expand = () => {
     const navigate = useNavigate();
-    const [total, setTotal] = useState(0.00);
+    const [total, setTotal] = useState(46.2);
     useEffect(() => {
         const getAmountTotal = async () => {
             const response = await GetAmountTotal()
@@ -38,8 +38,14 @@ const Expand = () => {
                     </div>
                     <div className="grid-style-external">
                         <div className="grid-style-internal">
-                            <div>{total}</div>
-                            <Countdown initialSeconds={3600}/>
+                            <div className='grid-style-margin'>
+                                <div className='title'>Total Bones Count:</div>
+                                <div className='content'>{total}K/1M</div>
+                            </div>
+                            <div className='grid-style-margin'>
+                                <div className='title'>Countdown unitl Next boost:</div>
+                                <Countdown initialSeconds={3600}/>
+                            </div>
                             <div className='gridStyle'>
                                 {Array(9).fill().map((_, index) => (
                                     <div
@@ -57,7 +63,6 @@ const Expand = () => {
                         <div className='record-table-dev'>
                             <RecordTable/>
                         </div>
-
                     </div>
                     <div>
                         <div onClick={ruleClickHandle}>

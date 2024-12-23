@@ -35,9 +35,7 @@ const Countdown = ({initialSeconds}) => {
 // 样式定义
 const styles = {
     container: {
-        textAlign: 'center',
         fontFamily: 'Arial, sans-serif',
-        marginTop: '20px',
     },
     time: {
         fontSize: '16px',

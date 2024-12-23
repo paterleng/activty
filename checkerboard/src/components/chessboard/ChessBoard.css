@@ -36,7 +36,7 @@
     flex-direction: column;
 }
 
-.countdown-wrapper-son{
+.countdown-wrapper-son {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -58,7 +58,6 @@
     color: #0056b3;
 }
 
-
 .conter-box {
     display: flex;
     justify-content: center;
@@ -69,7 +68,7 @@
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.2s; 
+    transition: background-color 0.2s;
 }
 
 .right-dev {
@@ -78,17 +77,15 @@
     align-items: center;
     margin-left: 10px;
     position: absolute;
-    top: 150px;
-    right: -150px;
+    top: 190px;
+    right: -5px;
     z-index: 3;
 }
 
 .record-table-dev {
     height: 500px;
-    border: 10px solid #292929;
-
+    border: 10px solid #000000;
 }
-
 
 .grid-container {
     display: grid;
@@ -126,10 +123,10 @@
 .grid-box.have {
     border: 1px solid #0dec68;
 }
+
 .grid-box.preempted {
     border: 1px solid #f40808;
 }
-
 
 .submit-button {
     text-align: center;
@@ -144,7 +141,6 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s, transform 0.3s;
 }
-
 
 .box-details {
     width: 400px;
@@ -173,7 +169,8 @@
     padding: 20px;
     z-index: 1;
 }
-.testStyle{
+
+.testStyle {
     position: fixed;
     right: -50px;
     transform: translate(-50%, -50%);
@@ -192,12 +189,10 @@
         grid-template-columns: repeat(5, 1fr);
         width: 100vw;
     }
-
     .grid-box {
         height: 50px;
         font-size: 14px;
     }
-
     .submit-button {
         font-size: 16px;
         padding: 10px 20px;
