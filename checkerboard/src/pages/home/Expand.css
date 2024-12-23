@@ -2,8 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-color: #6b3737; */
-    background-image: url('./images/bg-image/bg.png');
 }
 
 .grid-style-external {
@@ -14,7 +12,7 @@
     align-items: flex-start;
     justify-content: center;
     width: 1224px;
-    height: 720px;
+    height: 750px;
     clip-path: polygon(10% 0, 85% 0, 100% 100%, 0 100%);
     background: #000000;
     margin-top: 40px;
@@ -28,7 +26,7 @@
     align-items: flex-start;
     justify-content: space-evenly;
     width: 1200px;
-    height: 700px;
+    height: 730px;
     clip-path: polygon(10% 0, 85% 0, 100% 100%, 0 100%);
     background: #191919;
     z-index: 1;
@@ -38,12 +36,12 @@
     margin-left: 160px;
 }
 
-.title {
+.total-title {
     color: #393939;
     margin-bottom: 5px;
 }
 
-.content {
+.total-content {
     font-size: 42px;
     font-weight: 800;
     color: #f5df1b;
