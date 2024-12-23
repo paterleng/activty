@@ -5,6 +5,7 @@ import '../../components/chessboard/ChessBoard.css'
 import './Expand.css'
 import Header from '../../components/header/Header';
 import Countdown from "../../components/Countdown.jsx";
+import RulePopup from '../../components/rulePopup/rulePopup.jsx';
 import {useEffect, useState} from "react";
 import {GetAmountTotal} from "../../apis/manage.js";
 
@@ -23,10 +24,6 @@ const Expand = () => {
     const handleClick = (index) => {
         navigate(`/board/${index + 1}`);
     };
-
-    const ruleClickHandle = () => {
-        navigate("/rule")
-    }
 
     return (
         <div className='page'>
@@ -65,9 +62,7 @@ const Expand = () => {
                         </div>
                     </div>
                     <div>
-                        <div onClick={ruleClickHandle}>
-                            规则
-                        </div>
+                        <RulePopup/>
                     </div>
                 </div>
             </div>

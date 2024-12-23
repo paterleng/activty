@@ -1,0 +1,32 @@
+.rule-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    right: 10px;
+    width: 380px;
+    height: 180px;
+    background-color: #000000;
+    clip-path: polygon(6% 3%, 94% 6%, 98% 84%, 1% 95%);
+    z-index: 10;
+}
+
+.rule-box-in {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    width: 360px;
+    height: 160px;
+    background-color: #3c342f;
+    clip-path: polygon(5% 0, 95% 4%, 99% 85%, 0 96%);
+}
+
+.style-margin {
+    text-align: center;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+}
