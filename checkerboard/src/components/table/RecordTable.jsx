@@ -38,8 +38,8 @@ const RecordTable = () => {
         padding: '0 16px',
         position: 'relative',
         background: '#191919',
-          wordWrap: 'break-word',
-          wordBreak: 'break-word',
+        wordWrap: 'break-word',
+        wordBreak: 'break-word',
       }}
     >
       <div
