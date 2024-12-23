@@ -9,6 +9,7 @@ import Header from "../header/Header.jsx";
 import Countdown from "../Countdown.jsx";
 import {timeValue} from "../common/common.js";
 import {useSelector} from "react-redux";
+import Shiled from "../shiled/Shiled.jsx";
 
 const ChessBoard = () => {
     const [selectedBoxes, setSelectedBoxes] = useState([]);
@@ -21,11 +22,12 @@ const ChessBoard = () => {
     const [boxes, setBoxes] = useState(null);
     const [ws, setWs] = useState(null);
     const [showPopup, setShowPopup] = useState(false); // 控制弹窗显示与否
-    const [message, setMessage] = useState(null); // 存储弹窗信息
+    const [message, setMessage] = useState(""); // 存储弹窗信息
     const [value, setValue] = useState('0');
     const { id } = useParams();
     const navigate = useNavigate();
     const token = useSelector((state) => state.token);
+    const user = useSelector((state) => state.user);
 
     const getInfo = async (blockId) => {
         const response = await BoardInfo(blockId)
@@ -44,11 +46,20 @@ const ChessBoard = () => {
                 if (localStorage.getItem("token")) {
                     const response = await BoardInfo(blockId);
                     setBoxes(response.data.boards);
+                    //     默认选中第一个
+                    setMessage(response.data.boards[0])
+                    console.log(response.data.boards[0])
                 }else{
                     const response = await BoardInfoNoLogin(blockId);
                     setBoxes(response.data.boards);
+                    //     默认选中第一个
+                    setMessage(response.data.boards[0])
                 }
             }
+            if (message){
+                console.log(user)
+            }
+
         }
         getBoardInfo()
         if (blockId && localStorage.getItem("token")) {
@@ -253,117 +264,175 @@ const ChessBoard = () => {
         navigate("/")
     }
 
+    const images = [
+        '/images/avatar/1.png',
+        '/images/avatar/2.png',
+        '/images/avatar/3.png',
+        '/images/avatar/4.png',
+        '/images/avatar/5.png',
+        '/images/avatar/6.png',
+        '/images/avatar/7.png',
+        '/images/avatar/8.png',
+    ];
+
 
     return (
-        <>
+        <div className='checkerboard'>
             <div>
-                <Header />
+                <Header/>
             </div>
             <div className='main'>
                 <UserInfo/>
                 <div className="container">
-                    <div className="countdown-wrapper-son">
-                        <button onClick={() => leftHandle(blockId)}>向左</button>
-                        <div className='total'>
-                            <p>总金额: <strong>{totalAmount}</strong></p>
+                    <div className='container-left'>
+                        <div className="countdown-wrapper-son">
+                            <button onClick={() => leftHandle(blockId)}>向左</button>
+                            <div>BarkingCanyon</div>
+                            <p>当前位置： <strong>{blockId}</strong></p>
+                            <button onClick={goHome}>返回主页</button>
+                            <button onClick={() => rightHandle(blockId)}>向右</button>
                         </div>
-                        <p>当前位置： <strong>{blockId}</strong></p>
-                        <button onClick={goHome}>返回主页</button>
-                        <button onClick={() => rightHandle(blockId)}>向右</button>
-                    </div>
-                    <div className="grid-container" onMouseUp={handleMouseUp}>
-                        {boxes && boxes.length > 0 ? (
-                            boxes.map((box) => (
-                                <div
-                                    key={box.ID}
-                                    className={`grid-box ${selectedBoxes.includes(box.ID) ? 'selected' : ''} ${box.status == 1 ? 'have' : `${box.status == 2 ? 'preempted':''}`}`}
-                                    onMouseDown={(event) => handleMouseDown(box.ID, event)}
-                                    onMouseEnter={(event) => handleMouseEnter(box.ID, event)}
-                                    onClick={() => handleBoxClick(box)}
-                                >
-                                    {box.is_shield == 1? <StopTwoTone />:''}
-                                    <div>{box.price>box.price_increase ? box.price:box.price_increase}</div>
-                                </div>
-                            ))
-                        ) : (
-                            <Spin />
-                        )}
-                    </div>
-                </div>
-                {/*多选状态下的侧边*/}
-                <div>
-                    {multipleChoice && (
-                        <div className="testStyle">
-                            <div>
-                                <div>
-                                    当前总金额:{totalAmount}
-                                </div>
-                                <Space>
-                                    <InputNumber min={10} max={1000000} value={increaseValue}
-                                                 onChange={setIncreaseValue}/>
-                                    <Button
-                                        type="primary"
-                                        onClick={() => {
-                                            batchHandle();
-                                        }}
+                        <div className="grid-container" onMouseUp={handleMouseUp}>
+                            {boxes && boxes.length > 0 ? (
+                                boxes.map((box) => (
+                                    <div
+                                        key={box.ID}
+                                        className={`grid-box ${selectedBoxes.includes(box.ID) ? 'selected' : ''} ${box.status == 1 ? 'have' : `${box.status == 2 ? 'preempted' : ''}`}`}
+                                        onMouseDown={(event) => handleMouseDown(box.ID, event)}
+                                        onMouseEnter={(event) => handleMouseEnter(box.ID, event)}
+                                        onClick={() => handleBoxClick(box)}
                                     >
-                                        提交
-                                    </Button>
-                                </Space>
-                                <div>加价后金额:{totalIncreaseAmount}</div>
-                                <button onClick={closePopup}>Close</button>
-                            </div>
+                                        {box.is_shield == 1 ? <StopTwoTone/> : ''}
+                                        <div>{box.price > box.price_increase ? box.price : box.price_increase}</div>
+                                    </div>
+                                ))
+                            ) : (
+                                <Spin/>
+                            )}
                         </div>
-                    )}
-                </div>
-                {/*单选状态下的侧边*/}
-                <div>
-                    {showPopup && (
-                        <div className="popupStyle">
-                            <div>
-                                <Avatar
-                                    size={{xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100}}
-                                    icon={<AntDesignOutlined/>}
-                                    src="/images/avatar/1.png"
-                                />
-                                {message.is_shield === 1? <StopTwoTone />:''}
-                                {/* owner为空的话就展示未被占领 */}
-                                {message.owner != "" ? (
-                                    <p>{message.owner}</p>
-                                ) : (
-                                    <p>未被占领</p>
-                                )}
-                                {/* 哪个价格高展示哪个 */}
-                                {message.price > message.price_increase ? (
-                                    <div>
-                                        <p>{message.price}</p>
-                                    </div>
-                                ) : (
-                                    <div>
-                                        <p>{message.price_increase}</p>
-                                    </div>
-                                )}
-                                {message.is_shield == 1?
-                                    <Countdown initialSeconds={timeValue(message.end_shield_time)} />:
-                                    <Space>
-                                        <InputNumber min={1} max={100000000} value={value} onChange={setValue}/>
-                                        <Button
-                                            type="primary"
-                                            onClick={() => {
-                                                seizeHandle();
-                                            }}
-                                        >
-                                            { message.status == 2 ? '还击':'抢占'}
-                                        </Button>
-                                </Space>}
+                    </div>
+                    <div className='container-right'>
+                        <div>
+                            <Avatar
+                                shape="square" size={130}
+                                // size={{xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100}}
+                                icon={<AntDesignOutlined/>}
+                                src={images[user.avatar_id]}
+                            />
+                        </div>
+                        {
+                            message.user_id === "" ? <p style={{color: 'red'}}>Under Takenn!</p>:
+                                (
+                                    user.user_id === message.user_id ? <p style={{color: 'green'}}>Occupied!</p> :
+                                        <p style={{color: 'red'}}>Not Owned!</p>
+                                )
+                        }
+                        {
+                            message.user_id === "" ? '' : <p>Owner: {message.owner}</p>
 
-                                <button onClick={closePopup}>Close</button>
-                            </div>
-                        </div>
-                    )}
+                        }
+
+                        {
+                            message.user_id === user.user_id ? <p>Value Stakedown</p> :
+                                <div>
+                                    <p>Current Value:</p>
+                                    <p style={{color: 'green'}}>
+                                        {message.price>message.price_increase ? message.price:message.price_increase}
+                                    </p>
+                                </div>
+                        }
+
+                        {/*判断是否是当前用户的*/}
+                        {
+                            user.user_id === message.user_id ?
+                                <div>
+                                    <button className='button-style'>Buy More</button>
+                                    <Shiled />
+                                    {/*<button onClick={} className='button-style'>Shield Up!</button>*/}
+                                </div>
+                                :
+                                <div>
+                                    <button className='button-style'>Buy More</button>
+                                    <button className='button-style'>Shield Up!</button>
+                                </div>
+                    }
+
                 </div>
             </div>
-        </>
+            {/*多选状态下的侧边*/}
+            {/*<div>*/}
+            {/*    {multipleChoice && (*/}
+            {/*            <div className="testStyle">*/}
+            {/*                <div>*/}
+            {/*                    <div>*/}
+            {/*                        当前总金额:{totalAmount}*/}
+            {/*                    </div>*/}
+            {/*                    <Space>*/}
+            {/*                        <InputNumber min={10} max={1000000} value={increaseValue}*/}
+            {/*                                     onChange={setIncreaseValue}/>*/}
+            {/*                        <Button*/}
+            {/*                            type="primary"*/}
+            {/*                            onClick={() => {*/}
+            {/*                                batchHandle();*/}
+            {/*                            }}*/}
+            {/*                        >*/}
+            {/*                            提交*/}
+            {/*                        </Button>*/}
+            {/*                    </Space>*/}
+            {/*                    <div>加价后金额:{totalIncreaseAmount}</div>*/}
+            {/*                    <button onClick={closePopup}>Close</button>*/}
+            {/*                </div>*/}
+            {/*            </div>*/}
+            {/*        )}*/}
+            {/*    </div>*/}
+                {/*单选状态下的侧边*/}
+                {/*<div>*/}
+                {/*    {showPopup && (*/}
+                {/*        <div className="popupStyle">*/}
+                {/*            <div>*/}
+                {/*                <Avatar*/}
+                {/*                    size={{xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100}}*/}
+                {/*                    icon={<AntDesignOutlined/>}*/}
+                {/*                    src="/images/avatar/1.png"*/}
+                {/*                />*/}
+                {/*                {message.is_shield === 1 ? <StopTwoTone/> : ''}*/}
+                {/*                /!* owner为空的话就展示未被占领 *!/*/}
+                {/*                {message.owner != "" ? (*/}
+                {/*                    <p>{message.owner}</p>*/}
+                {/*                ) : (*/}
+                {/*                    <p>未被占领</p>*/}
+                {/*                )}*/}
+                {/*                /!* 哪个价格高展示哪个 *!/*/}
+                {/*                {message.price > message.price_increase ? (*/}
+                {/*                    <div>*/}
+                {/*                        <p>{message.price}</p>*/}
+                {/*                    </div>*/}
+                {/*                ) : (*/}
+                {/*                    <div>*/}
+                {/*                        <p>{message.price_increase}</p>*/}
+                {/*                    </div>*/}
+                {/*                )}*/}
+                {/*                {message.is_shield == 1 ?*/}
+                {/*                    <Countdown initialSeconds={timeValue(message.end_shield_time)}/> :*/}
+                {/*                    <Space>*/}
+                {/*                        <InputNumber min={1} max={100000000} value={value} onChange={setValue}/>*/}
+                {/*                        <Button*/}
+                {/*                            type="primary"*/}
+                {/*                            onClick={() => {*/}
+                {/*                                seizeHandle();*/}
+                {/*                            }}*/}
+                {/*                        >*/}
+                {/*                            {message.status == 2 ? '还击' : '抢占'}*/}
+                {/*                        </Button>*/}
+                {/*                    </Space>}*/}
+
+                {/*                <button onClick={closePopup}>Close</button>*/}
+                {/*            </div>*/}
+                {/*        </div>*/}
+                {/*    )}*/}
+                {/*</div>*/}
+            </div>
+        </div>
     );
 };
 

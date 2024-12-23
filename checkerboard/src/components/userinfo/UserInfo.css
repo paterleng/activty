@@ -115,6 +115,11 @@
     color: white !important;
 }
 
+.record-div-style{
+    height: 400px;
+    width: 700px;
+}
+
 .font-style {
     transform: scale(1,0.7);
     font-size: 75px;

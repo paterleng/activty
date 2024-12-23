@@ -13,9 +13,6 @@ const AuthContext = createContext(null);
 export const UseAuth = () => useContext(AuthContext);
 
 function App() {
-   // return(
-   //     <SlideShow />
-   // );
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   

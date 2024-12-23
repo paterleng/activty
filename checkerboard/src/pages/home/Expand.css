@@ -2,8 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #6b3737;
-    background-image: url('./images/bg-image/bg.png');
 
 }
 .grid-style-external{

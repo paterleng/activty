@@ -6,7 +6,8 @@ import { useTranslation } from 'react-i18next';
 import TransactionRecord from "../TransactionRecord";
 import './UserInfo.css'
 import ConnectWallet from "../web3wallet/Wallet.jsx";
-import {useSelector  } from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
+import {setUser} from "../../store/store.js";
 
 const UserInfo = () => {
     const { t } = useTranslation();
@@ -15,8 +16,9 @@ const UserInfo = () => {
     const [avatar, setAvatar] = useState(0)
     const [selectedIndex, setSelectedIndex] = useState(null); // 用于跟踪选中的头像索引
     const [image, setImage] = useState(0); // 用于控制头像使用哪一个
-
+    const dispatch = useDispatch();
     const token = useSelector((state) => state.token);
+    const user = useSelector((state) => state.user);
 
     const [userInfo, setUserInfo] = useState({
         user_name: "pater",
@@ -31,11 +33,13 @@ const UserInfo = () => {
             if (localStorage.getItem("token")) {
                 const response = await UserMessage()
                 setUserInfo(response.data)
+                console.log(response.data);
+                dispatch(setUser(response.data))
                 setImage(response.data.avatar_id-1)
             }
         };
         fetchUserInfo();
-    }, [token,image]);
+    }, [token,image,dispatch]);
   
     const showModal = () => {
         setOpen(true);
@@ -94,10 +98,10 @@ const UserInfo = () => {
                         <EditTwoTone className="edit-icon" onClick={showModal}/>
                     </div>
                 </div>
-                <div>{userInfo.user_name}</div>
-                <div>{t('total')}：{userInfo.total}</div>
-                <div>冻结数：{userInfo.frozen}</div>
-                <div>可用数：{userInfo.available}</div>
+                <div>{user.user_name}</div>
+                <div>{t('total')}：{user.total}</div>
+                <div>冻结数：{user.frozen}</div>
+                <div>可用数：{user.available}</div>
                 <button>退款</button>
                 <div>
                     <TransactionRecord/>

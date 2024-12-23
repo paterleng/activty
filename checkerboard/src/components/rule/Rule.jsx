@@ -21,7 +21,7 @@ const Rule = () => {
                     <Scrollbar/>
                 </div>
             </div>
-            <GoHome />
+            <GoHome/>
         </div>
     );
 };

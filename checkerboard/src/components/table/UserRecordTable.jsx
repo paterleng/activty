@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Table } from 'antd';
 import { Record } from '../../apis/manage';
+import './UserRecordTable.css'
 
 const UserRecordTable = () => {
   const [data, setData] = useState([]);
@@ -8,79 +8,47 @@ const UserRecordTable = () => {
   const [loading, setLoading] = useState(false);
 
     const fetchData = async (pagination) => {
-    setLoading(true);  
-    const response = await Record(pagination.current,pagination.pageSize);
-    setData(response.data.records);
-    setPagination({
-        ...pagination,
-        total: response.data.total,
-    });
-      setLoading(false)
+      setLoading(true);
+      const response = await Record(pagination.current,pagination.pageSize);
+      setData(response.data.records);
+      setPagination({
+          ...pagination,
+          total: response.data.total,
+      });
+        setLoading(false)
   };
 
   useEffect(() => {
     fetchData(pagination);
-  }, []);  
+  }, []);
 
-  const handleTableChange = (newPagination) => {
-    setPagination(newPagination);
-    fetchData(newPagination);  
-  };
+  const getTime = (timestr)=>{
+    const date = new Date(timestr);
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    const seconds = date.getSeconds();
+    return year + ':' + month + ':' + day + ':' + hours+':' + minutes+':' + seconds;
+  }
 
-  // 表格列配置
-  const columns = [
-    {
-      title: '用户',
-      dataIndex: 'name',
-    },
-    {
-      title: '原来值',
-      dataIndex: 'old_amount',
-    },
-    {
-      title: '交易价格',
-      dataIndex: 'transaction_amount',
-    },
-    {
-      title: '交易时间',
-      dataIndex: 'CreatedAt',
-      defaultSortOrder: 'descend',
-      sorter: (a, b) => new Date(a.CreatedAt).getTime() - new Date(b.CreatedAt).getTime(),
-      render: (text) => new Date(text).toLocaleString(),
-    },
-  ];
 
   return (
-
       <div className='user-info-model-external'>
         <div className="user-info-model-internal">
-          <div>
+          <div className="record-div-style">
             {data.map((item, index) => (
                 <div key={index}>
-                  <div>
-                    <span>{item.CreatedAt}</span>
-                    <span>
-                    You Occupied {item.owner} sacred food pit with {item.transaction_amount} SOL! All hail the God O'Dogs!
-                  </span>
-
-                  </div>
+                    <div className="time-style">{getTime(item.CreatedAt)}</div>
+                    <span >
+                      You Occupied {item.owner} sacred food pit with {item.transaction_amount} SOL! All hail the God O'Dogs!
+                    </span>
                 </div>
             ))}
           </div>
-
-
         </div>
       </div>
-  // <Table
-  //     columns={columns}
-  //     dataSource={data}
-  //     pagination={pagination}
-  //     loading={loading}
-  //     onChange={handleTableChange}
-  //     showSorterTooltip={{
-  //       target: 'sorter-icon',
-  //     }}
-  // />
 )
   ;
 };
