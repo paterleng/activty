@@ -109,12 +109,14 @@ func (p *UserController) GetUserInfo(c *gin.Context) {
 	info := struct {
 		UserName  string  `json:"user_name"`
 		AvatarId  int     `json:"avatar_id"`
+		UserId    string  `json:"user_id"`
 		Total     float64 `json:"total"`
 		Frozen    float64 `json:"frozen"`
 		Available float64 `json:"available"`
 	}{
 		AvatarId:  userInfo.AvatarId,
 		UserName:  userInfo.UserName,
+		UserId:    userInfo.UserId,
 		Total:     asset.Total,
 		Frozen:    asset.Freeze,
 		Available: asset.Available,
