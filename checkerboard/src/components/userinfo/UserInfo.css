@@ -9,29 +9,47 @@
     width: 420px;
     height: 750px;
     clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
-    background: #191919;
+    background: #000000;
     z-index: 1;
 }
 
 .user-info-internal{
     display: flex;
-    flex-wrap: wrap;
-    align-content: space-around;
+    flex-wrap: nowrap;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
+    margin-left: 3px;
     width: 400px;
     height: 730px;
     clip-path: polygon(0 0, 99% 0, 89% 100%, 0 100%);
     background: #292929;
     z-index: 2;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 .info-row {
     position: relative;
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
+    flex-wrap: nowrap;
+    height: 130px;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.data-style{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+
+}
+
+.line-style{
+    height: 1px;
+    width: 100%;
+    background-color: #000000;
 }
 
 .image-grid-container {
@@ -67,8 +85,8 @@
 
 .icon-container {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: -8px;
+    right: 191px;
     z-index: 1;
 }
 

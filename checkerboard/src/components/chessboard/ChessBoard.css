@@ -7,6 +7,7 @@
     flex-wrap: nowrap;
     align-content: center;
     justify-content: center;
+
 }
 
 .container-block {
@@ -24,8 +25,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 820px;
+    height: 750px;
     width: 1424px;
+    margin-top: 40px;
     clip-path: polygon(3% 0, 100% 0, 100% 100%, 0 100%);
     background-color: #292929;
     box-sizing: border-box;
@@ -40,7 +42,7 @@
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
-    height: 800px;
+    height: 730px;
     width: 1141px;
     margin-left: 10px;
     background-color: #191919;
@@ -52,6 +54,7 @@
     display: flex;
     margin-left: 10px;
     margin-right: 60px;
+    margin-top: 10px;
     background-color: #191919;
     height: 800px;
     width: 300px;
