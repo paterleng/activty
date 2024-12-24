@@ -1,5 +1,5 @@
 import { useState, useRef, useMemo, useEffect} from 'react';
-import { useParams,useNavigate  } from 'react-router-dom';
+import {useParams, useNavigate, useSearchParams} from 'react-router-dom';
 import { AntDesignOutlined,StopTwoTone } from '@ant-design/icons';
 import { Avatar,Button,Space,InputNumber,Spin } from 'antd';
 import './Chessboard.css';
@@ -19,15 +19,17 @@ const ChessBoard = () => {
     const isChoiceing = useRef(false) // 是否处于多选状态
     const isDragging = useRef(false); // 是否处于拖动状态
     const [blockId, setBlockId] = useState(null);
+    const [gridId, setGridId] = useState(null);
     const [boxes, setBoxes] = useState(null);
     const [ws, setWs] = useState(null);
     const [showPopup, setShowPopup] = useState(false); // 控制弹窗显示与否
     const [message, setMessage] = useState(""); // 存储弹窗信息
     const [value, setValue] = useState('0');
-    const { id } = useParams();
+    // const { id } = useParams();
     const navigate = useNavigate();
     const token = useSelector((state) => state.token);
     const user = useSelector((state) => state.user);
+    const [searchParams] = useSearchParams();
 
     const getInfo = async (blockId) => {
         const response = await BoardInfo(blockId)
@@ -37,7 +39,11 @@ const ChessBoard = () => {
     useEffect(() => {
         const getBoardInfo = async () => {
             try {
+                const id = searchParams.get("blockId");
+                const strGridId = searchParams.get("gridId");
                 const idInt = parseInt(id)
+                const intGridId = parseInt(strGridId)
+                setGridId(intGridId)
                 setBlockId(idInt);
             } catch (error) {
                 console.error('Failed to parse URL hash data:', error);
@@ -47,13 +53,13 @@ const ChessBoard = () => {
                     const response = await BoardInfo(blockId);
                     setBoxes(response.data.boards);
                     //     默认选中第一个
-                    setMessage(response.data.boards[0])
+                    setMessage(response.data.boards[gridId])
                     console.log(response.data.boards[0])
                 }else{
                     const response = await BoardInfoNoLogin(blockId);
                     setBoxes(response.data.boards);
                     //     默认选中第一个
-                    setMessage(response.data.boards[0])
+                    setMessage(response.data.boards[gridId])
                 }
             }
             if (message){

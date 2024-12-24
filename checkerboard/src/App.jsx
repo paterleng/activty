@@ -22,7 +22,7 @@ function App() {
         <Router>
           <Routes>
             <Route path='/' element={<Expand />}></Route>
-            <Route path="/board/:id" element={<ChessBoard />} />
+            <Route path="/board" element={<ChessBoard />} />
             <Route path="/login" element={<LoginForm loginIn={isLoggedIn} />} />
             <Route path="/register" element={<RegisterForm />} />
             <Route path='/rule' element={<Rule />}></Route>
