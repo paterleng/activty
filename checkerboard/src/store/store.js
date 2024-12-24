@@ -6,6 +6,7 @@ import { createLogger } from 'redux-logger';
 // Action types
 const TOKEN = 'token';
 const USER = 'user';
+const PAGE = 'page';
 
 // Action creators
 export const setToken = (token) => ({
@@ -18,10 +19,15 @@ export const setUser = (user) => ({
     payload: user,
 });
 
-// Initial state
+export const setPage = (page) => ({
+    type:PAGE,
+    payload:page,
+})
+
 const initialState = {
     token: null,
     user: null,
+    page: 1,
 };
 
 // Reducer
@@ -30,34 +36,38 @@ const Reducer = (state = initialState, action) => {
         case TOKEN:
             return {
                 ...state,
-                token: action.payload, // Store token
+                token: action.payload,
             };
         case USER:
             return {
                 ...state,
-                user: action.payload, // Store user data
+                user: action.payload,
+            };
+        case PAGE:
+            return {
+                ...state,
+                page: action.payload,
             };
         default:
             return state;
     }
 };
 
-// Persist configuration
 const persistConfig = {
-    key: 'root', // Redux store key
-    storage, // Use localStorage
+    key: 'root',
+    storage,
 };
 
-// Create a persisted reducer
+
 const persistedReducer = persistReducer(persistConfig, Reducer);
 
-// Create store with persisted reducer
+
 const store = createStore(
     persistedReducer,
-    applyMiddleware(createLogger()) // 可选：用于日志的中间件
+    applyMiddleware(createLogger())
 );
 
-// Create a persistor
+
 const persistor = persistStore(store);
 
 export { store, persistor };

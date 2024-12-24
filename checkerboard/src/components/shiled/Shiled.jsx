@@ -32,7 +32,7 @@ const Shiled = () => {
                 centered
                 width={849} // 设置宽度
                 className='model-style'
-                style={{ height: '534px', backgroundColor:'#292929'}} // 设置高度
+                style={{ height: '534px', backgroundColor:'#000000'}} // 设置高度
             >
                 <div className='div-style-top'>Select Your Shield</div>
                 <div className='div-style-bottom'>
@@ -42,9 +42,7 @@ const Shiled = () => {
                         <p>How many shields do you want to use?</p>
                         <Input></Input>
                     </div>
-
                 </div>
-
             </Modal>
         </>
     );

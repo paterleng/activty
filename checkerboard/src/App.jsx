@@ -2,10 +2,10 @@ import { createContext, useContext, useState } from 'react';
 import SlideShow from "./components/showde/SlideShow.jsx";
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Expand from './pages/home/Expand';
-import ChessBoard from './components/chessboard/ChessBoard';
 import RegisterForm from './pages/RegisterForm';
 import LoginForm from './pages/login/LoginForm';
 import Rule from './components/rule/Rule.jsx';
+import Chess from "./components/chessboard/Chess.jsx";
 
 
 // 创建 AuthContext 用于管理用户登录状态
@@ -22,7 +22,7 @@ function App() {
         <Router>
           <Routes>
             <Route path='/' element={<Expand />}></Route>
-            <Route path="/board" element={<ChessBoard />} />
+            <Route path="/board" element={<Chess />} />
             <Route path="/login" element={<LoginForm loginIn={isLoggedIn} />} />
             <Route path="/register" element={<RegisterForm />} />
             <Route path='/rule' element={<Rule />}></Route>
