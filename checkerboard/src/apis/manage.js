@@ -13,7 +13,7 @@ export const BoardInfo = (block_id) => instance.get(`checkboard/boardInfo/${bloc
 // 单个格子信息
 export const Board = (board_id) => instance.get(`checkboard/board?boardId=${board_id}`, { skipAuth: true })
 // 押注记录
-export const Record = (page,size) => instance.get(`checkboard/record?page=${page}&size=${size}`)
+export const Record = () => instance.get(`checkboard/record`)
 // 获取所有记录的前50条
 export const Records = () => instance.get('records', { skipAuth: true })
 // 修改用户信息

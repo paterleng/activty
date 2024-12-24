@@ -10,15 +10,10 @@ type CheckBoardDao struct {
 }
 
 // GetRecordByUserId 根据用户id查询用户的操作记录
-func (p *CheckBoardDao) GetRecordByUserId(userId string, page, size int) ([]model.Record, int64, error) {
+func (p *CheckBoardDao) GetRecordByUserId(userId string) ([]model.Record, error) {
 	var records []model.Record
-	err := p.DB.Where("owner = ? or old_owner = ?", userId, userId).Limit(size).Offset((page - 1) * size).Order("created_at desc").Find(&records).Error
-	if err != nil {
-		return nil, 0, err
-	}
-	var total int64
-	err = p.DB.Model(model.Record{}).Where("owner = ?", userId).Count(&total).Error
-	return records, total, err
+	err := p.DB.Where("owner = ? or old_owner = ?", userId, userId).Order("created_at desc").Find(&records).Error
+	return records, err
 }
 
 // GetBoardInfo 根据块id查询棋盘信息

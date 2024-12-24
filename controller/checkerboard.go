@@ -146,29 +146,29 @@ func (p *CheckerBoardController) GetUserOperateRecords(c *gin.Context) {
 		return
 	}
 
-	sizeStr := c.Query("size")
-	pageStr := c.Query("page")
-	size, _ := strconv.Atoi(sizeStr)
-	page, _ := strconv.Atoi(pageStr)
-	if size == 0 || page == 0 {
-		page = 1
-		size = 10
-	}
+	//sizeStr := c.Query("size")
+	//pageStr := c.Query("page")
+	//size, _ := strconv.Atoi(sizeStr)
+	//page, _ := strconv.Atoi(pageStr)
+	//if size == 0 || page == 0 {
+	//	page = 1
+	//	size = 10
+	//}
 
-	records, total, err := dao.GetDaoManager().GetRecordByUserId(userId, page, size)
+	records, err := dao.GetDaoManager().GetRecordByUserId(userId)
 	if err != nil {
 		p.LG.Error("获取用户交易记录错误", zap.Error(err))
 		pkg.ResponseError(c, pkg.CodeServerBusy)
 		return
 	}
-	data := struct {
-		Records []model.Record `json:"records"`
-		Total   int64          `json:"total"`
-	}{
-		Records: records,
-		Total:   total,
-	}
-	pkg.ResponseSuccess(c, data)
+	//data := struct {
+	//	Records []model.Record `json:"records"`
+	//	Total   int64          `json:"total"`
+	//}{
+	//	Records: records,
+	//	Total:   total,
+	//}
+	pkg.ResponseSuccess(c, records)
 }
 
 // GetBoardInfoNoLogin 获取棋盘信息，用户未登录状态

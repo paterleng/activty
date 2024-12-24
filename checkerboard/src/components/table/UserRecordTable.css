@@ -1,5 +1,47 @@
-.time-style{
+.record-li-div{
+    display: flex;
+    margin-bottom: 10px;;
+}
+
+.no-owner-div-style{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 520px;
+    height: 40px;
+}
+
+.no-owner-span-style{
+    width: 350px;
+    height: 40px;
+}
+
+.no-owner-button-style{
+    width: 150px;
     height: 30px;
-    width: 120px;
+    border-radius: 5px;
+    border: 1px #F5E01B solid;
+    background-color: #F5E01B;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.time-style{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 170px;
+    letter-spacing: 1px;
+    font-weight: bolder;
+    border-radius: 8px;
+    margin-right: 10px;
     background-color:#292929;
+}
+
+.span-style{
+    display: flex;
+    height: 40px;
+    width: 520px;
 }

@@ -99,14 +99,32 @@
 
 .user-info-model-internal{
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 1000px;
     height: 600px;
     clip-path: polygon(10% 0, 90% 10%, 100% 90%, 0 100%);
-    background: #191919;
+    background: #000000;
     z-index: 2;
+}
+
+.close-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    cursor: pointer;
+    top: 50px;
+    right: 93px;
+    width: 48px;
+    height: 48px;
+    background-color: #000000;
+    border-radius: 50%;
+    border: 5px solid #292929;
+    z-index: 5;
 }
 
 .ant-modal-content {
@@ -117,6 +135,7 @@
 }
 
 .record-div-style{
+    cursor: default;
     height: 400px;
     width: 700px;
 }

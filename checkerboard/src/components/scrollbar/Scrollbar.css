@@ -1,19 +1,19 @@
-/* 外层容器 */
+
 .custom-scroll-container {
     display: flex;
-    width: 800px;
-    height: 500px;
-    background-color: #191919;
+    width: 700px;
+    height: 400px;
+    background-color: #000000;
     overflow: hidden;
     position: relative;
 }
 
 /* 内容区域 */
 .content {
-    flex: 1; /* 占据全部宽度 */
-    height: 100%; /* 高度填满容器 */
-    overflow-y: scroll; /* 纵向滚动 */
-    padding-right: 15px; /* 给滚动条留出空间 */
+    flex: 1;
+    height: 100%;
+    overflow-y: scroll;
+    padding-right: 15px;
     box-sizing: border-box;
     scrollbar-width: none;
 }
@@ -33,13 +33,13 @@
 
 .scrollbar-thumb {
     position: absolute;
-    width: 30px; /* 滑块宽度与轨道一致 */
-    background-color: #ffffff; /* 滑块颜色 */
-    border-radius: 5px; /* 滑块圆角 */
-    cursor: pointer; /* 鼠标指针样式 */
-    transition: background-color 0.3s; /* 鼠标悬停动画 */
+    width: 30px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .scrollbar-thumb:hover {
-    background-color: #555; /* 鼠标悬停时滑块颜色 */
+    background-color: #555;
 }

@@ -1,8 +1,10 @@
 import  { useRef, useState, useEffect } from "react";
 import "./Scrollbar.css";
 import {Record} from "../../apis/manage.js";
+import {useSelector} from "react-redux";
+import {useNavigate} from "react-router-dom";
 
-const RecordScrollbar = ({data}) => {
+const RecordScrollbar = () => {
     const [scrollPosition, setScrollPosition] = useState(0); // 滚动条位置
     const [thumbHeight, setThumbHeight] = useState(0); // 滑块高度
     const contentRef = useRef(null); // 内容容器引用
@@ -13,19 +15,25 @@ const RecordScrollbar = ({data}) => {
     const startScrollTop = useRef(0); // 内容滚动的初始位置
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
+    const user = useSelector((state) => state.user);
+    const navigate = useNavigate();
+
 
     const fetchData = async () => {
         setLoading(true);
         const response = await Record();
-        setData(response.data.records);
+        setData(response.data);
         setLoading(false)
     };
 
     useEffect(() => {
         fetchData();
-        // 初始化滑块高度
-        updateThumbHeight();
     }, []);
+
+    useEffect(() => {
+        updateThumbHeight(); // 数据变化时更新滑块高度
+    }, [data]);
+
 
     const updateThumbHeight = () => {
         if (contentRef.current && trackRef.current) {
@@ -82,15 +90,20 @@ const RecordScrollbar = ({data}) => {
         document.removeEventListener("mousemove", handleThumbMouseMove);
         document.removeEventListener("mouseup", handleThumbMouseUp);
     };
-    const getTime = (timestr)=>{
+    const getTime = (timestr) => {
         const date = new Date(timestr);
         const year = date.getFullYear();
-        const month = date.getMonth() + 1;
-        const day = date.getDate();
-        const hours = date.getHours();
-        const minutes = date.getMinutes();
-        const seconds = date.getSeconds();
-        return year + ':' + month + ':' + day + ':' + hours+':' + minutes+':' + seconds;
+        const month = (date.getMonth() + 1).toString().padStart(2, '0'); // 月份补齐两位
+        const day = date.getDate().toString().padStart(2, '0');         // 日期补齐两位
+        const hours = date.getHours().toString().padStart(2, '0');      // 小时补齐两位
+        const minutes = date.getMinutes().toString().padStart(2, '0');  // 分钟补齐两位
+        const seconds = date.getSeconds().toString().padStart(2, '0');  // 秒数补齐两位
+
+        return `${year}:${month}:${day}:${hours}:${minutes}:${seconds}`;
+    };
+
+    const jumpPage = (blockId,gridId)=>{
+        navigate(`/board?blockId=${blockId}&gridId=${gridId}`);
     }
 
     return (
@@ -102,11 +115,22 @@ const RecordScrollbar = ({data}) => {
                 onScroll={handleContentScroll}
             >
                 {data.map((item, index) => (
-                    <div key={index}>
+                    <div key={index} className="record-li-div">
                         <div className="time-style">{getTime(item.CreatedAt)}</div>
-                        <span >
-                        You Occupied {item.owner} sacred food pit with {item.transaction_amount} SOL! All hail the God O'Dogs!
-                      </span>
+                        {
+                            user.user_id === item.owner ?
+                                <span className="span-style">
+                                    You Occupied {item.name} sacred food pit with {item.transaction_amount} SOL! All hail the God O'Dogs!
+                                </span> :
+                                <div className="no-owner-div-style">
+                                    <span className="no-owner-span-style" style={{color: '#f51987'}}>
+                                        {item.name} Occupied Your sacred food pit with {item.transaction_amount} SOL! Your deposit is available for your next digging.
+                                    </span>
+                                    <button onClick={() => jumpPage(item.block_id, item.ID)}
+                                            className='no-owner-button-style'>Reoccupy my bow!
+                                    </button>
+                                </div>
+                        }
                     </div>
                 ))}
             </div>
@@ -120,7 +144,7 @@ const RecordScrollbar = ({data}) => {
                         height: `${thumbHeight}px`,
                         top: `${scrollPosition}px`,
                     }}
-                    onMouseDown={handleThumbMouseDown} // 添加鼠标事件
+                    onMouseDown={handleThumbMouseDown}
                 ></div>
             </div>
         </div>

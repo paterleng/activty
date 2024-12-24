@@ -13,6 +13,10 @@ const TransactionRecord = () => {
         setData(null);
     };
 
+    const closeModal = () => {
+        setOpen(false);
+    }
+
     return (
         <>
             <Button type="primary" onClick={showLoading}>
@@ -28,8 +32,15 @@ const TransactionRecord = () => {
                 height="auto"
                 footer={null}
                 centered
-            >  
-                <UserRecordTable></UserRecordTable>
+            >
+                <div onClick={closeModal} className='close-btn'>
+                    <svg width="30" height="30" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.70703 1.29297L17.707 16.8892" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M17.707 1.69678L1.7071 17.293" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+
+                </div>
+                <UserRecordTable />
             </Modal>
         </>
     );

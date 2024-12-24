@@ -1,4 +1,3 @@
-import { useEffect} from 'react';
 import './UserRecordTable.css'
 import RecordScrollbar from "../scrollbar/ScrollbarRecord.jsx";
 
