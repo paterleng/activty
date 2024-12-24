@@ -31,7 +31,7 @@ const Expand = () => {
         getAmountTotal()
     }, []);
     const handleClick = (index) => {
-        navigate(`/board?blockId=${index + 1}&gridId=0`);
+        navigate(`/board?blockId=${index + 1}`);
     };
     // 九宫格数组对象
     const cellArray = [
