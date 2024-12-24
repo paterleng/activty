@@ -22,3 +22,5 @@ export const UpdateUserInfo = (param) => instance.put('user/put/userinfo',param)
 export const SeizeGrid = (param) => instance.post('checkboard/betting',param)
 // 用户充值记录
 export const ReCharge = (param) => instance.post('user/recharge',param)
+// 用户加盾
+export const AddShiled = (param) => instance.post('checkboard/add_shield',param)
