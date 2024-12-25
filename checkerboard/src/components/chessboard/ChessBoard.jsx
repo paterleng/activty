@@ -315,12 +315,12 @@ const ChessBoard = ({bId,gId}) => {
                     user.user_id === message.user_id ?
                         <div>
                             <button className='button-style'>Buy More</button>
-                            <Shiled />
+                            <Shiled gId={message.ID}/>
                         </div>
                         :
                         <div>
                             <button className='button-style'>Buy More</button>
-                            <Shiled />
+                            <Shiled gId={message.ID}/>
                         </div>
             }
         </div>

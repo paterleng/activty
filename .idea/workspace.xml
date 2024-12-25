@@ -7,9 +7,10 @@
     <list default="true" id="81e28f08-7929-4107-9a7a-4c51f856d31e" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/activity.log" beforeDir="false" afterPath="$PROJECT_DIR$/activity.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/apis/manage.js" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/apis/manage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/chessboard/ChessBoard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/chessboard/ChessBoard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkerboard/src/components/shiled/Shiled.css" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/shiled/Shiled.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkerboard/src/components/shiled/Shiled.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/shiled/Shiled.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/checkerboard.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/checkerboard.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

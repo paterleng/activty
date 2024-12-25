@@ -95,6 +95,36 @@
     margin-top: 150px;
 }
 
+.buttom-right-input{
+    height: 40px;
+    width: 208px;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 12px;
+    border: 7px solid #292929;
+    background-color: #191919;
+    color: white;
+}
+.buttom-right-input:hover {
+    background-color:#191919 !important;
+    border-color: #292929; /* 鼠标悬停时的边框颜色 */
+    box-shadow: 0 0 5px #292929; /* 添加悬浮阴影 */
+}
+
+
+/* 输入框被选中（聚焦）时样式 */
+.buttom-right-input:focus {
+    background-color:#191919 !important;
+    border-color: #292929;
+    box-shadow: 0 0 5px #292929;
+}
+
+/* 输入框在选中后且鼠标悬停时样式 */
+.buttom-right-input-input:focus:hover {
+    background-color:#191919 !important;
+    border-color: #673ab7;
+    box-shadow: 0 0 5px rgba(103, 58, 183, 0.8);
+}
 
 .buttom-update-shiled {
     width: 250px;

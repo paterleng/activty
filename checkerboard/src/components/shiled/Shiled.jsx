@@ -2,29 +2,32 @@ import  { useState } from 'react';
 import {Button, Input, Modal} from 'antd';
 import './Shiled.css'
 import {AddShiled} from "../../apis/manage.js";
-const Shiled = () => {
+const Shiled = ({gId}) => {
     const [open, setOpen] = useState(false);
-    const [confirmLoading, setConfirmLoading] = useState(false);
+    const [value, setValue] = useState(null);
     const showModal = () => {
         setOpen(true);
     };
 
     const addShiled = async () => {
-        const response = await AddShiled();
-        if (response.code === 200) {
-            console.log(response);
+        let param = {
+            "shield_amount":value,
+            "grid_id":gId,
+        }
+        const response = await AddShiled(param);
+        if (response.code === 200||response.code === 1021) {
+            setOpen(false);
         }
     }
     const handleOk = () => {
         addShiled();
-        setConfirmLoading(true);
-        setTimeout(() => {
-            setOpen(false);
-            setConfirmLoading(false);
-        }, 2000);
     };
     const handleCancel = () => {
         setOpen(false);
+    };
+
+    const handleChange = (e) => {
+        setValue(e.target.value);
     };
     return (
         <>
@@ -34,7 +37,6 @@ const Shiled = () => {
             <Modal
                 open={open}
                 onOk={handleOk}
-                confirmLoading={confirmLoading}
                 onCancel={handleCancel}
                 footer={null}
                 closable={false}
@@ -87,11 +89,11 @@ const Shiled = () => {
                         </div>
                         <p style={{color: "#65574A", fontSize: "12px", fontWeight: "400"}}>How many shields do you want
                             to use?</p>
-                        <Input></Input>
+                        <Input className="buttom-right-input"  placeholder="请输入内容" value={value} onChange={handleChange}></Input>
                     </div>
                 </div>
                 <div className="button-shiled-div-style">
-                    <button className="buttom-update-shiled" onClick={handleOk}>Shiled Up!</button>
+                    <button className="buttom-update-shiled" onClick={()=>handleOk()}>Shiled Up!</button>
                     <button className="buttom-confirm-shiled" onClick={handleCancel}>Confirm</button>
                 </div>
             </Modal>

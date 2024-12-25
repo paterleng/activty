@@ -350,11 +350,11 @@ func (p *CheckerBoardController) AddShield(c *gin.Context) {
 	}
 	nowTime := time.Now()
 	if gridInfo.IsShield == pkg.EXIST {
-		gridInfo.EndShieldTime = gridInfo.EndShieldTime.Add(time.Duration(data.ShieldAmount) * time.Minute)
+		gridInfo.EndShieldTime = gridInfo.EndShieldTime.Add(time.Duration(data.ShieldAmount) * 4 * time.Hour)
 	} else {
 		gridInfo.IsShield = pkg.EXIST
 		gridInfo.StartShieldTime = nowTime
-		gridInfo.EndShieldTime = nowTime.Add(time.Duration(data.ShieldAmount) * time.Minute)
+		gridInfo.EndShieldTime = nowTime.Add(time.Duration(data.ShieldAmount) * 4 * time.Hour)
 	}
 	//加盾
 	err = dao.GetDaoManager().UpdateBoardShield(gridInfo)
