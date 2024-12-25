@@ -31,7 +31,9 @@ const Shiled = ({gId}) => {
     };
     return (
         <>
-            <Button type="primary" onClick={showModal}>
+            <Button
+                onMouseEnter={(e) => e.currentTarget.style.color = '#3C342F'}
+                className='shild-up-btn' type="primary" onClick={showModal}>
                 Shield Up!
             </Button>
             <Modal
@@ -44,6 +46,7 @@ const Shiled = ({gId}) => {
                 width={849} // 设置宽度
                 className='model-style'
                 style={{height: '534px', backgroundColor: '#000000'}} // 设置高度
+                destroyOnClose={true}
             >
                 <div className='div-style-top'>
                     <p>Select Your Shield</p>
