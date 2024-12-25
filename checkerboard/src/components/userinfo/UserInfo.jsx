@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { AntDesignOutlined,EditTwoTone } from '@ant-design/icons';
-import {  Modal,Avatar } from 'antd';
+import {Modal, Avatar, message} from 'antd';
 import { UserMessage,UpdateUserInfo } from '../../apis/manage';
 import { useTranslation } from 'react-i18next';
 import TransactionRecord from "../TransactionRecord";
@@ -92,13 +92,14 @@ const UserInfo = () => {
                         sx={{
                             borderRadius: '12px',
                         }}
-                        style={{marginLeft:"30px"}}
+                        style={{marginLeft: "30px"}}
                         shape="square" size={80}
                         icon={<AntDesignOutlined/>}
                         src={images[image]}
                     />
                     <div className="icon-container">
-                        <svg className="edit-icon" onClick={showModal} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg className="edit-icon" onClick={showModal} width="24" height="24" viewBox="0 0 24 24"
+                             fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="12" fill="#4A7971"/>
                             <g clipPath="url(#clip0_0_1)">
                                 <path
@@ -119,112 +120,115 @@ const UserInfo = () => {
                             </defs>
                         </svg>
                     </div>
-                    <h3 style={{marginLeft:'30px'}}>{user.user_name}</h3>
+                    <h3 style={{marginLeft: '30px'}}>{user.user_name}</h3>
                 </div>
-                <div className="data-style">
-                    <h4>SOL Available</h4>
-                    <p style={{color: "#F5E01B"}}>{user.available}</p>
-                </div>
-                <div>
-                    <button>Withdraw</button>
-                    <button>Top Up</button>
-                </div>
-                <div>
+                <div className='line-style'></div>
+                <div className='line-under-div'>
                     <div className="data-style">
-                        <p style={{color: 'white'}}>Bowls Occupied:</p>
-                        <p style={{color: "#F5E01B"}}>18</p>
+                        <div className='sol-avaliable'>SOL Available</div>
+                        <div className='sol-avaliable-amount' style={{color: "#F5E01B"}}>{user.available}</div>
                     </div>
-                    <div className="data-style">
-                        <p style={{color: 'white'}}>Value Staked:</p>
-                        <p style={{color: "#F5E01B"}}>10.12</p>
+                    <div style={{marginTop: '30px'}}>{message.user_id}
+                        <button className='user-info-btn'>Withdraw</button>
+                        <button className='user-info-btn' style={{marginLeft:'10px'}}>Top Up</button>
                     </div>
-                    <div className="data-style">
-                        <p style={{color: 'white'}}>Bones Secured:</p>
-                        <p style={{color: "#F5E01B"}}>18</p>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <p>
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="6" cy="6" r="6" fill="#65574A"/>
-                            </svg>
-                        </p>
-                        <p>Shield Left</p>
-                        <p>10</p>
-                    </div>
-                    <div>
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <g clipPath="url(#clip0_398_1857)">
-                                <path
-                                    d="M3.75284 6.41683L5.33309 3.78308C5.49876 3.50716 5.85751 3.41733 6.13343 3.58358C6.24251 3.6495 6.32767 3.74866 6.37492 3.86708L8.27134 8.60841L9.41642 6.69975C9.52201 6.52416 9.71159 6.41683 9.91634 6.41683H13.4163V2.3335C13.4163 1.36691 12.6329 0.583496 11.6663 0.583496H2.33301C1.36642 0.583496 0.583008 1.36691 0.583008 2.3335V6.41683H3.75284Z"
-                                    fill="#65574A"/>
-                                <path
-                                    d="M10.2465 7.58367L8.66626 10.2174C8.56068 10.393 8.37109 10.5003 8.16634 10.5003H8.11968C7.89859 10.4828 7.70668 10.3411 7.62442 10.1352L5.72801 5.39209L4.58292 7.30076C4.47734 7.47634 4.28776 7.58367 4.08301 7.58367H0.583008V11.667C0.583008 12.6336 1.36642 13.417 2.33301 13.417H11.6663C12.6329 13.417 13.4163 12.6336 13.4163 11.667V7.58367H10.2465Z"
-                                    fill="#65574A"/>
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_398_1857">
-                                    <rect width="14" height="14" fill="white"/>
-                                </clipPath>
-                            </defs>
-                        </svg>
-                        <TransactionRecord/>
-                    </div>
-                    <div>
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M13.7031 5.20466C13.7022 5.19883 13.7022 5.19329 13.7011 5.18745C13.6938 5.1542 13.6801 5.12329 13.662 5.095C13.6602 5.09208 13.66 5.08858 13.6582 5.08566C13.6562 5.08246 13.6527 5.081 13.6503 5.07808C13.6311 5.05212 13.6092 5.02791 13.5815 5.00925L13.5757 5.00516L13.5751 5.00487L7.16453 0.634246C7.06537 0.566579 6.93499 0.566579 6.83583 0.634246L0.426159 5.00458C0.426159 5.00458 0.425284 5.00516 0.424701 5.00545L0.419159 5.00925C0.391742 5.02791 0.369576 5.05212 0.350326 5.07808C0.347992 5.08129 0.344492 5.08275 0.342451 5.08595C0.340409 5.08887 0.340409 5.09237 0.338659 5.09529C0.320576 5.12387 0.306867 5.1545 0.299576 5.18775C0.298409 5.19358 0.298409 5.19912 0.297534 5.20466C0.295201 5.21983 0.291992 5.2347 0.291992 5.25016V11.9585C0.291992 12.7626 0.9462 13.4168 1.75033 13.4168H12.2503C13.0545 13.4168 13.7087 12.7626 13.7087 11.9585V5.25016C13.7087 5.2347 13.7055 5.21983 13.7031 5.20466ZM7.00033 1.22808L12.8993 5.25016L7.00033 9.27225L1.10137 5.25016L7.00033 1.22808Z"
-                                fill="#65574A"/>
-                        </svg>
-                        <p>Email Alert</p>
-                        <p>689</p>
-                    </div>
-                    <p>Please link your email address</p>
-                </div>
-                <Modal
-                    open={open}
-                    cancelText="取消"
-                    okText="修改"
-                    onOk={handleOk}
-                    confirmLoading={confirmLoading}
-                    onCancel={handleCancel}
-                    destroyOnClose={true}
-                    maskStyle={{backgroundColor: 'rgba(0, 0, 0, 0.7)'}}
-                    className='user-info-model'
-                    width="auto"
-                    height="auto"
-                    footer={null}
-                    centered
-                >
-                    <div className='user-info-model-external'>
-                        <div className="user-info-model-internal">
-                            <div className="font-style">Change your avatar</div>
-                            <div className="image-grid-container">
-                            {images.map((image, index) => (
-                                    <div
-                                        className={`image-box ${selectedIndex == index ? "selected" : ""}`}
-                                        key={index}
-                                        onClick={() => divClickHandle(index + 1)}>
-                                        <img src={image} alt={`image-${index}`}/>
-                                    </div>
-                                ))}
-                            </div>
+                    <div style={{marginTop:'50px'}}>
+                        <div className="data-style-middle">
+                            <div className='data-style-middle-font' style={{color: 'white'}}>Bowls Occupied:</div>
+                            <div className='data-style-middle-amount' style={{color: "#F5E01B"}}>18</div>
+                        </div>
+                        <div className="data-style-middle">
+                            <div style={{color: 'white'}}>Value Staked:</div>
+                            <div style={{color: "#F5E01B"}}>10.12</div>
+                        </div>
+                        <div className="data-style-middle">
+                            <div style={{color: 'white'}}>Bones Secured:</div>
+                            <div style={{color: "#F5E01B"}}>18</div>
                         </div>
                     </div>
-                    <div className="button-div-style">
-                        <button className="buttom-update" onClick={handleOk}>Update</button>
-                        <button className="buttom-confirm" onClick={handleCancel}>Confirm</button>
+                    <div>
+                        <div>
+                            <div>
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="6" cy="6" r="6" fill="#65574A"/>
+                                </svg>
+                            </div>
+                            <div>Shield Left</div>
+                            <div>10</div>
+                        </div>
+                        <div>
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <g clipPath="url(#clip0_398_1857)">
+                                    <path
+                                        d="M3.75284 6.41683L5.33309 3.78308C5.49876 3.50716 5.85751 3.41733 6.13343 3.58358C6.24251 3.6495 6.32767 3.74866 6.37492 3.86708L8.27134 8.60841L9.41642 6.69975C9.52201 6.52416 9.71159 6.41683 9.91634 6.41683H13.4163V2.3335C13.4163 1.36691 12.6329 0.583496 11.6663 0.583496H2.33301C1.36642 0.583496 0.583008 1.36691 0.583008 2.3335V6.41683H3.75284Z"
+                                        fill="#65574A"/>
+                                    <path
+                                        d="M10.2465 7.58367L8.66626 10.2174C8.56068 10.393 8.37109 10.5003 8.16634 10.5003H8.11968C7.89859 10.4828 7.70668 10.3411 7.62442 10.1352L5.72801 5.39209L4.58292 7.30076C4.47734 7.47634 4.28776 7.58367 4.08301 7.58367H0.583008V11.667C0.583008 12.6336 1.36642 13.417 2.33301 13.417H11.6663C12.6329 13.417 13.4163 12.6336 13.4163 11.667V7.58367H10.2465Z"
+                                        fill="#65574A"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_398_1857">
+                                        <rect width="14" height="14" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <TransactionRecord/>
+                        </div>
+                        <div>
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.7031 5.20466C13.7022 5.19883 13.7022 5.19329 13.7011 5.18745C13.6938 5.1542 13.6801 5.12329 13.662 5.095C13.6602 5.09208 13.66 5.08858 13.6582 5.08566C13.6562 5.08246 13.6527 5.081 13.6503 5.07808C13.6311 5.05212 13.6092 5.02791 13.5815 5.00925L13.5757 5.00516L13.5751 5.00487L7.16453 0.634246C7.06537 0.566579 6.93499 0.566579 6.83583 0.634246L0.426159 5.00458C0.426159 5.00458 0.425284 5.00516 0.424701 5.00545L0.419159 5.00925C0.391742 5.02791 0.369576 5.05212 0.350326 5.07808C0.347992 5.08129 0.344492 5.08275 0.342451 5.08595C0.340409 5.08887 0.340409 5.09237 0.338659 5.09529C0.320576 5.12387 0.306867 5.1545 0.299576 5.18775C0.298409 5.19358 0.298409 5.19912 0.297534 5.20466C0.295201 5.21983 0.291992 5.2347 0.291992 5.25016V11.9585C0.291992 12.7626 0.9462 13.4168 1.75033 13.4168H12.2503C13.0545 13.4168 13.7087 12.7626 13.7087 11.9585V5.25016C13.7087 5.2347 13.7055 5.21983 13.7031 5.20466ZM7.00033 1.22808L12.8993 5.25016L7.00033 9.27225L1.10137 5.25016L7.00033 1.22808Z"
+                                    fill="#65574A"/>
+                            </svg>
+                            <div>Email Alert</div>
+                            <div>689</div>
+                        </div>
+                        <div>Please link your email address</div>
                     </div>
-                </Modal>
-                {!localStorage.getItem("token") && (
-                    <div className="overlay-box">
-                        <ConnectWallet/>
-                    </div>
-                )}
+                    <Modal
+                        open={open}
+                        cancelText="取消"
+                        okText="修改"
+                        onOk={handleOk}
+                        confirmLoading={confirmLoading}
+                        onCancel={handleCancel}
+                        destroyOnClose={true}
+                        maskStyle={{backgroundColor: 'rgba(0, 0, 0, 0.7)'}}
+                        className='user-info-model'
+                        width="auto"
+                        height="auto"
+                        footer={null}
+                        centered
+                    >
+                        <div className='user-info-model-external'>
+                            <div className="user-info-model-internal">
+                                <div className="font-style">Change your avatar</div>
+                                <div className="image-grid-container">
+                                    {images.map((image, index) => (
+                                        <div
+                                            className={`image-box ${selectedIndex == index ? "selected" : ""}`}
+                                            key={index}
+                                            onClick={() => divClickHandle(index + 1)}>
+                                            <img src={image} alt={`image-${index}`}/>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                        <div className="button-div-style">
+                            <button className="buttom-update" onClick={handleOk}>Update</button>
+                            <button className="buttom-confirm" onClick={handleCancel}>Confirm</button>
+                        </div>
+                    </Modal>
+                    {!localStorage.getItem("token") && (
+                        <div className="overlay-box">
+                            <ConnectWallet/>
+                        </div>
+                    )}
+                </div>
             </div>
         </div>
 
