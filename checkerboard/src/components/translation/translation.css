@@ -1,18 +1,51 @@
-.language-switcher-select {
-    height: 40px;
-    width: 120px;
-    padding: 8px 30px;
+/* 修改 Select 外部框样式 */
+.custom-select .ant-select-selector {
+    background-color: #3c342f !important; /* 背景色 */
+    color: #ffffff !important; /* 字体颜色 */
+    border: 1px solid #3c342f !important; /* 边框颜色 */
     border-radius: 12px;
-    border: 1px solid #3c342f;
-    outline: none;
     transition: all 0.3s ease;
-    cursor: pointer;
-    background-color: #3c342f;
-    color: #fff;
-    margin-right: 10px;
 }
 
-.language-switcher-select option {
-    padding: 8px;
-    background-color: red;
+/* 鼠标悬停时保持样式一致 */
+.custom-select .ant-select-selector:hover {
+    background-color: #3c342f !important; /* 背景色不变 */
+    border-color: #3c342f !important; /* 边框颜色不变 */
+    color: #ffffff !important; /* 字体颜色保持白色 */
+}
+
+/* 聚焦状态 */
+.custom-select .ant-select-selector:focus,
+.custom-select.ant-select-focused .ant-select-selector {
+    background-color: #3c342f !important; /* 背景色不变 */
+    border-color: #3c342f !important; /* 边框颜色不变 */
+    color: #ffffff !important; /* 字体颜色保持白色 */
+    box-shadow: none !important; /* 移除默认阴影 */
+}
+
+/* 下拉菜单选项样式 */
+.custom-select .ant-select-item {
+    background-color: #3c342f !important; /* 背景色 */
+    color: #ffffff !important; /* 字体颜色保持白色 */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* 鼠标悬停选项时 */
+.custom-select .ant-select-item-option-active {
+    background-color: #1f1b19 !important; /* 背景色变化 */
+    color: #ffffff !important; /* 字体颜色保持白色 */
+}
+
+/* 下拉框样式 */
+.custom-select .ant-select-dropdown {
+    color: #ffffff !important;
+    border: 1px solid #3c342f !important; /* 边框颜色 */
+    border-radius: 12px;
+}
+
+/* 强制所有状态字体为白色 */
+.custom-select .ant-select-selector,
+.custom-select .ant-select-item,
+.custom-select .ant-select-item-option-active {
+    color: #ffffff !important; /* 确保字体始终为白色 */
 }
