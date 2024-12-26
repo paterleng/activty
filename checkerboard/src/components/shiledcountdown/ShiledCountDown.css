@@ -1,0 +1,53 @@
+.shiled-div-have-external{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 160px;
+    background-color: #000000;
+    clip-path: polygon(7% 0, 95% 6%, 100% 90%, 0 100%);
+    position: absolute;
+    top:740px;
+    right: 50px;
+}
+
+.shiled-div-have-internal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 230px;
+    height: 140px;
+    background-color: #6076C1;
+    clip-path: polygon(7% 0, 95% 6%, 100% 90%, 0 100%);
+    position: relative;
+}
+
+.font-div-style{
+    position: absolute;
+    left: 38px;
+    top: 34px;
+}
+
+.time-style-div{
+    font-family: SF Pro;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38.19px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #ffffff;
+}
+
+.shiled-duration-div{
+    margin-top: 20px;
+    font-family: SF Pro;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14.32px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #ffffff;
+}
