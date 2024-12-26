@@ -1,0 +1,92 @@
+/*故事页第一页样式*/
+
+.first-svg-first-style{
+    position: absolute;
+    top: 130px;
+    left: 150px;
+}
+
+.first-svg-second-style{
+    position: absolute;
+    top: 400px;
+    left: -950px;
+}
+
+.first-svg-three-style{
+    position: absolute;
+    top: 400px;
+    right: -200px;
+}
+
+.first-svg-four-style{
+    position: absolute;
+    top: 700px;
+    left: 250px;
+}
+
+.first-svg-cycle-style{
+    position: absolute;
+    top: 0px;
+    left: 450px;
+}
+
+.svg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 让 SVG 垂直居中 */
+}
+
+.rotating-svg {
+    animation: rotate-animation 5s linear infinite;
+    transform-origin: center center; /* 确保旋转中心是 SVG 中心 */
+}
+
+@keyframes rotate-animation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.first-svg-dog{
+    position: absolute;
+    top: 200px;
+    left: 450px;
+    z-index: 5;
+}
+
+.first-svg-div{
+    position: absolute;
+    top: 600px;
+    left: 430px;
+    width: 900px;
+    height: 100px;
+    background-color: #000000;
+    border-radius: 137px;
+}
+
+.first-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 800px;
+    left: 800px;
+    width: 240px;
+    height: 50px;
+    background-color: #F5E01B;
+    border: 10px solid #000000;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: DIN;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.54px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}

@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81e28f08-7929-4107-9a7a-4c51f856d31e" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/checkerboard/src/components/shiledcountdown/ShiledCountDown.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkerboard/src/components/shiledcountdown/ShiledCountDown.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkerboard/src/components/story/Story.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkerboard/src/components/story/Story.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkerboard/src/components/story/StoryFirst.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/public/images/bg-image/bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/public/images/bg-image/bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/Countdown.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/Countdown.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/chessboard/ChessBoard.css" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/chessboard/ChessBoard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/chessboard/ChessBoard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/chessboard/ChessBoard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activity.log" beforeDir="false" afterPath="$PROJECT_DIR$/activity.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/main.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import  {store,persistor} from './store/store.js';
 import { Buffer } from 'buffer';
 import {PersistGate} from "redux-persist/integration/react";
+import StoryFirst from "./components/story/StoryFirst.jsx";
 window.Buffer = Buffer;
 
 
@@ -14,7 +15,8 @@ createRoot(document.getElementById('root')).render(
     <Provider store={store}>
         {/* PersistGate 会在持久化数据加载完毕后再渲染应用 */}
         <PersistGate loading={null} persistor={persistor}>
-            <App />
+            <StoryFirst />
+            {/*<App />*/}
         </PersistGate>
     </Provider>,
 )
