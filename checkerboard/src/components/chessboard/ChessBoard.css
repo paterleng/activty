@@ -265,8 +265,9 @@
     align-items: center;
     margin-left: 10px;
     position: absolute;
-    top: 190px;
-    right: -5px;
+    border-radius: 5px;
+    top: 270px;
+    right: 3px;
     z-index: 3;
 }
 

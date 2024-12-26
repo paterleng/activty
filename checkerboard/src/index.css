@@ -6,7 +6,7 @@ body {
   align-items: stretch;
   justify-content: flex-start;
   overflow-x: hidden;
-  overflow: hidden;
+  /*overflow: hidden;*/
   cursor: auto;
 }
 body{

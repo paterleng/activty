@@ -11,9 +11,9 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    width: 1224px;
+    width: 1124px;
     height: 750px;
-    clip-path: polygon(10% 0, 85% 0, 100% 100%, 0 100%);
+    clip-path: polygon(4% 0, 85% 0, 100% 100%, 0 100%);
     background: #000000;
     margin-top: 40px;
     z-index: 1;
@@ -25,9 +25,9 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
-    width: 1200px;
+    width: 1100px;
     height: 730px;
-    clip-path: polygon(10% 0, 85% 0, 100% 100%, 0 100%);
+    clip-path: polygon(4% 0, 85% 0, 100% 100%, 0 100%);
     background: #191919;
     z-index: 1;
 }
@@ -35,15 +35,33 @@
 .grid-style-margin {
     margin-left: 160px;
 }
+.countdown-title{
+    font-family: SF Pro;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.09px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #646464;
+
+}
 
 .total-title {
     color: #393939;
-    margin-bottom: 5px;
+    /*margin-bottom: 5px;*/
 }
 
 .total-content {
-    font-size: 42px;
-    font-weight: 800;
+    font-family: SF UI Text;
+    font-size: 36px;
+    font-style: italic;
+    font-weight: 585;
+    line-height: 47.73px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    text-decoration-skip-ink: none;
     color: #f5df1b;
 }
 
@@ -83,6 +101,14 @@
         display: inline-block;
     }
     .cellTitle {
+        font-family: Roboto;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 14.06px;
+        text-align: center;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        color: #D5C7AD;
         margin-top: 5px;
     }
 }
