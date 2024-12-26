@@ -20,14 +20,13 @@ const Countdown = ({initialSeconds}) => {
         const hourPart = hours > 0 ? `${String(hours).padStart(2, '0')}时 ` : '';
         const minutePart = minutes > 0 ? `${String(minutes).padStart(2, '0')}分 ` : '';
         const secondPart = `${String(secs).padStart(2, '0')}秒`;
-
         return `${dayPart}${hourPart}${minutePart}${secondPart}`;
     };
 
 
     return (
         <div style={styles.container}>
-            <h1 style={styles.time}>距护盾结束还有:{seconds > 0 ? formatTime(seconds) : ''}</h1>
+            <h1 style={styles.time}>{seconds > 0 ? formatTime(seconds) : ''}</h1>
         </div>
     );
 };

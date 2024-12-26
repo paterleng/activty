@@ -7,6 +7,7 @@ import { BoardInfo, BoardInfoNoLogin, SeizeGrid} from '../../apis/manage'
 import {useDispatch, useSelector} from "react-redux";
 import Shiled from "../shiled/Shiled.jsx";
 import {setPage} from "../../store/store.js";
+import ShiledCountDown from "../shiledcountdown/ShiledCountDown.jsx";
 
 const ChessBoard = ({bId,gId}) => {
     const [selectedBoxes, setSelectedBoxes] = useState([]);
@@ -270,6 +271,7 @@ const ChessBoard = ({bId,gId}) => {
 
 
     return (
+        <div>
         <div className="container">
             <div className='container-left'>
                 <div className="countdown-wrapper-son">
@@ -282,58 +284,88 @@ const ChessBoard = ({bId,gId}) => {
                 <div className="grid-container" onMouseUp={handleMouseUp}>
                     {boxes && boxes.length > 0 ? (
                         boxes.map((box) => (
-                                <div
-                                    key={box.ID}
-                                    className={`grid-box ${box.status == 1 ? 'have' : `${box.status == 2 ? 'preempted' : ''}`}`}
-                                    onMouseDown={(event) => handleMouseDown(box.ID, event)}
-                                    onMouseEnter={(event) => handleMouseEnter(box.ID, event)}
-                                    onClick={() => handleBoxClick(box)}
-                                >
-                                    {/*加盾*/}
-                                    <svg className="svg-style" width="44" height="15" viewBox="0 0 34 10" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M0 1.84219C0 1.23467 0.492487 0.742188 1.1 0.742188H34V4.24219C34 7.27975 31.5376 9.74219 28.5 9.74219H0V1.84219Z"
-                                            fill={box.status == 1 ? '#4A7971' : box.status == 2 ? '#B35649' : '#6076C1'}/>
-                                        <svg x="0" y="2" width="5" height="6" viewBox="0 0 4 5" fill="none"
+                            <div
+                                key={box.ID}
+                                onMouseDown={(event) => handleMouseDown(box.ID, event)}
+                                onMouseEnter={(event) => handleMouseEnter(box.ID, event)}
+                                onClick={() => handleBoxClick(box)}
+                            >
+                                {box.is_shield == 1 ?
+                                    <div className='shiled-div'>
+                                        <svg width="40" height="40" viewBox="0 0 137 137" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
-                                            <g clipPath="url(#clip0_390_20353)">
-                                                <path
-                                                    d="M2.45209 1.72751L0.942007 3.17022C0.942007 3.17022 0.597205 3.47587 0.302175 3.47587C0.00714429 3.47587 -0.0496735 3.89767 0.059014 4.00165C0.167702 4.10563 0.442944 4.01382 0.57097 4.01382C0.698996 4.01382 0.839615 4.026 0.839615 4.16048C0.839615 4.29497 0.749667 4.73511 0.993277 4.73511C1.23689 4.73511 1.4796 4.57627 1.4796 4.33164C1.4796 4.08701 1.37721 3.79368 1.74824 3.4392C2.11928 3.08472 2.93841 2.1072 2.93841 2.1072C2.93841 2.1072 3.1303 1.94837 3.32234 1.98503C3.51438 2.0217 3.78302 1.99721 3.91105 1.83823C4.03908 1.67925 4.02618 1.33694 3.80866 1.33694C3.59113 1.33694 3.32234 1.55693 3.32234 1.41027C3.32234 1.26361 3.37346 0.75 3.0408 0.75C2.70814 0.75 2.49047 0.908981 2.49047 1.14129C2.49047 1.3736 2.61175 1.57469 2.45209 1.72751Z"
-                                                    fill="white"/>
-                                            </g>
+                                            <circle cx="68.39" cy="68.39" r="68.39" fill="url(#paint0_radial_450_4)"/>
+                                            <path
+                                                d="M69.6117 46C61.7952 51.211 51.3732 53.4443 43.5566 53.4443C43.5566 71.6829 51.3732 90.2936 69.6117 98.1101C87.8503 90.2936 95.6668 71.6829 95.6668 53.4443C87.8503 53.4443 77.4282 51.211 69.6117 46Z"
+                                                fill="white" fill-opacity="0.73" stroke="#DAACC1" stroke-opacity="0.49"
+                                                stroke-width="10" stroke-miterlimit="10" stroke-linecap="square"/>
                                             <defs>
-                                                <clipPath id="clip0_390_20353">
-                                                    <rect width="4" height="4" fill="white"
-                                                          transform="translate(0 0.742188)"/>
-                                                </clipPath>
+                                                <radialGradient id="paint0_radial_450_4" cx="0" cy="0" r="1"
+                                                                gradientUnits="userSpaceOnUse"
+                                                                gradientTransform="translate(84.878 39.0812) rotate(95.9188) scale(100.678)">
+                                                    <stop offset="0.02" stop-color="#F9EDF2"/>
+                                                    <stop offset="0.23" stop-color="#E4B4CA"/>
+                                                    <stop offset="0.515" stop-color="#C23273"/>
+                                                    <stop offset="1" stop-color="#E4B4CA"/>
+                                                </radialGradient>
                                             </defs>
                                         </svg>
-                                        <text x="5" y="8" fill="white" fontSize="6" fontFamily="Arial"
-                                              fontWeight="bold">
-                                            {box.price > box.price_increase ? box.price : box.price_increase}
-                                        </text>
-                                    </svg>
-
-                                    {box.is_shield == 1 ? <StopTwoTone/> : ''}
-                                    {selectedBoxes.includes(box.ID) ?
-                                        <svg className="selected-style" width="15" height="15" viewBox="0 0 15 15"
+                                    </div>
+                                    :
+                                    <div
+                                        className={`grid-box ${box.status == 1 ? 'have' : `${box.status == 2 ? 'preempted' : ''}`}`}
+                                    >
+                                        {/*加盾*/}
+                                        <svg className="svg-style" width="44" height="15" viewBox="0 0 34 10"
                                              fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
-                                            <rect width="15" height="15" rx="1.25" fill="#F5E01B"/>
-                                            <path d="M4.375 7.545L6.42763 9.625L10.375 5.625" stroke="#3C342F"
-                                                  strokeWidth="1.875" strokeLinecap="round"/>
-                                        </svg> : ''}
-                                </div>
+                                            <path
+                                                d="M0 1.84219C0 1.23467 0.492487 0.742188 1.1 0.742188H34V4.24219C34 7.27975 31.5376 9.74219 28.5 9.74219H0V1.84219Z"
+                                                fill={box.status == 1 ? '#4A7971' : box.status == 2 ? '#B35649' : '#6076C1'}/>
+                                            <svg x="0" y="2" width="5" height="6" viewBox="0 0 4 5" fill="none"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <g clipPath="url(#clip0_390_20353)">
+                                                    <path
+                                                        d="M2.45209 1.72751L0.942007 3.17022C0.942007 3.17022 0.597205 3.47587 0.302175 3.47587C0.00714429 3.47587 -0.0496735 3.89767 0.059014 4.00165C0.167702 4.10563 0.442944 4.01382 0.57097 4.01382C0.698996 4.01382 0.839615 4.026 0.839615 4.16048C0.839615 4.29497 0.749667 4.73511 0.993277 4.73511C1.23689 4.73511 1.4796 4.57627 1.4796 4.33164C1.4796 4.08701 1.37721 3.79368 1.74824 3.4392C2.11928 3.08472 2.93841 2.1072 2.93841 2.1072C2.93841 2.1072 3.1303 1.94837 3.32234 1.98503C3.51438 2.0217 3.78302 1.99721 3.91105 1.83823C4.03908 1.67925 4.02618 1.33694 3.80866 1.33694C3.59113 1.33694 3.32234 1.55693 3.32234 1.41027C3.32234 1.26361 3.37346 0.75 3.0408 0.75C2.70814 0.75 2.49047 0.908981 2.49047 1.14129C2.49047 1.3736 2.61175 1.57469 2.45209 1.72751Z"
+                                                        fill="white"/>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_390_20353">
+                                                        <rect width="4" height="4" fill="white"
+                                                              transform="translate(0 0.742188)"/>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            <text x="5" y="8" fill="white" fontSize="6" fontFamily="Arial"
+                                                  fontWeight="bold">
+                                                {box.price > box.price_increase ? box.price : box.price_increase}
+                                            </text>
+                                        </svg>
+                                        {selectedBoxes.includes(box.ID) ?
+                                            <div>
+                                                <svg className="selected-style" width="15" height="15"
+                                                     viewBox="0 0 15 15"
+                                                     fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <rect width="15" height="15" rx="1.25" fill="#F5E01B"/>
+                                                    <path d="M4.375 7.545L6.42763 9.625L10.375 5.625" stroke="#3C342F"
+                                                          strokeWidth="1.875" strokeLinecap="round"/>
+                                                </svg>
+                                            </div>
+                                            : ''}
+                                    </div>
+                                }
+
+                            </div>
                         ))
                     ) : (
-                        <Spin />
+                        <Spin/>
                     )}
                 </div>
             </div>
             {/*是否处于多选状态*/}
             {
-                (isChoiceing.current)?
+                (isChoiceing.current) ?
                     (
                         <div className='betch-container-right'>
                             <div>
@@ -359,16 +391,17 @@ const ChessBoard = ({bId,gId}) => {
                                     <Avatar
                                         shape="square" size={150}
                                         icon={<AntDesignOutlined/>}
-                                        src={images[message.avatar_id-1]}
+                                        src={images[message.avatar_id - 1]}
                                         className='batch-avatar'
                                     />
                                 </div>
                                 {
-                                    message.user_id === "" ? <div className="is-owner"  style={{color: '#B35649'}}>Under Takenn!</div> :
+                                    message.user_id === "" ?
+                                        <div className="is-owner" style={{color: '#B35649'}}>Under Takenn!</div> :
                                         (
                                             user.user_id === message.user_id ? <div
-                                                className="is-owner"style={{color:'#2FF519'}}>Occupied!</div> :
-                                            <div className="is-owner" style={{color: '#B35649'}}>Not Owned!</div>
+                                                    className="is-owner" style={{color: '#2FF519'}}>Occupied!</div> :
+                                                <div className="is-owner" style={{color: '#B35649'}}>Not Owned!</div>
                                         )
                                 }
                                 {
@@ -385,13 +418,13 @@ const ChessBoard = ({bId,gId}) => {
                                             <div className='amount-div-value' style={{color: '#2FF519'}}>
                                                 {message.price > message.price_increase ? message.price : message.price_increase} SOL
                                             </div>
-                                        </div>):
+                                        </div>) :
                                         (
                                             message.user_id === user.user_id ?
-                                            <div className='value-div-owner'>Value Stakedown</div> :
-                                            <div className='value-div-owner'>
-                                                <div className='value-amount-font'>Current Value:</div>
-                                                <div className='amount-div-value' style={{color: '#2FF519'}}>
+                                                <div className='value-div-owner'>Value Stakedown</div> :
+                                                <div className='value-div-owner'>
+                                                    <div className='value-amount-font'>Current Value:</div>
+                                                    <div className='amount-div-value' style={{color: '#2FF519'}}>
                                                     {message.price > message.price_increase ? message.price : message.price_increase} SOL
                                                 </div>
                                             </div>
@@ -416,16 +449,24 @@ const ChessBoard = ({bId,gId}) => {
                                                 <Shiled gId={message.ID}/>
                                             </div>
                                         :
-                                        <div className='div-btn-style'>
-                                            <Input className="batch-buttom-right-input" placeholder="请输入内容" value={betValue}
-                                                   onChange={betValueChange}></Input>
-                                            <button onClick={seizeHandle} className='button-style'>Occupy</button>
-                                        </div>)
+                                        //     需要在判断当前格子是否有盾，有盾就不展示输入框及按钮，当前处于保护状态
+                                                (message.is_shield === 1 ? '' :
+                                                        <div className='div-btn-style'>
+                                                            <Input className="batch-buttom-right-input"
+                                                                   placeholder="请输入内容" value={betValue}
+                                                                   onChange={betValueChange}></Input>
+                                                            <button onClick={seizeHandle}
+                                                                    className='button-style'>Occupy
+                                                            </button>
+                                                        </div>
+                                                ))
                                 }
                             </div>
                         </div>
                     )
             }
+            {/*当前格子是否有盾*/}
+
 
 
             {/*余额不足时展示的模态框*/}
@@ -544,6 +585,11 @@ const ChessBoard = ({bId,gId}) => {
                 </div>
             </Modal>
         </div>
+    {message.is_shield === 1 ?
+        <ShiledCountDown durationTime={message.end_shield_time}/> :
+        ''
+    }
+    </div>
     );
 };
 
