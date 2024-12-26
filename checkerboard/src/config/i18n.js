@@ -26,7 +26,7 @@ i18n
   .use(initReactI18next) // 把 react-i18next 绑定到 i18next
   .init({
     resources,  // 语言资源
-    lng: "en",  // 默认语言
+    lng: "zh",  // 默认语言
     keySeparator: false, // 不使用键分隔符
     interpolation: {
       escapeValue: false, // React 已经处理了 XSS 问题

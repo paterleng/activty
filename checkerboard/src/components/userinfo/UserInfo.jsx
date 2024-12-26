@@ -19,6 +19,24 @@ const UserInfo = () => {
     const dispatch = useDispatch();
     const token = useSelector((state) => state.token);
     const user = useSelector((state) => state.user);
+    const [isEditing, setIsEditing] = useState(false); // 控制是否编辑状态
+    const [name, setName] = useState(user.user_name); // 保存用户输入
+
+    // 点击 SVG 切换到编辑状态
+    const handleEdit = () => {
+        if (!isEditing) {
+            setIsEditing(true)
+        }else{
+            setIsEditing(false);
+        }
+    };
+
+    // 失去焦点保存输入内容并切换回非编辑状态
+    const handleBlur = (e) => {
+        setName(e.target.value); // 保存输入框内容
+        setIsEditing(false); // 切换回非编辑状态
+    };
+
 
     const [userInfo, setUserInfo] = useState({
         user_name: "pater",
@@ -120,7 +138,56 @@ const UserInfo = () => {
                             </defs>
                         </svg>
                     </div>
-                    <h3 style={{marginLeft: '30px'}}>{user.user_name}</h3>
+                    <div style={{display: "flex", alignItems: "center",width:'300px'}}>
+                        {/* 如果是编辑状态，则显示输入框 */}
+                        {isEditing ? (
+                            <input
+                                type="text"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)} // 实时更新输入框内容
+                                onBlur={handleBlur} // 失去焦点时保存内容
+                                autoFocus // 自动聚焦到输入框
+                                style={{
+                                    marginLeft: "30px",
+                                    height: "30px",
+                                    width:'150px',
+                                    fontSize: "16px",
+                                    padding: "4px",
+                                    borderRadius: "4px",
+                                }}
+                            />
+                        ) : (
+                            // 非编辑状态显示 h3 标签
+                            <h3 style={{marginLeft: "30px"}}>{name}</h3>
+                        )}
+
+                        {/* 点击 SVG 切换到编辑状态 */}
+                        <svg
+                            onClick={handleEdit}
+                            style={{marginLeft: "10px", marginTop: "5px", cursor: "pointer"}}
+                            width="12"
+                            height="12"
+                            viewBox="0 0 12 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <g clipPath="url(#clip0_398_1805)">
+                                <path
+                                    d="M6.61626 2.677L1.14626 8.146C1.09105 8.20228 1.04993 8.27081 1.02626 8.346L0.0262609 11.346C0.00201556 11.4209 -0.00420511 11.5004 0.0081052 11.5782C0.0204155 11.6559 0.0509089 11.7297 0.0971038 11.7934C0.143299 11.8572 0.20389 11.9091 0.273946 11.945C0.344002 11.9809 0.421544 11.9997 0.500261 12C0.554012 12.0002 0.607422 11.9915 0.658261 11.974L3.65826 10.974C3.73346 10.9503 3.80199 10.9092 3.85826 10.854L9.32726 5.384L6.61626 2.677Z"
+                                    fill="#F6F5F4"
+                                />
+                                <path
+                                    d="M11.8547 2.14592L9.85473 0.145917C9.80829 0.099354 9.75311 0.0624111 9.69237 0.0372047C9.63162 0.0119982 9.5665 -0.000976563 9.50073 -0.000976562C9.43497 -0.000976562 9.36985 0.0119982 9.3091 0.0372047C9.24836 0.0624111 9.19318 0.099354 9.14673 0.145917L7.67773 1.61592L10.3847 4.32292L11.8547 2.85392C11.9013 2.80747 11.9382 2.7523 11.9634 2.69155C11.9887 2.63081 12.0016 2.56568 12.0016 2.49992C12.0016 2.43415 11.9887 2.36903 11.9634 2.30828C11.9382 2.24754 11.9013 2.19236 11.8547 2.14592Z"
+                                    fill="#F6F5F4"
+                                />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_398_1805">
+                                    <rect width="12" height="12" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
                 </div>
                 <div className='line-style'></div>
                 <div className='line-under-div'>
@@ -130,7 +197,7 @@ const UserInfo = () => {
                     </div>
                     <div style={{marginTop: '30px'}}>{message.user_id}
                         <button className='user-info-btn'>Withdraw</button>
-                        <button onClick={} className='user-info-btn' style={{marginLeft: '10px'}}>Top Up</button>
+                        <button className='user-info-btn' style={{marginLeft: '10px'}}>Top Up</button>
                     </div>
                     <div style={{marginTop: '50px'}}>
                         <div className="data-style-middle">

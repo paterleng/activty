@@ -6,17 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="81e28f08-7929-4107-9a7a-4c51f856d31e" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/Gohome.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/Gohome.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/chessboard/ChessBoard.css" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/chessboard/ChessBoard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/header/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/header/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/rule/Rule.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/rule/Rule.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/rulepopup/RulePupup.css" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/rulepopup/RulePupup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/translation/Translation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/translation/Translation.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/translation/translation.css" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/translation/translation.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/userinfo/UserInfo.css" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/userinfo/UserInfo.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkerboard/src/components/userinfo/UserInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/userinfo/UserInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/web3wallet/Wallet.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/web3wallet/Wallet.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/pages/home/Expand.css" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/pages/home/Expand.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/pages/home/Expand.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/pages/home/Expand.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/web3wallet/Wallet.css" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/web3wallet/Wallet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/config/i18n.js" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/config/i18n.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
