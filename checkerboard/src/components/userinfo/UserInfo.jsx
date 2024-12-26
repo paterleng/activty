@@ -130,7 +130,7 @@ const UserInfo = () => {
                     </div>
                     <div style={{marginTop: '30px'}}>{message.user_id}
                         <button className='user-info-btn'>Withdraw</button>
-                        <button className='user-info-btn' style={{marginLeft: '10px'}}>Top Up</button>
+                        <button onClick={} className='user-info-btn' style={{marginLeft: '10px'}}>Top Up</button>
                     </div>
                     <div style={{marginTop: '50px'}}>
                         <div className="data-style-middle">

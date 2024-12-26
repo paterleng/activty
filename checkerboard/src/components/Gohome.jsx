@@ -9,10 +9,10 @@ const GoHome = () => {
     const style = {
         width:'200px',
         height:'40px',
-        backgroundColor:'#2ff519',
-        borderRadius:'10px',
+        backgroundColor:'#F5E01B',
+        border:'1px solid #F5E01B',
+        borderRadius:'12px',
         position:'absolute',
-        top:'-30px',
         fontWeight:'bolder',
         cursor:'pointer',
     }
