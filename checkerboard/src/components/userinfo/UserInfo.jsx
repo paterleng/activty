@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { AntDesignOutlined,EditTwoTone } from '@ant-design/icons';
-import {Modal, Avatar, message} from 'antd';
+import {Modal, Avatar, message, Switch} from 'antd';
 import { UserMessage,UpdateUserInfo } from '../../apis/manage';
 import { useTranslation } from 'react-i18next';
 import TransactionRecord from "../TransactionRecord";
@@ -130,35 +130,108 @@ const UserInfo = () => {
                     </div>
                     <div style={{marginTop: '30px'}}>{message.user_id}
                         <button className='user-info-btn'>Withdraw</button>
-                        <button className='user-info-btn' style={{marginLeft:'10px'}}>Top Up</button>
+                        <button className='user-info-btn' style={{marginLeft: '10px'}}>Top Up</button>
                     </div>
-                    <div style={{marginTop:'50px'}}>
+                    <div style={{marginTop: '50px'}}>
                         <div className="data-style-middle">
-                            <div className='data-style-middle-font' style={{color: 'white'}}>Bowls Occupied:</div>
-                            <div className='data-style-middle-amount' style={{color: "#F5E01B"}}>18</div>
+                            <div className='data-style-middle-font'>Bowls Occupied:</div>
+                            <div className='data-style-middle-amount'>18</div>
                         </div>
                         <div className="data-style-middle">
-                            <div style={{color: 'white'}}>Value Staked:</div>
-                            <div style={{color: "#F5E01B"}}>10.12</div>
+                            <div className='data-style-middle-font'>Value Staked:</div>
+                            <div className='data-style-middle-amount'>10.12</div>
                         </div>
                         <div className="data-style-middle">
-                            <div style={{color: 'white'}}>Bones Secured:</div>
-                            <div style={{color: "#F5E01B"}}>18</div>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <div>
-                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                            <div className='data-style-middle-font'>Bones Secured:</div>
+                            <div className='data-style-middle-svg'>
+                                <svg width="17" height="20" viewBox="0 0 17 20" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="6" cy="6" r="6" fill="#65574A"/>
+                                    <g clip-path="url(#clip0_398_1574)">
+                                        <path
+                                            d="M7.90992 18.9754C12.2488 18.9754 15.7661 14.7397 15.7661 9.51458C15.7661 4.28949 12.2488 0.0537109 7.90992 0.0537109C3.57105 0.0537109 0.0537109 4.28949 0.0537109 9.51458C0.0537109 14.7397 3.57105 18.9754 7.90992 18.9754Z"
+                                            fill="#FFE711" stroke="#231815" stroke-width="0.10712"
+                                            stroke-miterlimit="10"/>
+                                        <path
+                                            d="M7.5332 18.9765C11.8726 18.9765 15.3894 14.741 15.3894 9.51563C15.3894 4.2903 11.8726 0.0537109 7.5332 0.0537109H9.09073C13.4302 0.0537109 16.9469 4.2903 16.9469 9.51563C16.9469 14.741 13.4302 18.9765 9.09073 18.9765H7.5332Z"
+                                            fill="#B7A60C" stroke="#231815" stroke-width="0.10712"
+                                            stroke-miterlimit="10"/>
+                                        <path d="M10.6699 0.858398H12.1664" stroke="#231815" stroke-width="0.10712"
+                                              stroke-miterlimit="10"/>
+                                        <path d="M11.9395 1.64648H13.4241" stroke="#231815" stroke-width="0.10712"
+                                              stroke-miterlimit="10"/>
+                                        <path d="M12.7559 2.43359H14.2748" stroke="#231815" stroke-width="0.10712"
+                                              stroke-miterlimit="10"/>
+                                        <path d="M13.4463 3.22266H14.9545" stroke="#231815" stroke-width="0.10712"
+                                              stroke-miterlimit="10"/>
+                                        <path d="M13.9561 4.01074H15.4643" stroke="#231815" stroke-width="0.10712"
+                                              stroke-miterlimit="10"/>
+                                        <path d="M14.3652 4.79785H15.9067" stroke="#231815" stroke-width="0.10712"
+                                              stroke-miterlimit="10"/>
+                                        <path d="M14.6709 5.58594H16.2124" stroke="#231815" stroke-width="0.10712"
+                                              stroke-miterlimit="10"/>
+                                        <path d="M14.9521 6.375H16.485" stroke="#231815" stroke-width="0.10712"
+                                              stroke-miterlimit="10"/>
+                                        <path d="M15.1309 7.16211H16.728" stroke="#231815" stroke-width="0.10712"
+                                              stroke-miterlimit="10"/>
+                                        <path d="M15.3096 7.9502H16.8435" stroke="#231815" stroke-width="0.10712"
+                                              stroke-miterlimit="10"/>
+                                        <path d="M15.4111 8.73926H16.9462" stroke="#231815" stroke-width="0.10712"
+                                              stroke-miterlimit="10"/>
+                                        <path d="M15.3896 9.52734H16.9472" stroke="#231815" stroke-width="0.10712"
+                                              stroke-miterlimit="10"/>
+                                        <path d="M15.3604 10.3145H16.9468" stroke="#231815" stroke-width="0.10712"
+                                              stroke-miterlimit="10"/>
+                                        <path d="M15.2842 11.1035H16.8289" stroke="#231815" stroke-width="0.10712"
+                                              stroke-miterlimit="10"/>
+                                        <path d="M15.1309 11.8916H16.6852" stroke="#231815" stroke-width="0.10712"
+                                              stroke-miterlimit="10"/>
+                                        <path d="M14.9521 12.6787H16.5118" stroke="#231815" stroke-width="0.10712"
+                                              stroke-miterlimit="10"/>
+                                        <path d="M14.6709 13.4668H16.2091" stroke="#231815" stroke-width="0.10712"
+                                              stroke-miterlimit="10"/>
+                                        <path d="M14.3135 14.2559H15.8924" stroke="#231815" stroke-width="0.10712"
+                                              stroke-miterlimit="10"/>
+                                        <path d="M13.9043 15.043H15.4747" stroke="#231815" stroke-width="0.10712"
+                                              stroke-miterlimit="10"/>
+                                        <path d="M13.3711 15.8311H14.9565" stroke="#231815" stroke-width="0.10712"
+                                              stroke-miterlimit="10"/>
+                                        <path d="M12.751 16.6201H14.2785" stroke="#231815" stroke-width="0.10712"
+                                              stroke-miterlimit="10"/>
+                                        <path d="M11.8857 17.4072H13.4283" stroke="#231815" stroke-width="0.10712"
+                                              stroke-miterlimit="10"/>
+                                        <path d="M10.6699 18.1953H12.1739" stroke="#231815" stroke-width="0.10712"
+                                              stroke-miterlimit="10"/>
+                                        <path
+                                            d="M8.68365 7.34879L5.19045 10.842C5.19045 10.842 4.39133 11.5822 3.71005 11.5822C3.02876 11.5822 2.89593 12.6041 3.14767 12.8559C3.3994 13.1076 4.03569 12.8848 4.32599 12.8848C4.61629 12.8848 4.94836 12.9148 4.94836 13.2404C4.94836 13.5661 4.74055 14.633 5.30293 14.633C5.86531 14.633 6.42876 14.2484 6.42876 13.656C6.42876 13.0637 6.19203 12.3534 7.05006 11.4943C7.9081 10.6352 9.80306 8.26789 9.80306 8.26789C9.80306 8.26789 10.2476 7.88226 10.6922 7.97117C11.1367 8.06008 11.7569 8.00115 12.0536 7.61659C12.3504 7.23203 12.3204 6.40293 11.8169 6.40293C11.3135 6.40293 10.6922 6.93853 10.6922 6.57967C10.6922 6.22082 10.81 4.98145 10.0398 4.98145C9.26959 4.98145 8.7672 5.36599 8.7672 5.92837C8.7672 6.49075 9.05428 6.97922 8.68365 7.34879Z"
+                                            fill="white" stroke="#231815" stroke-width="0.321361"
+                                            stroke-miterlimit="10"/>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_398_1574">
+                                            <rect width="17" height="19.0299" fill="white"/>
+                                        </clipPath>
+                                    </defs>
                                 </svg>
+                                <div className='data-style-middle-amount' style={{marginLeft: '5px'}}>18</div>
                             </div>
-                            <div>Shield Left</div>
-                            <div>10</div>
                         </div>
+                    </div>
+                </div>
+                <div className='line-style-under'></div>
+                <div className='line-under-button-div'>
+                    <div className='user-info-botton-div'>
                         <div>
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="6" cy="6" r="6" fill="#65574A"/>
+                                <circle cx="6" cy="6" r="2" fill="#191919"/>
+                            </svg>
+                        </div>
+                        <div className='user-info-botton-div-font'>Shield Left</div>
+                        <div className='user-info-botton-div-amount'>10</div>
+                    </div>
+                    <div className='user-info-botton-div'>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <g clipPath="url(#clip0_398_1857)">
                                     <path
@@ -173,21 +246,27 @@ const UserInfo = () => {
                                         <rect width="14" height="14" fill="white"/>
                                     </clipPath>
                                 </defs>
-                            </svg>
-                            <TransactionRecord/>
+                        </svg>
+                        <div className='user-info-botton-div-font'>
+                            <TransactionRecord />
                         </div>
-                        <div>
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M13.7031 5.20466C13.7022 5.19883 13.7022 5.19329 13.7011 5.18745C13.6938 5.1542 13.6801 5.12329 13.662 5.095C13.6602 5.09208 13.66 5.08858 13.6582 5.08566C13.6562 5.08246 13.6527 5.081 13.6503 5.07808C13.6311 5.05212 13.6092 5.02791 13.5815 5.00925L13.5757 5.00516L13.5751 5.00487L7.16453 0.634246C7.06537 0.566579 6.93499 0.566579 6.83583 0.634246L0.426159 5.00458C0.426159 5.00458 0.425284 5.00516 0.424701 5.00545L0.419159 5.00925C0.391742 5.02791 0.369576 5.05212 0.350326 5.07808C0.347992 5.08129 0.344492 5.08275 0.342451 5.08595C0.340409 5.08887 0.340409 5.09237 0.338659 5.09529C0.320576 5.12387 0.306867 5.1545 0.299576 5.18775C0.298409 5.19358 0.298409 5.19912 0.297534 5.20466C0.295201 5.21983 0.291992 5.2347 0.291992 5.25016V11.9585C0.291992 12.7626 0.9462 13.4168 1.75033 13.4168H12.2503C13.0545 13.4168 13.7087 12.7626 13.7087 11.9585V5.25016C13.7087 5.2347 13.7055 5.21983 13.7031 5.20466ZM7.00033 1.22808L12.8993 5.25016L7.00033 9.27225L1.10137 5.25016L7.00033 1.22808Z"
-                                    fill="#65574A"/>
-                            </svg>
-                            <div>Email Alert</div>
-                            <div>689</div>
-                        </div>
-                        <div>Please link your email address</div>
+
                     </div>
+                    <div className='user-info-botton-div'>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M13.7031 5.20466C13.7022 5.19883 13.7022 5.19329 13.7011 5.18745C13.6938 5.1542 13.6801 5.12329 13.662 5.095C13.6602 5.09208 13.66 5.08858 13.6582 5.08566C13.6562 5.08246 13.6527 5.081 13.6503 5.07808C13.6311 5.05212 13.6092 5.02791 13.5815 5.00925L13.5757 5.00516L13.5751 5.00487L7.16453 0.634246C7.06537 0.566579 6.93499 0.566579 6.83583 0.634246L0.426159 5.00458C0.426159 5.00458 0.425284 5.00516 0.424701 5.00545L0.419159 5.00925C0.391742 5.02791 0.369576 5.05212 0.350326 5.07808C0.347992 5.08129 0.344492 5.08275 0.342451 5.08595C0.340409 5.08887 0.340409 5.09237 0.338659 5.09529C0.320576 5.12387 0.306867 5.1545 0.299576 5.18775C0.298409 5.19358 0.298409 5.19912 0.297534 5.20466C0.295201 5.21983 0.291992 5.2347 0.291992 5.25016V11.9585C0.291992 12.7626 0.9462 13.4168 1.75033 13.4168H12.2503C13.0545 13.4168 13.7087 12.7626 13.7087 11.9585V5.25016C13.7087 5.2347 13.7055 5.21983 13.7031 5.20466ZM7.00033 1.22808L12.8993 5.25016L7.00033 9.27225L1.10137 5.25016L7.00033 1.22808Z"
+                                fill="#65574A"/>
+                        </svg>
+                        <div className='user-info-botton-div-font'>Email Alert</div>
+                        <Switch
+                            className="switch-style"
+                            size="small"
+                            defaultChecked />
+                    </div>
+                    <div className='email-address-style'>Please link your email address</div>
+
                     <Modal
                         open={open}
                         cancelText="取消"
