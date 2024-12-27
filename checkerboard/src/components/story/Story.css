@@ -680,6 +680,7 @@
     overflow: hidden;
     width: 420px;
     height: 440px;
+    cursor: pointer;
 }
 
 .five-dog img {

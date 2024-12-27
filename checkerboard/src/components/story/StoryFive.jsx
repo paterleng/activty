@@ -1,7 +1,12 @@
 import './Story.css';
 import Header from "../header/Header.jsx";
+import {useNavigate} from "react-router-dom";
 
 const StoryFive = () => {
+    const navigate = useNavigate();
+    const goGame= ()=>{
+        navigate('/')
+    }
     return (
         <div className='five-div' style={{position: 'relative'}}>
             <Header/>
@@ -19,7 +24,7 @@ const StoryFive = () => {
                 </div>
                 <div className='five-div-content'>Gamified 100% Fair Launch for $CHICO</div>
             </div>
-            <div className='five-dog'>
+            <div onClick={goGame} className='five-dog'>
                 <img src='./images/picture/five-dog.png' alt="Example"/>
             </div>
             <div className='five-step-three'>

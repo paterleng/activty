@@ -7,6 +7,7 @@ import LoginForm from './pages/login/LoginForm';
 import Rule from './components/rule/Rule.jsx';
 import Chess from "./components/chessboard/Chess.jsx";
 import StoryFirst from "./components/story/StoryFirst.jsx";
+import StoryFive from "./components/story/StoryFive.jsx";
 
 
 // 创建 AuthContext 用于管理用户登录状态
@@ -22,7 +23,8 @@ function App() {
        <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
         <Router>
           <Routes>
-              <Route path='/first' element={<StoryFirst />} />
+              <Route path='/five' element={<StoryFive />} />
+              <Route path='/first' element={<SlideShow />} />
                 <Route path='/' element={<Expand />}></Route>
                 <Route path="/board" element={<Chess />} />
                 <Route path="/login" element={<LoginForm loginIn={isLoggedIn} />} />
