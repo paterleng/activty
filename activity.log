@@ -2263,3 +2263,7 @@
 {"level":"INFO","time":"2024-12-27T18:46:55.686+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
 {"level":"INFO","time":"2024-12-27T18:46:56.102+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
 {"level":"INFO","time":"2024-12-27T18:47:01.512+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-27T19:34:25.351+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-27T19:34:25.357+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-27T19:34:25.835+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-27T19:34:31.585+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}

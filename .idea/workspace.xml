@@ -7,7 +7,10 @@
     <list default="true" id="81e28f08-7929-4107-9a7a-4c51f856d31e" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/activity.log" beforeDir="false" afterPath="$PROJECT_DIR$/activity.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/table/RecordTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/table/RecordTable.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkerboard/src/components/userinfo/UserInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/userinfo/UserInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/checkerboard.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/checkerboard.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/record.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/record.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

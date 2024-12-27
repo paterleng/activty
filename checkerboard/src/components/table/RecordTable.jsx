@@ -70,7 +70,15 @@ const RecordTable = () => {
               dataSource={data}
               renderItem={(item) => (
                 <List.Item style={{ margin: 0 ,color: 'white'}}>
-                  <div>{item.owner} Occupied {item.old_owner} Altar with {item.transaction_amount} USDT!</div>
+                    <div style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+
+                    }}>
+                        <div>头像</div>
+                        <div>{item.owner} Occupied {item.old_owner} Altar with {item.transaction_amount} USDT!</div>
+                    </div>
                 </List.Item>
               )}
             />

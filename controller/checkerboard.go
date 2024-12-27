@@ -109,6 +109,7 @@ func (p *CheckerBoardController) UserBetting(c *gin.Context) {
 		bet[i].OldName = record[uint(bet[i].GridId)].Owner
 		bet[i].OldOwner = record[uint(bet[i].GridId)].UserId
 		bet[i].Name = userInfo.UserName
+		bet[i].AvatarId = userInfo.AvatarId
 		//更新格子信息
 		checkerBoards[i].Owner = userInfo.UserName
 		checkerBoards[i].UserId = userId

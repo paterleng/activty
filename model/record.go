@@ -7,6 +7,7 @@ type Record struct {
 	gorm.Model
 	Owner             string  `json:"owner" gorm:"column:owner"`                                              // 拥有者
 	OldOwner          string  `json:"old_owner" gorm:"column:old_owner"`                                      // 原来拥有者
+	AvatarId          int     `json:"avatar_id" gorm:"column:avatar_id"`                                      // 用户头像id
 	Name              string  `json:"name" gorm:"column:name"`                                                // 现在拥有者的用户名
 	OldName           string  `json:"old_name" gorm:"column:old_name"`                                        // 之前拥有者的用户名
 	OldAmount         float64 `json:"old_amount" gorm:"column:old_amount"`                                    // 成交前价格
