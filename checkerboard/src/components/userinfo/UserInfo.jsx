@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import {useState, useLayoutEffect} from "react";
 import { AntDesignOutlined} from '@ant-design/icons';
 import {Modal, Avatar, message, Switch} from 'antd';
 import { UserMessage,UpdateUserInfo } from '../../apis/manage';
@@ -45,12 +45,12 @@ const UserInfo = () => {
         available: 0,
     });
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const fetchUserInfo = async () => {
             // 当用户登录的时候才会调用
             if (localStorage.getItem("token")) {
                 const response = await UserMessage()
-                setUserInfo(response.data)
+                setUserInfo(response.data);
                 console.log(response.data);
                 dispatch(setUser(response.data))
                 setImage(response.data.avatar_id-1)
