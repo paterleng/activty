@@ -9,7 +9,7 @@ const StoryFirst = () => {
     }
 
     return (
-        <div style={{position: 'relative'}}>
+        <div style={{position: 'relative',width: "100%", height: "100vh"}}>
             <Header/>
             <svg className='first-svg-first-style' width="1310" height="200" viewBox="0 0 1310 225" fill="none"
                  xmlns="http://www.w3.org/2000/svg">
