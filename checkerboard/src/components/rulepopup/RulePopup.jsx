@@ -7,10 +7,13 @@ const RulePopup = () => {
     const ruleClickHandle = () => {
         navigate("/rule")
     }
+    const story = ()=>{
+        navigate("/first")
+    }
     return (
         <div className='rule-box'>
            <div className='rule-box-in'>
-                <div className='style-margin'>Review Story</div>
+                <div onClick={story} className='style-margin'>Review Story</div>
                 <Divider
                     style={{
                         borderColor: '#000000',

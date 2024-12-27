@@ -11,7 +11,10 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.5.2",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@metamask/sdk": "^0.30.3",
+    "@mui/material": "^6.3.0",
     "@rainbow-me/rainbowkit": "^2.2.0",
     "@react-spring/web": "^9.7.5",
     "@reduxjs/toolkit": "^2.4.0",

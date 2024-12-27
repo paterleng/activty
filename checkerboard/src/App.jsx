@@ -6,6 +6,7 @@ import RegisterForm from './pages/RegisterForm';
 import LoginForm from './pages/login/LoginForm';
 import Rule from './components/rule/Rule.jsx';
 import Chess from "./components/chessboard/Chess.jsx";
+import StoryFirst from "./components/story/StoryFirst.jsx";
 
 
 // 创建 AuthContext 用于管理用户登录状态
@@ -21,17 +22,18 @@ function App() {
        <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
         <Router>
           <Routes>
-            <Route path='/' element={<Expand />}></Route>
-            <Route path="/board" element={<Chess />} />
-            <Route path="/login" element={<LoginForm loginIn={isLoggedIn} />} />
-            <Route path="/register" element={<RegisterForm />} />
-            <Route path='/rule' element={<Rule />}></Route>
-            <Route
-              path="/"
-              element={
-                isLoggedIn ? <Expand to="/" replace /> : <Navigate to="/login" replace />
-              }
-            />
+              <Route path='/first' element={<StoryFirst />} />
+                <Route path='/' element={<Expand />}></Route>
+                <Route path="/board" element={<Chess />} />
+                <Route path="/login" element={<LoginForm loginIn={isLoggedIn} />} />
+                <Route path="/register" element={<RegisterForm />} />
+                <Route path='/rule' element={<Rule />}></Route>
+                <Route
+                  path="/"
+                  element={
+                    isLoggedIn ? <Expand to="/" replace /> : <Navigate to="/login" replace />
+                  }
+                />
           </Routes>
         </Router>
       </AuthContext.Provider>
