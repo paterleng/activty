@@ -22,18 +22,18 @@ function App() {
        <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
         <Router>
           <Routes>
-              <Route path='/first-story' element={<StoryFirst />}></Route>
-            <Route path='/' element={<Expand />}></Route>
-            <Route path="/board" element={<Chess />} />
-            <Route path="/login" element={<LoginForm loginIn={isLoggedIn} />} />
-            <Route path="/register" element={<RegisterForm />} />
-            <Route path='/rule' element={<Rule />}></Route>
-            <Route
-              path="/"
-              element={
-                isLoggedIn ? <Expand to="/" replace /> : <Navigate to="/login" replace />
-              }
-            />
+              <Route path='/first' element={<StoryFirst />} />
+                <Route path='/' element={<Expand />}></Route>
+                <Route path="/board" element={<Chess />} />
+                <Route path="/login" element={<LoginForm loginIn={isLoggedIn} />} />
+                <Route path="/register" element={<RegisterForm />} />
+                <Route path='/rule' element={<Rule />}></Route>
+                <Route
+                  path="/"
+                  element={
+                    isLoggedIn ? <Expand to="/" replace /> : <Navigate to="/login" replace />
+                  }
+                />
           </Routes>
         </Router>
       </AuthContext.Provider>

@@ -34,7 +34,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* 让 SVG 垂直居中 */
 }
 
 .rotating-svg {
@@ -52,10 +51,13 @@
 }
 
 .first-svg-dog{
+    width: 440px;
+    height: 440px;
     position: absolute;
     top: 200px;
     left: 450px;
     z-index: 5;
+    background-image: url("./images/picture/dog.svg");
 }
 
 .first-svg-div{
@@ -65,7 +67,17 @@
     width: 900px;
     height: 100px;
     background-color: #000000;
+    overflow: hidden;
     border-radius: 137px;
+    animation: marquee 5s linear infinite; /* 动画持续时间可调整 */
+}
+@keyframes first-svg-div {
+    0% {
+        transform: translateX(100%); /* 从右侧开始 */
+    }
+    100% {
+        transform: translateX(-100%); /* 滚动到左侧消失 */
+    }
 }
 
 .first-button {
@@ -89,4 +101,625 @@
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
 
+}
+
+/*第二个故事页样式*/
+.second-div{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-image: url(./images/bg-image/stpry-bg.png) !important;
+    background-position: center; /* 居中显示图片 */
+    background-repeat: no-repeat; /* 不重复 */
+    background-size:
+            100% 100%,
+            100% 100%,
+            100% 100%;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+}
+
+.second-main{
+    display: flex;
+}
+
+.second-dog-div{
+    position: absolute;
+    width: 600px;
+    height: 500px;
+    top: 410px;
+    left: 180px;
+    display: flex; /* 使内部内容对齐 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    overflow: hidden; /* 防止图片溢出 */
+}
+/* 图片样式 */
+.second-dog-div img {
+    width: 100%; /* 图片宽度填充容器 */
+    height: 100%; /* 图片高度填充容器 */
+    object-fit: cover; /* 保持比例填满容器，可能会裁剪 */
+}
+
+.second-font-div-external{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 171px;
+    left: 810px;
+    width: 450px;
+    height: 740px;
+    background-color: #000000;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+}
+
+.second-font-div-internal{
+    display: flex;
+    flex-direction: column;
+    width: 430px;
+    height: 720px;
+    background-color: #000000;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+    background-image: url("./images/bg-image/paicture.png");
+    background-repeat: no-repeat; /* 不重复 */
+    background-size:
+            100% 100%,
+            100% 100%,
+            100% 100%,
+            100% 100%;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+}
+
+.middle-style-font{
+    font-family: Seymour One;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 20px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #F6F5F4;
+    width: 250px;
+
+}
+
+.fitdog-div{
+    position: absolute;
+    top: 340px;
+    left: 1200px;
+    display: flex; /* 使内部内容对齐 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    overflow: hidden; /* 防止图片溢出 */
+    width: 410px;
+    height: 410px;
+
+}
+
+/* 图片样式 */
+.fitdog-div img {
+    width: 100%; /* 图片宽度填充容器 */
+    height: 100%; /* 图片高度填充容器 */
+    object-fit: cover; /* 保持比例填满容器，可能会裁剪 */
+}
+
+.buttom-div-style{
+    position: absolute;
+    top:680px;
+    left: 1250px;
+    height: 220px;
+    width: 320px;
+    border: 8px solid #000000;
+    border-radius: 10px;
+    background-color: #262626;
+    background-image: url("./images/bg-image/box-bg.png");
+    background-repeat: no-repeat; /* 不重复 */
+    background-size:
+            100% 100%,
+            100% 100%,
+            100% 100%,
+            100% 100%;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+}
+
+
+/*第三个故事页样式*/
+
+.three-div-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.three-div-top{
+    display: flex;
+    width: 770px;
+    height: 310px;
+    background-color: #000000;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+.three-image-top-inner{
+    width: 300px;
+    height: 310px;
+    display: flex; /* 使内部内容对齐 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    overflow: hidden; /* 防止图片溢出 */
+}
+
+.three-image-top-inner img {
+    width: 100%; /* 图片宽度填充容器 */
+    height: 100%; /* 图片高度填充容器 */
+    object-fit: cover; /* 保持比例填满容器，可能会裁剪 */
+}
+
+.three-div-top-right{
+    width: 400px;
+    height: 150px;
+    margin-top: 10px;
+    font-family: Seymour One;
+    font-style: italic;
+    font-size: 47px;
+    font-weight: 600;
+    line-height: 56px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.three-div-middle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 420px;
+    height: 310px;
+    top: 300px;
+    left: 900px;
+    background-image: url("./images/picture/liaotianyangshi.png");
+    background-repeat: no-repeat; /* 不重复 */
+    background-size:
+            100% 100%,
+            100% 100%,
+            100% 100%,
+            100% 100%;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    z-index: 4;
+}
+
+.three-div-middle-font{
+    width:250px;
+    font-family: Seymour One;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40.22px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #3C342F;
+}
+
+.three-div-middle-fit-dog{
+    position: absolute;
+    top: 310px;
+    left: 1250px;
+    width: 250px;
+    height: 250px;
+    display: flex; /* 使内部内容对齐 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    overflow: hidden; /* 防止图片溢出 */
+    z-index: 4;
+
+}
+.three-div-middle-fit-dog img {
+    width: 100%; /* 图片宽度填充容器 */
+    height: 100%; /* 图片高度填充容器 */
+    object-fit: cover; /* 保持比例填满容器，可能会裁剪 */
+}
+
+
+.three-div-bottom{
+    position:relative ;
+    width: 770px;
+    height: 440px;
+    background-color: #000000;
+    border-radius: 10px;
+    margin-top: 20px;
+    z-index: 1;
+}
+
+.three-image-bottom-dog{
+    position: absolute;
+    top: -40px;
+    left: 30px;
+    display: flex; /* 使内部内容对齐 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    overflow: hidden; /* 防止图片溢出 */
+    width: 310px;
+    height: 383px;
+    z-index: 5;
+}
+.three-image-bottom-dog img {
+    width: 100%; /* 图片宽度填充容器 */
+    height: 100%; /* 图片高度填充容器 */
+    object-fit: cover; /* 保持比例填满容器，可能会裁剪 */
+}
+
+.three-buttom-div-text-one{
+    position: absolute;
+    top: 230px;
+    left: 390px;
+    width:350px;
+    height: 100px;
+    background-color: #3C342F;
+    border-radius: 10px;
+}
+
+.three-buttom-div-text-title{
+    font-family: Seymour One;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 30.16px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #F6F5F4;
+    margin-left: 5px;
+
+}
+.three-buttom-div-text-content{
+    font-family: SF Pro;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 19.09px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #F6F5F4;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.three-buttom-div-text-two{
+    position: absolute;
+    top: 340px;
+    left: 20px;
+    width:350px;
+    height: 100px;
+    background-color: #3C342F;
+    border-radius: 10px;
+}
+.three-buttom-div-text-three{
+    position: absolute;
+    top: 340px;
+    left: 390px;
+    width:350px;
+    height: 100px;
+    background-color: #3C342F;
+    border-radius: 10px;
+}
+
+/*第四页样式*/
+.four-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-image: url(./images/bg-image/stpry-bg.png) !important;
+    background-position: center; /* 居中显示图片 */
+    background-repeat: no-repeat; /* 不重复 */
+    background-size:
+            100% 100%,
+            100% 100%,
+            100% 100%;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+}
+
+
+.four-div-main-external{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 1220px;
+    height: 770px;
+    background-color: #000000;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
+}
+
+.four-div-main-internal{
+    position: relative;
+    display: flex;
+    width: 1200px;
+    height: 750px;
+    background-color: #292929;
+    background-image: url("./images/picture/four-bg-one.png") ;
+    background-position: center; /* 居中显示图片 */
+    background-repeat: no-repeat; /* 不重复 */
+    background-size:
+            100% 100%,
+            100% 100%,
+            100% 100%;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
+}
+
+.four-div-left {
+    position: absolute;
+    top: 20px;
+    left: 250px;
+}
+
+.four-div-left-title{
+    font-family: Seymour One;
+    font-size: 47px;
+    font-weight: 800;
+    line-height: 59.07px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin-top: 20px;
+    letter-spacing: 3px; /* 增加字间距 */
+}
+
+.four-div-left-contant{
+    font-family: Seymour One;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17.6px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin-top: 50px;
+    width: 200px;
+    height: 540px;
+    color: #F6F5F4;
+
+}
+
+.four-div-right{
+    position: absolute;
+    top: 60px;
+    left: 600px;
+    width: 460px;
+    height: 460px;
+}
+
+.four-div-right-buttom-div{
+    position: absolute;
+    top: 330px;
+    left: 180px;
+}
+
+.four-div-right-buttom-div-one{
+    font-family: SF Pro;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 59.67px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #3C342F;
+}
+
+.four-div-right-buttom-div-two{
+    font-family: SF Pro;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.64px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #3C342F;
+}
+
+.four-div-right-top-div{
+    position: absolute;
+    top: -40px;
+    left: 430px;
+}
+
+.four-div-right-top-div-one{
+    font-family: SF Pro;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 47.73px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.four-div-right-top-div-two{
+    font-family: SF Pro;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.64px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+/*第五个故事页样式*/
+.five-div{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-image: url(./images/bg-image/stpry-bg.png) !important;
+    background-position: center; /* 居中显示图片 */
+    background-repeat: no-repeat; /* 不重复 */
+    background-size:
+            100% 100%,
+            100% 100%,
+            100% 100%;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+}
+
+.five-step-one{
+    position: absolute;
+    top: 120px;
+    left: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    align-content: space-around;
+    flex-wrap: wrap;
+    width: 450px;
+    height: 330px;
+    background-image: url(./images/picture/five-step-one.png) !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%, 100% 100%, 100% 100%;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+
+}
+
+.five-step-one img {
+    width: 100%;
+    height: 100%;
+}
+.five-step-two{
+    position: absolute;
+    top: 550px;
+    left: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    align-content: space-around;
+    flex-wrap: wrap;
+    width: 450px;
+    height: 330px;
+    background-image: url("./images/picture/five-step-two.png") !important;
+    background-position: center; /* 居中显示图片 */
+    background-repeat: no-repeat; /* 不重复 */
+    background-size:
+            100% 100%,
+            100% 100%,
+            100% 100%;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+}
+
+.five-step-two img {
+    width: 100%;
+    height: 100%;
+}
+
+.five-step-three{
+    position: absolute;
+    top: 120px;
+    left: 1180px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    align-content: space-around;
+    flex-wrap: wrap;
+    width: 450px;
+    height: 330px;
+    background-image: url("./images/picture/five-step-three.png") !important;
+    background-position: center; /* 居中显示图片 */
+    background-repeat: no-repeat; /* 不重复 */
+    background-size:
+            100% 100%,
+            100% 100%,
+            100% 100%;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+}
+
+.five-step-three img {
+    width: 100%;
+    height: 100%;
+}
+
+.five-step-four{
+    position: absolute;
+    top: 550px;
+    left: 1180px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    align-content: space-around;
+    flex-wrap: wrap;
+    width: 450px;
+    height: 330px;
+    background-image: url("./images/picture/five-step-one.png") !important;
+    background-position: center; /* 居中显示图片 */
+    background-repeat: no-repeat; /* 不重复 */
+    background-size:
+            100% 100%,
+            100% 100%,
+            100% 100%;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+}
+
+.five-step-four img {
+    width: 100%;
+    height: 100%;
+}
+
+.five-dog{
+    position: absolute;
+    top:250px;
+    left: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 420px;
+    height: 440px;
+}
+
+.five-dog img {
+    width: 100%;
+    height: 100%;
+}
+
+.fiv-text-div{
+    display: flex;
+    align-items: center;
+}
+
+.five-div-color{
+    width: 21px;
+    height: 21px;
+    background-color: #F5E01B;
+}
+.five-div-title{
+    font-style: italic;
+    margin-left: 30px;
+    font-family: Seymour One;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 50.27px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #F6F5F4;
+}
+
+.five-div-content{
+    margin-left: 50px;
+    margin-top: 10px;
+    width: 250px;
+    font-family: SF Pro;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 28.64px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #F6F5F4;
 }

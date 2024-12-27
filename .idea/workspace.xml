@@ -5,15 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81e28f08-7929-4107-9a7a-4c51f856d31e" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/checkerboard/src/components/story/Story.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkerboard/src/components/story/Story.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkerboard/src/components/story/StoryFirst.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkerboard/public/images/bg-image/box-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkerboard/public/images/bg-image/stpry-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkerboard/public/images/picture/dog.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkerboard/public/images/picture/five-dog.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkerboard/public/images/picture/five-step-four.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkerboard/public/images/picture/five-step-one.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkerboard/public/images/picture/five-step-three.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkerboard/public/images/picture/five-step-two.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkerboard/public/images/picture/four-bg-one.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkerboard/public/images/picture/liaotianyangshi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkerboard/public/images/picture/pitdog.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkerboard/public/images/picture/three-fit-dog.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkerboard/public/images/picture/three-one.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkerboard/public/images/picture/three-silam-dog.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkerboard/src/components/story/StoryFive.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkerboard/src/components/story/StoryFour.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkerboard/src/components/story/StorySecond.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkerboard/src/components/story/StoryThree.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/activity.log" beforeDir="false" afterPath="$PROJECT_DIR$/activity.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkerboard/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/rulepopup/RulePopup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/rulepopup/RulePopup.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/story/Story.css" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/story/Story.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/story/StoryFirst.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/story/StoryFirst.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkerboard/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/pages/home/Expand.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/pages/home/Expand.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

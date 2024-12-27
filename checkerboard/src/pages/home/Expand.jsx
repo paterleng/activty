@@ -227,8 +227,6 @@ const Expand = () => {
                                                     </clipPath>
                                                 </defs>
                                             </svg>
-
-                                            {/*<img src={cell.img} alt="" style={{width: '50px', height: '50px'}}/>*/}
                                         </div>
                                         <div className='cellTitle'>{cell.title}</div>
                                     </div>
