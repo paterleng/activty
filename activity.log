@@ -2259,3 +2259,7 @@
 {"level":"INFO","time":"2024-12-27T17:01:37.743+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=2)次上涨"}
 {"level":"INFO","time":"2024-12-27T18:01:37.666+0800","caller":"handle/scheduledtasks.go:49","msg":"定时入库成功第%!t(int=3)次上涨"}
 {"level":"ERROR","time":"2024-12-27T18:43:11.441+0800","caller":"middleware/token.go:28","msg":"token 无效","error":"token不正确"}
+{"level":"INFO","time":"2024-12-27T18:46:55.681+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-27T18:46:55.686+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-27T18:46:56.102+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-27T18:47:01.512+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
