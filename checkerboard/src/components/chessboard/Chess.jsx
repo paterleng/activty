@@ -37,7 +37,7 @@ const Chess = () => {
             </div>
             <div className='main'>
                 <UserInfo/>
-                {blockId !== null && gridId !== null && <ChessBoard bId={blockId} gId={gridId} />}
+                {blockId !== null && gridId !== null && <ChessBoard gId={gridId} />}2
             </div>
         </div>
     );
