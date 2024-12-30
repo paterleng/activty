@@ -9,7 +9,7 @@ import Shiled from "../shiled/Shiled.jsx";
 import {setPage} from "../../store/store.js";
 import ShiledCountDown from "../shiledcountdown/ShiledCountDown.jsx";
 
-const ChessBoard = ({bId,gId}) => {
+const ChessBoard = ({gId}) => {
     const [selectedBoxes, setSelectedBoxes] = useState([]);
     const [detailBoxes, setDetailBoxes] = useState([]);// 记录多选盒子的详细信息
     const multipleChoice = useRef(false);
@@ -46,7 +46,7 @@ const ChessBoard = ({bId,gId}) => {
         }
     }
     useEffect(()=>{
-        setBlockId(bId);
+        setBlockId(page);
         setGridId(gId);
         // 如果page发生变化，就重新渲染组件数据
         getBoardInfo();
