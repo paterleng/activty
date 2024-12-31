@@ -226,11 +226,29 @@ const ChessBoard = ({gId}) => {
 
     // 向左
     const leftHandle = (id) => {
+        console.log(id)
+        if ((id-1) === 0){
+            console.log('jinlail')
+            return
+        }
+        if (id-1 === 5){
+            let nextId = id-2
+            dispatch(setPage(nextId))
+            return;
+        }
         let nextId = id - 1
         dispatch(setPage(nextId))
     }
     // 向右
     const rightHandle = (id) => {
+        if (id+1 === 10){
+            return
+        }
+        if (id+1 === 5){
+            let nextId = id+2
+            dispatch(setPage(nextId))
+            return;
+        }
         let nextId = id + 1
         dispatch(setPage(nextId))
     }
@@ -280,11 +298,33 @@ const ChessBoard = ({gId}) => {
         <div className="container">
             <div className='container-left'>
                 <div className="countdown-wrapper-son">
-                    <button onClick={() => leftHandle(blockId)}>向左</button>
-                    <div>BarkingCanyon</div>
-                    <p>当前位置： <strong>{page}</strong></p>
+                    <div>Barking Canyon</div>
                     <button onClick={goHome}>返回主页</button>
-                    <button onClick={() => rightHandle(blockId)}>向右</button>
+                    <div className='countdown-wrapper-son-btn'>
+                        <div style={{cursor:'pointer'}} onClick={() => leftHandle(blockId)}>
+                            <svg width="32" height="32" viewBox="0 0 28 28" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="14" cy="14" r="14" fill="#3C342F"/>
+                                <path d="M20.0003 13.8369H8.32617" stroke="#65574A" stroke-width="2"
+                                      stroke-miterlimit="10"
+                                      stroke-linecap="round"/>
+                                <path
+                                    d="M13.4078 8L8.0515 14.1117C7.98283 14.1804 7.98283 14.2491 8.0515 14.3177L13.4765 20.4295"
+                                    stroke="#65574A" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div style={{marginLeft:'15rem',cursor:'pointer'}} onClick={() => rightHandle(blockId)}>
+                            <svg width="32" height="32" viewBox="0 0 28 28" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="14" cy="14" r="14" transform="matrix(-1 0 0 1 28 0)" fill="#3C342F"/>
+                                <path d="M7.99975 13.8369H19.6738" stroke="#65574A" stroke-width="2"
+                                      stroke-miterlimit="10" stroke-linecap="round"/>
+                                <path
+                                    d="M14.5922 8L19.9485 14.1117C20.0172 14.1804 20.0172 14.2491 19.9485 14.3177L14.5235 20.4295"
+                                    stroke="#65574A" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
                 <div className="grid-container" onMouseUp={handleMouseUp}>
                     {boxes && boxes.length > 0 ? (
@@ -299,7 +339,7 @@ const ChessBoard = ({gId}) => {
                                     <div className='shiled-div'>
                                         <svg width="40" height="40" viewBox="0 0 137 137" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="68.39" cy="68.39" r="68.39" fill="url(#paint0_radial_450_4)"/>
+                                        <circle cx="68.39" cy="68.39" r="68.39" fill="url(#paint0_radial_450_4)"/>
                                             <path
                                                 d="M69.6117 46C61.7952 51.211 51.3732 53.4443 43.5566 53.4443C43.5566 71.6829 51.3732 90.2936 69.6117 98.1101C87.8503 90.2936 95.6668 71.6829 95.6668 53.4443C87.8503 53.4443 77.4282 51.211 69.6117 46Z"
                                                 fill="white" fill-opacity="0.73" stroke="#DAACC1" stroke-opacity="0.49"
@@ -373,7 +413,7 @@ const ChessBoard = ({gId}) => {
                 (isChoiceing.current) ?
                     (
                         <div className='betch-container-right'>
-                            <div>
+                            <div className='container-avatar'>
                                 <Avatar
                                     shape="square" size={150}
                                     icon={<AntDesignOutlined/>}
@@ -470,10 +510,6 @@ const ChessBoard = ({gId}) => {
                         </div>
                     )
             }
-            {/*当前格子是否有盾*/}
-
-
-
             {/*余额不足时展示的模态框*/}
             <Modal
                 open={open}

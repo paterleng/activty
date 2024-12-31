@@ -2342,3 +2342,19 @@
 {"level":"INFO","time":"2024-12-31T16:05:02.844+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=3)连接"}
 {"level":"INFO","time":"2024-12-31T16:05:13.669+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=3)连接"}
 {"level":"INFO","time":"2024-12-31T16:05:16.837+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=3)连接"}
+{"level":"INFO","time":"2024-12-31T16:20:52.979+0800","caller":"utils/init.go:160","msg":"init logger success"}
+{"level":"INFO","time":"2024-12-31T16:20:52.983+0800","caller":"utils/init.go:42","msg":"初始化logger成功"}
+{"level":"INFO","time":"2024-12-31T16:20:53.442+0800","caller":"utils/init.go:47","msg":"初始化mysql成功"}
+{"level":"INFO","time":"2024-12-31T16:20:59.263+0800","caller":"handle/create_shiled.go:26","msg":"初始化盾信息成功"}
+{"level":"INFO","time":"2024-12-31T16:21:15.344+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=3)连接"}
+{"level":"INFO","time":"2024-12-31T16:21:31.993+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=3)连接"}
+{"level":"ERROR","time":"2024-12-31T16:21:45.408+0800","caller":"controller/checkerboard.go:86","msg":"用户提交的数据不足以买下"}
+{"level":"ERROR","time":"2024-12-31T16:22:09.877+0800","caller":"controller/checkerboard.go:86","msg":"用户提交的数据不足以买下"}
+{"level":"ERROR","time":"2024-12-31T16:22:11.101+0800","caller":"controller/checkerboard.go:86","msg":"用户提交的数据不足以买下"}
+{"level":"INFO","time":"2024-12-31T16:23:56.786+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=3)连接"}
+{"level":"ERROR","time":"2024-12-31T16:24:10.467+0800","caller":"controller/checkerboard.go:86","msg":"用户提交的数据不足以买下"}
+{"level":"ERROR","time":"2024-12-31T16:24:13.270+0800","caller":"controller/checkerboard.go:86","msg":"用户提交的数据不足以买下"}
+{"level":"INFO","time":"2024-12-31T16:25:47.673+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=3)连接"}
+{"level":"INFO","time":"2024-12-31T16:37:37.310+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=3)连接"}
+{"level":"INFO","time":"2024-12-31T16:41:30.442+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=2)连接"}
+{"level":"INFO","time":"2024-12-31T16:42:52.563+0800","caller":"handle/wshandle.go:95","msg":"用户0xb1b49f717045f0a1a667ccb56e5caaf47d16116f通过客户端主动关闭模块%!t(int=1)连接"}
