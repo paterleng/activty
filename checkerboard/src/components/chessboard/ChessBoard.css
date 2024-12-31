@@ -23,7 +23,7 @@
     align-items: center;
     justify-content: center;
     height: 750rem;
-        width: 1324rem;
+        width: 1124rem;
         margin-top: 40rem;
     clip-path: polygon(3% 0, 100% 0, 100% 100%, 0 100%);
     background-color: #000000;
@@ -40,10 +40,11 @@
     flex-wrap: wrap;
     flex-direction: column;
     height: 730rem;
-        width: 989rem;
+        width: 789rem;
         margin-left: 94rem;
     background-color: #191919;
     clip-path: polygon(4% 0, 100% 0, 100% 100%, 0 100%);
+    position: relative;
 }
 
 .betch-container-right {
@@ -59,9 +60,9 @@
     height: 729rem;
         width: 300rem;
 }
-
 .batch-avatar{
     margin-top: 130rem;
+    border: 8px solid #3C342F;
 }
 
 .is-owner{
@@ -226,11 +227,24 @@
 
 .countdown-wrapper-son {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-content: space-around;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     align-items: center;
+    width: 600rem;
+    position: absolute;
+    top: 20rem;
+    font-family: Seymour One;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 30.16px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
 
+.countdown-wrapper-son-btn{
+    display: flex;
+    justify-content: center;
 }
 
 .countdown-wrapper>* {
@@ -289,15 +303,19 @@
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
+    background-color: #191919 ;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     gap: 5rem;
-        width: 500rem;
-        height: 500rem;
-        padding: 10rem;
+    width: 500rem;
+    height: 500rem;
+    padding: 10rem;
+    position: absolute;
+    top: 60rem;
+    left: 70rem;
 }
 
 .shiled-div{
