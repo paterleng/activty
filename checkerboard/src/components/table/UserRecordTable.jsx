@@ -7,6 +7,7 @@ const UserRecordTable = () => {
       <div className='user-info-model-external'>
         <div className="user-info-model-internal">
           <div className="record-div-style">
+
             <RecordScrollbar />
           </div>
         </div>

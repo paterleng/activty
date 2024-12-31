@@ -1,8 +1,8 @@
 
 .custom-scroll-container {
     display: flex;
-    width: 700px;
-    height: 400px;
+    width: 700rem;
+    height: 400rem;
     background-color: #000000;
     overflow: hidden;
     position: relative;
@@ -13,7 +13,8 @@
     flex: 1;
     height: 100%;
     overflow-y: scroll;
-    padding-right: 15px;
+    padding-right: 15rem;
+    font-size: 16rem;
     box-sizing: border-box;
     scrollbar-width: none;
 }
@@ -26,16 +27,16 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 5px;
+    width: 5rem;
     height: 80%;
     background-color: #292929;
 }
 
 .scrollbar-thumb {
     position: absolute;
-    width: 30px;
+    width: 30rem;
     background-color: #ffffff;
-    border-radius: 5px;
+    border-radius: 5rem;
     cursor: pointer;
     transition: background-color 0.3s;
 }

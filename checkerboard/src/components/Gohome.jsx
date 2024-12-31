@@ -7,11 +7,11 @@ const GoHome = () => {
         navigate('/')
     }
     const style = {
-        width:'200px',
-        height:'40px',
+        width:'200rem',
+        height:'40rem',
         backgroundColor:'#F5E01B',
-        border:'1px solid #F5E01B',
-        borderRadius:'12px',
+        border:'1rem solid #F5E01B',
+        borderRadius:'12rem',
         position:'absolute',
         fontWeight:'bolder',
         cursor:'pointer',

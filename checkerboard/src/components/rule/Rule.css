@@ -9,8 +9,8 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    width: 1020px;
-    height: 720px;
+    width: 1020rem;
+        height: 720rem;
     clip-path: polygon(10% 0, 90% 10%, 100% 90%, 0 100%);
     background: #262626;
     z-index: 1;
@@ -24,15 +24,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    width: 1000px;
-    height: 700px;
+    width: 1000rem;
+        height: 700rem;
     clip-path: polygon(10% 0, 90% 10%, 100% 90%, 0 100%);
     background: #000000;
     z-index: 2;
 }
 
 .content {
-    width: 600px;
+    width: 600rem;
     line-height: 1.6;
     word-wrap: break-word;  /* 强制单词换行 */
     word-break: break-word; /* 打破长单词以换行 */

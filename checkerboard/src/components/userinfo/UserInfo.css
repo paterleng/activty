@@ -5,9 +5,9 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    margin-top: 40px;
-    width: 420px;
-    height: 750px;
+    margin-top: 40rem;
+        width: 420rem;
+        height: 750rem;
     clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
     background: #000000;
     z-index: 1;
@@ -17,9 +17,9 @@
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    margin-left: 3px;
-    width: 400px;
-    height: 730px;
+    margin-left: 3rem;
+        width: 400rem;
+        height: 730rem;
     clip-path: polygon(0 0, 99% 0, 89% 100%, 0 100%);
     background: #191919;
     z-index: 2;
@@ -31,10 +31,10 @@
     position: relative;
     display: flex;
     flex-wrap: nowrap;
-    height: 130px;
+    height: 130rem;
     flex-direction: row;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 10rem;
 }
 
 .data-style{
@@ -46,15 +46,15 @@
 }
 
 .user-info-btn{
-    width: 140px;
-    height: 35px;
-    border: 4px solid #262626;
-    border-radius: 8px;
+    width: 140rem;
+        height: 35rem;
+        border: 4rem solid #262626;
+        border-radius: 8rem;
     background-color: #000000;
     font-family: SF Pro;
-    font-size: 12px;
+    font-size: 12rem;
     font-weight: 700;
-    line-height: 14.32px;
+    line-height: 14.32rem;
     text-align: center;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
@@ -69,15 +69,15 @@
     justify-content: space-between;
     align-content: center;
     width: 100%;
-    margin-top: 15px;
+    margin-top: 15rem;
 
 }
 
 .data-style-middle-font{
     font-family: SF Pro;
-    font-size: 12px;
+    font-size: 12rem;
     font-weight: 400;
-    line-height: 23px;
+    line-height: 23rem;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
@@ -86,9 +86,9 @@
 
 .data-style-middle-amount{
     font-family: SF Pro;
-    font-size: 14px;
+    font-size: 14rem;
     font-weight: 700;
-    line-height: 23px;
+    line-height: 23rem;
     text-align: right;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
@@ -101,17 +101,17 @@
 }
 
 .line-style-under{
-    margin-top: 100px;
-    height: 2px;
-    width: 358px;
+    margin-top: 100rem;
+        height: 2rem;
+        width: 358rem;
     background-color: #000000;
 }
 
 .sol-avaliable{
     font-family: SF Pro;
-    font-size: 16px;
+    font-size: 16rem;
     font-weight: 700;
-    line-height: 19.09px;
+    line-height: 19.09rem;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
@@ -119,9 +119,9 @@
 
 .sol-avaliable-amount{
     font-family: SF Pro;
-    font-size: 24px;
+    font-size: 24rem;
     font-weight: 700;
-    line-height: 28.64px;
+    line-height: 28.64rem;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
@@ -129,50 +129,50 @@
 }
 
 .line-style{
-    height: 2px;
-    width: 380px;
+    height: 2rem;
+        width: 380rem;
     background-color: #000000;
 }
 
 .line-under-div{
-    margin-top: 40px;
-    margin-left: 30px;
+    margin-top: 40rem;
+        margin-left: 30rem;
 }
 
 .line-under-button-div{
-    margin-left: 30px;
+    margin-left: 30rem;
 }
 
 .user-info-botton-div{
     display: flex;
     align-items: center;
-    margin-top: 20px;
-    height: 30px;
+    margin-top: 20rem;
+        height: 30rem;
 }
 
 .user-info-botton-div-font{
     font-family: SF Pro;
-    font-size: 14px;
+    font-size: 14rem;
     font-weight: 400;
-    line-height: 16.71px;
+    line-height: 16.71rem;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
     color: #E8E6E2 !important;
-    margin-left: 10px;
-    margin-right: 3px;
+    margin-left: 10rem;
+        margin-right: 3rem;
 }
 
 .switch-style{
-    margin-left: 10px;
+    margin-left: 10rem;
 }
 
 .email-address-style{
-    margin-top: 10px;
+    margin-top: 10rem;
     font-family: SF Pro;
-    font-size: 14px;
+    font-size: 14rem;
     font-weight: 400;
-    line-height: 16.71px;
+    line-height: 16.71rem;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
@@ -185,15 +185,15 @@
     align-content: center;
     align-items: center;
     justify-content: center;
-    width: 31px;
-    height: 22px;
+    width: 31rem;
+        height: 22rem;
     background-color: #3C342F;
-    margin-left: 10px;
-    border-radius: 10px;
+    margin-left: 10rem;
+        border-radius: 10rem;
     font-family: SF Pro;
-    font-size: 12px;
+    font-size: 12rem;
     font-weight: 700;
-    line-height: 14.32px;
+    line-height: 14.32rem;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
@@ -205,8 +205,8 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    max-width: 800px;
-    height: 300px;
+    max-width: 800rem;
+        height: 300rem;
     margin: 0 auto;
 }
 
@@ -214,10 +214,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 100px;
+    width: 100rem;
+        height: 100rem;
     border-radius: 50%;
-    margin: 20px;
+    margin: 20rem;
     overflow: hidden;
     background-color: #f4f4f4;
 }
@@ -229,23 +229,23 @@
 }
 
 .image-box.selected {
-    border: 2px solid blue;
+    border: 2rem solid blue;
 }
 
 .icon-container {
     position: absolute;
-    bottom: 21px;
-    right: 300px;
+    bottom: 21rem;
+        right: 300rem;
     z-index: 1;
 }
 
 .edit-icon {
-    font-size: 24px;
+    font-size: 24rem;
     transition: all 0.3s ease;
 }
 
 .edit-icon:hover {
-    font-size: 30px;
+    font-size: 30rem;
     color: #1890ff;
 }
 
@@ -259,7 +259,7 @@
     justify-content: center;
     flex-direction: row;
     clip-path: polygon(10% 0, 90% 10%, 100% 90%, 0 100%);
-    padding: 10px;
+    padding: 10rem;
     background-color: #292929;
     z-index: 1;
 }
@@ -270,8 +270,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 1000px;
-    height: 600px;
+    width: 1000rem;
+        height: 600rem;
     clip-path: polygon(10% 0, 90% 10%, 100% 90%, 0 100%);
     background: #000000;
     z-index: 2;
@@ -284,18 +284,19 @@
     align-items: center;
     position: absolute;
     cursor: pointer;
-    top: 50px;
-    right: 93px;
-    width: 48px;
-    height: 48px;
+    top: 50rem;
+        right: 93rem;
+        width: 48rem;
+        height: 48rem;
     background-color: #000000;
     border-radius: 50%;
-    border: 5px solid #292929;
+    border: 5rem solid #292929;
     z-index: 5;
 }
 
 .ant-modal-content {
-    padding: 10px !important;/* 通过内边距加上边框 */
+    padding: 10rem !important;
+        /* 通过内边距加上边框 */
     margin: 0 !important;
     background-color: transparent !important;
     color: white !important;
@@ -303,13 +304,13 @@
 
 .record-div-style{
     cursor: default;
-    height: 400px;
-    width: 700px;
+    height: 400rem;
+        width: 700rem;
 }
 
 .font-style {
     transform: scale(1,0.7);
-    font-size: 75px;
+    font-size: 75rem;
     font-weight: bolder;
     color: white !important;
 }
@@ -318,28 +319,28 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 50rem;
 }
 
 
 .buttom-update {
-    width: 250px;
-    height: 40px;
+    width: 250rem;
+        height: 40rem;
     background-color: #ffffff;
     cursor: pointer;
-    border: 1px solid #ffffff;
-    border-radius: 10px;
-    margin-right: 10px;
+    border: 1rem solid #ffffff;
+        border-radius: 10rem;
+        margin-right: 10rem;
 }
 
 .buttom-confirm{
-    width: 250px;
-    height: 40px;
+    width: 250rem;
+        height: 40rem;
     background-color: #1eb91e;
     cursor: pointer;
-    border: 1px solid #1eb91e;
-    border-radius: 10px;
-    margin-left: 10px;
+    border: 1rem solid #1eb91e;
+        border-radius: 10rem;
+        margin-left: 10rem;
 }
 
 

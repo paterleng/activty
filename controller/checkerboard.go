@@ -20,17 +20,17 @@ type CheckerBoardController struct {
 // UserBetting 押注
 func (p *CheckerBoardController) UserBetting(c *gin.Context) {
 	//计算总金额，如果大于100万，就结束，阻止请求
-	amountTotal, err := utils.Amount()
-	if err != nil {
-		utils.Tools.LG.Error("计算总金额失败", zap.Error(err))
-		pkg.ResponseError(c, pkg.CodeActivityEnd)
-		return
-	}
-	if amountTotal >= 1000000 {
-		utils.Tools.LG.Error("活动结束", zap.Error(err))
-		pkg.ResponseError(c, pkg.CodeActivityEnd)
-		return
-	}
+	//amountTotal, err := utils.Amount()
+	//if err != nil {
+	//	utils.Tools.LG.Error("计算总金额失败", zap.Error(err))
+	//	pkg.ResponseError(c, pkg.CodeActivityEnd)
+	//	return
+	//}
+	//if amountTotal >= 1000000 {
+	//	utils.Tools.LG.Error("活动结束", zap.Error(err))
+	//	pkg.ResponseError(c, pkg.CodeActivityEnd)
+	//	return
+	//}
 	userId := c.GetString(pkg.USERID)
 	if userId == "" {
 		p.LG.Error("用户id在上下文中未找到")

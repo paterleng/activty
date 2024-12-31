@@ -36,7 +36,7 @@ const ShiledCountDown = ({durationTime}) => {
                     <div className='shiled-duration-div'>Shield Duration</div>
                 </div>
 
-                <svg style={{marginLeft: '115px'}} width="84" height="84" viewBox="0 0 84 84" fill="none"
+                <svg style={{marginLeft: '115rem'}} width="84" height="84" viewBox="0 0 84 84" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
                     <g opacity="0.41">
                         <circle cx="42" cy="42" r="42" fill="url(#paint0_radial_450_1875)"/>

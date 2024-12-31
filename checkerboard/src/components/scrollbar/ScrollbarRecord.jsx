@@ -141,8 +141,8 @@ const RecordScrollbar = () => {
                     className="scrollbar-thumb"
                     ref={thumbRef}
                     style={{
-                        height: `${thumbHeight}px`,
-                        top: `${scrollPosition}px`,
+                        height: `${thumbHeight}rem`,
+                        top: `${scrollPosition}rem`,
                     }}
                     onMouseDown={handleThumbMouseDown}
                 ></div>

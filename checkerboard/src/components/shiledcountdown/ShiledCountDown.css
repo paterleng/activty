@@ -3,21 +3,21 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 250px;
-    height: 160px;
+    width: 250rem;
+        height: 160rem;
     background-color: #000000;
     clip-path: polygon(7% 0, 95% 6%, 100% 90%, 0 100%);
     position: absolute;
-    top:740px;
-    right: 50px;
+    top: 740rem;
+        right: 50rem;
 }
 
 .shiled-div-have-internal{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 230px;
-    height: 140px;
+    width: 230rem;
+        height: 140rem;
     background-color: #6076C1;
     clip-path: polygon(7% 0, 95% 6%, 100% 90%, 0 100%);
     position: relative;
@@ -25,15 +25,15 @@
 
 .font-div-style{
     position: absolute;
-    left: 38px;
-    top: 34px;
+    left: 38rem;
+        top: 34rem;
 }
 
 .time-style-div{
     font-family: SF Pro;
-    font-size: 32px;
+    font-size: 32rem;
     font-weight: 700;
-    line-height: 38.19px;
+    line-height: 38.19rem;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
@@ -41,11 +41,11 @@
 }
 
 .shiled-duration-div{
-    margin-top: 20px;
+    margin-top: 20rem;
     font-family: SF Pro;
-    font-size: 12px;
+    font-size: 12rem;
     font-weight: 700;
-    line-height: 14.32px;
+    line-height: 14.32rem;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;

@@ -3,12 +3,12 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 206px;
-    height: 40px;
-    border-radius: 12px;
+    width: 206rem;
+        height: 40rem;
+        border-radius: 12rem;
     cursor: pointer;
     background-color:  #F51987;
-    border: 1px solid  #F51987;
+    border: 1rem solid #F51987;
     color: white;
-    margin-right: 10px;
+    margin-right: 10rem;
 }

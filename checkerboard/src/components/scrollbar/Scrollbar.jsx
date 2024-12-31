@@ -113,8 +113,8 @@ const CustomScroll = () => {
                     className="scrollbar-thumb"
                     ref={thumbRef}
                     style={{
-                        height: `${thumbHeight}px`,
-                        top: `${scrollPosition}px`,
+                        height: `${thumbHeight}rem`,
+                        top: `${scrollPosition}rem`,
                     }}
                     onMouseDown={handleThumbMouseDown} // 添加鼠标事件
                 ></div>
