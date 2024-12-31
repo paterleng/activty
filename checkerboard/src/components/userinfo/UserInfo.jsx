@@ -20,7 +20,7 @@ const UserInfo = () => {
     const token = useSelector((state) => state.token);
     const user = useSelector((state) => state.user);
     const [isEditing, setIsEditing] = useState(false); // 控制是否编辑状态
-    const [name, setName] = useState(user.user_name); // 保存用户输入
+    const [name, setName] = useState(""); // 保存用户输入
 
     // 点击 SVG 切换到编辑状态
     const handleEdit = () => {
@@ -53,11 +53,12 @@ const UserInfo = () => {
                 setUserInfo(response.data);
                 console.log(response.data);
                 dispatch(setUser(response.data))
+                setName(response.data.user_name);
                 setImage(response.data.avatar_id-1)
             }
         };
         fetchUserInfo();
-    }, [token,image,dispatch]);
+    }, [token,image]);
   
     const showModal = () => {
         setOpen(true);
@@ -108,9 +109,9 @@ const UserInfo = () => {
                 <div className="info-row">
                     <Avatar
                         sx={{
-                            borderRadius: '12px',
+                            borderRadius: '12rem',
                         }}
-                        style={{marginLeft: "30px"}}
+                        style={{marginLeft: "30rem"}}
                         shape="square" size={80}
                         icon={<AntDesignOutlined/>}
                         src={images[image]}
@@ -138,7 +139,7 @@ const UserInfo = () => {
                             </defs>
                         </svg>
                     </div>
-                    <div style={{display: "flex", alignItems: "center",width:'300px'}}>
+                    <div style={{display: "flex", alignItems: "center",width:'300rem'}}>
                         {/* 如果是编辑状态，则显示输入框 */}
                         {isEditing ? (
                             <input
@@ -148,23 +149,23 @@ const UserInfo = () => {
                                 onBlur={handleBlur} // 失去焦点时保存内容
                                 autoFocus // 自动聚焦到输入框
                                 style={{
-                                    marginLeft: "30px",
-                                    height: "30px",
-                                    width:'150px',
-                                    fontSize: "16px",
-                                    padding: "4px",
-                                    borderRadius: "4px",
+                                    marginLeft: "30rem",
+                                    height: "30rem",
+                                    width:'150rem',
+                                    fontSize: "16rem",
+                                    padding: "4rem",
+                                    borderRadius: "4rem",
                                 }}
                             />
                         ) : (
                             // 非编辑状态显示 h3 标签
-                            <h3 style={{marginLeft: "30px"}}>{name}</h3>
+                            <h3 style={{marginLeft: "30rem",fontSize:'20rem'}}>{userInfo.user_name}</h3>
                         )}
 
                         {/* 点击 SVG 切换到编辑状态 */}
                         <svg
                             onClick={handleEdit}
-                            style={{marginLeft: "10px", marginTop: "5px", cursor: "pointer"}}
+                            style={{marginLeft: "10rem", marginTop: "5rem", cursor: "pointer"}}
                             width="12"
                             height="12"
                             viewBox="0 0 12 12"
@@ -193,13 +194,13 @@ const UserInfo = () => {
                 <div className='line-under-div'>
                     <div className="data-style">
                         <div className='sol-avaliable'>SOL Available</div>
-                        <div className='sol-avaliable-amount' style={{color: "#F5E01B"}}>{user.available}</div>
+                        <div className='sol-avaliable-amount' style={{color: "#F5E01B"}}>{userInfo.available}</div>
                     </div>
-                    <div style={{marginTop: '30px'}}>{message.user_id}
+                    <div style={{marginTop: '30rem'}}>{message.user_id}
                         <button className='user-info-btn'>Withdraw</button>
-                        <button className='user-info-btn' style={{marginLeft: '10px'}}>Top Up</button>
+                        <button className='user-info-btn' style={{marginLeft: '10rem'}}>Top Up</button>
                     </div>
-                    <div style={{marginTop: '50px'}}>
+                    <div style={{marginTop: '50rem'}}>
                         <div className="data-style-middle">
                             <div className='data-style-middle-font'>Bowls Occupied:</div>
                             <div className='data-style-middle-amount'>18</div>
@@ -279,7 +280,7 @@ const UserInfo = () => {
                                         </clipPath>
                                     </defs>
                                 </svg>
-                                <div className='data-style-middle-amount' style={{marginLeft: '5px'}}>18</div>
+                                <div className='data-style-middle-amount' style={{marginLeft: '5rem'}}>18</div>
                             </div>
                         </div>
                     </div>

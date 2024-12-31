@@ -22,9 +22,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 750px;
-    width: 1324px;
-    margin-top: 40px;
+    height: 750rem;
+        width: 1324rem;
+        margin-top: 40rem;
     clip-path: polygon(3% 0, 100% 0, 100% 100%, 0 100%);
     background-color: #000000;
     box-sizing: border-box;
@@ -39,9 +39,9 @@
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
-    height: 730px;
-    width: 989px;
-    margin-left: 94px;
+    height: 730rem;
+        width: 989rem;
+        margin-left: 94rem;
     background-color: #191919;
     clip-path: polygon(4% 0, 100% 0, 100% 100%, 0 100%);
 }
@@ -53,43 +53,43 @@
     flex-wrap: wrap;
     align-content: space-around;
     justify-content: flex-start;
-    margin-left: 10px;
-    margin-right: 93px;
+    margin-left: 10rem;
+        margin-right: 93rem;
     background-color: #191919;
-    height: 729px;
-    width: 300px;
+    height: 729rem;
+        width: 300rem;
 }
 
 .batch-avatar{
-    margin-top: 130px;
+    margin-top: 130rem;
 }
 
 .is-owner{
-    margin-top: 20px;
+    margin-top: 20rem;
     font-family: SF Pro;
-    font-size: 20px;
+    font-size: 20rem;
     font-weight: 860;
-    line-height: 23.87px;
+    line-height: 23.87rem;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
 }
 
 .owner-div{
-    margin-top: 30px;
+    margin-top: 30rem;
     font-family: SF Pro;
-    font-size: 12px;
+    font-size: 12rem;
     font-weight: 400;
-    line-height: 14.32px;
+    line-height: 14.32rem;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
 }
 .owner-div span{
     font-family: SF Pro;
-    font-size: 12px;
+    font-size: 12rem;
     font-weight: 700;
-    line-height: 14.32px;
+    line-height: 14.32rem;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
@@ -97,36 +97,36 @@
 }
 
 .value-div-owner{
-    margin-top: 10px;
+    margin-top: 10rem;
     font-family: SF Pro;
-    font-size: 12px;
+    font-size: 12rem;
     font-weight: 400;
-    line-height: 14.32px;
+    line-height: 14.32rem;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
 }
 
 .value-div-noowner{
-    margin-top: 52px;
+    margin-top: 52rem;
 }
 
 .value-amount-font{
     font-family: SF Pro;
-    font-size: 12px;
+    font-size: 12rem;
     font-weight: 400;
-    line-height: 14.32px;
+    line-height: 14.32rem;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
 }
 
 .amount-div-value{
-    margin-top: 5px;
+    margin-top: 5rem;
     font-family: SF Pro;
-    font-size: 16px;
+    font-size: 16rem;
     font-weight: 700;
-    line-height: 19.09px;
+    line-height: 19.09rem;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
@@ -138,11 +138,11 @@
 }
 
 .batch-number-div{
-    margin-top: 20px;
+    margin-top: 20rem;
     font-family: SF Pro;
-    font-size: 20px;
+    font-size: 20rem;
     font-weight: 860;
-    line-height: 23.87px;
+    line-height: 23.87rem;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
@@ -150,11 +150,11 @@
 }
 
 .total-comount{
-    margin-top: 50px;
+    margin-top: 50rem;
     font-family: SF Pro;
-    font-size: 12px;
+    font-size: 12rem;
     font-weight: 400;
-    line-height: 14.32px;
+    line-height: 14.32rem;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
@@ -162,32 +162,33 @@
 }
 .total-comount-div{
     font-family: SF Pro;
-    font-size: 16px;
+    font-size: 16rem;
     font-weight: 700;
-    line-height: 19.09px;
+    line-height: 19.09rem;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
     color: #2FF519;
-    margin-top: 10px;
+    margin-top: 10rem;
 }
 
 .batch-buttom-right-input{
-    height: 50px;
-    width: 170px;
-    font-size: 16px;
+    height: 50rem;
+        width: 170rem;
+        font-size: 16rem;
     font-weight: 400;
-    border-radius: 12px;
-    border: 10px solid #292929;
+    border-radius: 12rem;
+        border: 10rem solid #292929;
     background-color: #191919;
     color: white;
-    margin-top: 50px;
+    margin-top: 50rem;
 }
 
 .batch-buttom-right-input:hover {
     background-color:#191919 !important;
     border-color: #292929; /* 鼠标悬停时的边框颜色 */
-    box-shadow: 0 0 5px #292929; /* 添加悬浮阴影 */
+    box-shadow: 0 0 5rem #292929;
+        /* 添加悬浮阴影 */
 }
 
 
@@ -195,20 +196,20 @@
 .batch-buttom-right-input:focus {
     background-color:#191919 !important;
     border-color: #292929;
-    box-shadow: 0 0 5px #292929;
+    box-shadow: 0 0 5rem #292929;
 }
 
 .container-right {
     display: flex;
     flex-direction: column;
-    margin-left: 10px;
-    margin-right: 93px;
+    margin-left: 10rem;
+        margin-right: 93rem;
     background-color: #191919;
-    height: 729px;
-    width: 300px;
+    height: 729rem;
+        width: 300rem;
 }
 .container-right-internal{
-    margin-left: 70px;
+    margin-left: 70rem;
 }
 
 .div-btn-style {
@@ -251,9 +252,9 @@
     justify-content: center;
     align-items: center;
     background-color: #e3e3e3;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
+    border: 1rem solid #ccc;
+        border-radius: 6rem;
+        font-size: 14rem;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.2s;
@@ -263,26 +264,40 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 10px;
+    margin-left: 10rem;
     position: absolute;
-    border-radius: 5px;
-    top: 270px;
-    right: 3px;
+    border-radius: 5rem;
+        top: 270rem;
+        right: 3rem;
     z-index: 3;
 }
 
 .record-table-dev {
-    height: 500px;
-    border: 10px solid #000000;
+    height: 500rem;
+    border: 10rem solid #000000;
+}
+.record-table-dev-title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50rem;
+    color: #ffffff;
+    font-size: 16rem;
+    font-family: SF Pro;
+    font-weight: 800;
+    line-height: 16.71rem;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    gap: 5px;
-    width: 500px;
-    height: 500px;
-    padding: 10px;
+    gap: 5rem;
+        width: 500rem;
+        height: 500rem;
+        padding: 10rem;
 }
 
 .shiled-div{
@@ -290,10 +305,10 @@
     position: relative;
     justify-content: center;
     align-items: center;
-    height: 50px;
-    width: 50px;
-    border: 5px solid #c53d7b;
-    font-size: 14px;
+    height: 50rem;
+        width: 50rem;
+        border: 5rem solid #c53d7b;
+        font-size: 14rem;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.2s;
@@ -304,13 +319,13 @@
     position: relative;
     justify-content: center;
     align-items: center;
-    height: 50px;
-    width: 50px;
-    border: 5px solid #6076C1;
+    height: 50rem;
+        width: 50rem;
+        border: 5rem solid #6076C1;
     background-image: url("./images/picture/grid-img.png");
     background-position: center;
     background-repeat: no-repeat;
-    font-size: 14px;
+    font-size: 14rem;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.2s;
@@ -318,53 +333,53 @@
 
 .hover-style{
     position: absolute;
-    top: 40px;
-    right: -6px;
+    top: 40rem;
+        right: -6rem;
 }
 
 .selected-style{
     position: absolute;
-    top: 40px;
-    right: -6px;
+    top: 40rem;
+        right: -6rem;
 }
 
 .svg-style{
     position: absolute;
-    top: -5px;
-    left: 0px;
+    top: -5rem;
+        left: 0rem;
 }
 /*拥有的格子*/
 .grid-box.have {
-    border: 5px solid #4A7971;
+    border: 5rem solid #4A7971;
 }
 
 /*被他人抢占的*/
 .grid-box.preempted {
-    border: 5px solid #B35649;
+    border: 5rem solid #B35649;
 }
 
 
 .submit-button {
     text-align: center;
-    width: 20px;
-    margin-top: 10px;
-    padding-right: 25px;
-    font-size: 18px;
+    width: 20rem;
+        margin-top: 10rem;
+        padding-right: 25rem;
+        font-size: 18rem;
     color: #1677ff;
     border: none;
-    border-radius: 5px;
+    border-radius: 5rem;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4rem 10rem rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s, transform 0.3s;
 }
 
 .box-details {
-    width: 400px;
-    height: 400px;
-    margin-left: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    width: 400rem;
+        height: 400rem;
+        margin-left: 20rem;
+        padding: 10rem;
+        border: 1rem solid #ddd;
+        border-radius: 5rem;
     background-color: #f9f9f9;
 }
 
@@ -374,59 +389,59 @@
 
 .popupStyle {
     position: fixed;
-    right: -50px;
+    right: -50rem;
     transform: translate(-50%, -50%);
-    width: 250px;
-    height: 400px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
+    width: 250rem;
+        height: 400rem;
+        box-shadow: 0 4rem 10rem rgba(0, 0, 0, 0.2);
+        border-radius: 6rem;
     background-color: white;
-    border: 1px solid black;
-    padding: 20px;
+    border: 1rem solid black;
+        padding: 20rem;
     z-index: 1;
 }
 
 .testStyle {
     position: fixed;
-    right: -50px;
+    right: -50rem;
     transform: translate(-50%, -50%);
-    width: 250px;
-    height: 400px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
+    width: 250rem;
+        height: 400rem;
+        box-shadow: 0 4rem 10rem rgba(0, 0, 0, 0.2);
+        border-radius: 6rem;
     background-color: white;
-    border: 1px solid black;
-    padding: 20px;
+    border: 1rem solid black;
+        padding: 20rem;
     z-index: 1;
 }
 
 .batch-button-style{
-    height:50px ;
-    width: 170px;
-    border: 10px solid #292929;
-    border-radius: 14px;
+    height: 50rem;
+        width: 170rem;
+        border: 10rem solid #292929;
+        border-radius: 14rem;
     background-color: #F5E01B;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 16rem;
     color: #3C342F;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 10rem;
 
 }
 
 .button-style{
-    margin-top: 10px;
-    height: 50px;
-    width: 170px;
+    margin-top: 10rem;
+        height: 50rem;
+        width: 170rem;
     cursor: pointer;
-    border: 10px solid #262626;
-    border-radius: 15px;
+    border: 10rem solid #262626;
+        border-radius: 15rem;
     background-color: #F5E01B;
     color:  #3C342F;
     font-family: SF Pro;
-    font-size: 16px;
+    font-size: 16rem;
     font-weight: 700;
-    line-height: 19.09px;
+    line-height: 19.09rem;
     text-align: center;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
@@ -437,8 +452,8 @@
 .model-style{
     display: flex;
     flex-direction: column;
-    width: 849px;
-    border: 10px solid #292929 !important;
+    width: 849rem;
+        border: 10rem solid #292929 !important;
 }
 .div-style-top{
     display: flex;
@@ -449,17 +464,17 @@
     height: 100%;
     transform: scale(1.3,0.8);
     font-weight: bolder;
-    font-size: 50px;
+    font-size: 50rem;
 
 }
 
 .shild-wenzi-style-chess{
     position: absolute;
-    top: 145px;
-    left: 85px;
-    font-size: 16px;
+    top: 145rem;
+        left: 85rem;
+        font-size: 16rem;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 1rem;
 }
 
 .chess-div-style-bottom{
@@ -479,29 +494,29 @@
     flex-wrap: nowrap;
     flex-direction: row;
     position: relative;
-    width: 349px;
-    height: 240px;
+    width: 349rem;
+        height: 240rem;
     background-color: #3C342F;
-    border-radius: 8px;
+    border-radius: 8rem;
 }
 
 .chess-button-left-style{
     display: flex;
-    font-size: 26px;
+    font-size: 26rem;
     font-weight: 700;
-    letter-spacing: 1px;
-    margin-left: 20px;
-    margin-top: 10px;
+    letter-spacing: 1rem;
+        margin-left: 20rem;
+        margin-top: 10rem;
 }
 
 .button-left-image{
-    height: 132px;
-    width: 349px;
+    height: 132rem;
+        width: 349rem;
 }
 .chess-button-left-button{
     display: flex;
     justify-content: space-around;
-    width: 349px;
+    width: 349rem;
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
@@ -510,18 +525,18 @@
 
 .svg-chess-choice{
     position: absolute;
-    top: -26px;
-    left: -25px;
+    top: -26rem;
+        left: -25rem;
 }
 
 .chess-button-left-button-p{
-    font-size: 46px;
+    font-size: 46rem;
     font-weight: 860;
-    letter-spacing: 1px;
+    letter-spacing: 1rem;
     color: #F5E01B;
 }
 .div-style-bottom-right{
-    width: 250px;
+    width: 250rem;
 }
 .buttom-right-top{
     display: flex;
@@ -536,7 +551,7 @@
     width: 100%;
 }
 .buttom-right-top p{
-    font-size: 16px;
+    font-size: 16rem;
     font-weight: 400;
 }
 
@@ -548,23 +563,24 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 150px;
+    margin-top: 150rem;
 }
 
 .buttom-right-input{
-    height: 50px;
-    width: 170px;
-    font-size: 16px;
+    height: 50rem;
+        width: 170rem;
+        font-size: 16rem;
     font-weight: 400;
-    border-radius: 12px;
-    border: 10px solid #292929;
+    border-radius: 12rem;
+        border: 10rem solid #292929;
     background-color: #191919;
     color: white;
 }
 .buttom-right-input:hover {
     background-color:#191919 !important;
     border-color: #292929; /* 鼠标悬停时的边框颜色 */
-    box-shadow: 0 0 5px #292929; /* 添加悬浮阴影 */
+    box-shadow: 0 0 5rem #292929;
+        /* 添加悬浮阴影 */
 }
 
 
@@ -572,38 +588,38 @@
 .buttom-right-input:focus {
     background-color:#191919 !important;
     border-color: #292929;
-    box-shadow: 0 0 5px #292929;
+    box-shadow: 0 0 5rem #292929;
 }
 
 /* 输入框在选中后且鼠标悬停时样式 */
 .buttom-right-input-input:focus:hover {
     background-color:#191919 !important;
     border-color: #673ab7;
-    box-shadow: 0 0 5px rgba(103, 58, 183, 0.8);
+    box-shadow: 0 0 5rem rgba(103, 58, 183, 0.8);
 }
 
 .buttom-update-shiled {
-    width: 250px;
-    height: 40px;
+    width: 250rem;
+        height: 40rem;
     background-color: #f5df1b;
     cursor: pointer;
-    border: 1px solid #f5df1b;
-    border-radius: 10px;
-    margin-right: 10px;
+    border: 1rem solid #f5df1b;
+        border-radius: 10rem;
+        margin-right: 10rem;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 16rem;
 }
 
 .buttom-confirm-shiled{
-    width: 250px;
-    height: 40px;
+    width: 250rem;
+        height: 40rem;
     background-color: #f9f9f9;
     cursor: pointer;
-    border: 1px solid #f9f9f9;
-    border-radius: 10px;
-    margin-left: 10px;
+    border: 1rem solid #f9f9f9;
+        border-radius: 10rem;
+        margin-left: 10rem;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 16rem;
 }
 
 
@@ -616,11 +632,11 @@
         width: 100vw;
     }
     .grid-box {
-        height: 50px;
-        font-size: 14px;
+        height: 50rem;
+            font-size: 14rem;
     }
     .submit-button {
-        font-size: 16px;
-        padding: 10px 20px;
+        font-size: 16rem;
+            padding: 10rem 20rem;
     }
 }

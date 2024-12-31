@@ -37,7 +37,7 @@ const styles = {
         fontFamily: 'Arial, sans-serif',
     },
     time: {
-        fontSize: '16px',
+        fontSize: '16rem',
         fontWeight: 'bold',
     },
 };

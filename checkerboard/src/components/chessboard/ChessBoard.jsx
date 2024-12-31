@@ -157,8 +157,9 @@ const ChessBoard = ({gId}) => {
             return
         }
 
-        box.price>box.price_increase ?(setValue(box.price)):(setValue(box.price_increase))
-        setMessage(box); 
+        box.price>box.price_increase ?(setValue(box.price),setbetValue(box.price)):(setValue(box.price_increase),setbetValue(box.price_increase))
+        setMessage(box);
+
         setShowPopup(true);
         if (showPopup) {
             setSelectedBoxes([]);
@@ -254,7 +255,11 @@ const ChessBoard = ({gId}) => {
         setIncreaseValue(e.target.value);
     };
     const betValueChange =(e)=>{
-        setbetValue(e.target.value);
+        let v = parseFloat(e.target.value)
+        if (isNaN(v)){
+            v = null
+        }
+        setbetValue(v);
     }
 
 
@@ -443,7 +448,7 @@ const ChessBoard = ({gId}) => {
                                         ):
                                         (user.user_id === message.user_id ?
                                             <div className='div-btn-style'>
-                                                <button className='button-style' style={{marginTop: '50px'}}
+                                                <button className='button-style' style={{marginTop: '50rem'}}
                                                         onClick={seizeHandle}>Buy More
                                                 </button>
                                                 <Shiled gId={message.ID}/>
@@ -479,7 +484,7 @@ const ChessBoard = ({gId}) => {
                 centered
                 width={849} // 设置宽度
                 className='model-style'
-                style={{height: '534px', backgroundColor: '#000000'}} // 设置高度
+                style={{height: '534rem', backgroundColor: '#000000'}} // 设置高度
                 destroyOnClose={true}
             >
                 <div className='div-style-top'>
@@ -561,7 +566,7 @@ const ChessBoard = ({gId}) => {
                         </svg>
                         <div className='chess-button-left-button'>
                             <p className='chess-button-left-button-p'>{totalAmount}</p>
-                            <p style={{fontWeight: '860', fontSize: '20px',marginTop:"40px",color:'#F5E01B'}}>SOL</p>
+                            <p style={{fontWeight: '860', fontSize: '20rem',marginTop:"40rem",color:'#F5E01B'}}>SOL</p>
                         </div>
                     </div>
                     <div className='div-style-bottom-right'>

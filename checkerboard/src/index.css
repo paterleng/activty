@@ -2,6 +2,7 @@ html,
 body {
   height: 100%;
   width: 100%;
+    font-size: 1px;
   color: #f9f9f9;
   align-items: stretch;
   justify-content: flex-start;
@@ -16,7 +17,7 @@ body{
             100% 100%,
             100% 100%;
     background-repeat: no-repeat, no-repeat, no-repeat;
-    margin: 0px !important;
+    margin: 0rem !important;
     cursor: auto;
 }
 

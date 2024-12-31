@@ -96,7 +96,7 @@ const Expand = () => {
                                 <div className='total-title'>Total Bones Count:</div>
                                 <div style={{display: 'flex', alignItems: "center"}}>
                                     <div className='total-content'>{total}K/1M</div>
-                                    <svg style={{marginLeft:'10px'}} width="26" height="26" viewBox="0 0 26 26" fill="none"
+                                    <svg style={{marginLeft:'10rem'}} width="26" height="26" viewBox="0 0 26 26" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M15.7273 7.04168L6.62894 15.9567C6.62894 15.9567 4.54756 17.8457 2.77308 17.8457C0.99861 17.8457 0.652644 20.4538 1.30831 21.0962C1.96397 21.7387 3.62126 21.1701 4.37736 21.1701C5.13347 21.1701 5.99839 21.2465 5.99839 22.0776C5.99839 22.9087 5.45711 25.6316 6.92189 25.6316C8.38667 25.6316 9.85424 24.6502 9.85424 23.1384C9.85424 21.6266 9.23764 19.814 11.4725 17.6215C13.7073 15.429 18.6429 9.38731 18.6429 9.38731C18.6429 9.38731 19.8008 8.40313 20.9587 8.63004C22.1165 8.85694 23.732 8.70657 24.5048 7.72513C25.2776 6.74369 25.1995 4.62777 23.8882 4.62777C22.5769 4.62777 20.9587 5.99465 20.9587 5.07882C20.9587 4.163 21.2655 1 19.2595 1C17.2535 1 15.9449 1.98139 15.9449 3.41664C15.9449 4.85189 16.6927 6.09851 15.7273 7.04168Z"
@@ -236,6 +236,10 @@ const Expand = () => {
                     </div>
                     <div className='right-dev'>
                         <div className='record-table-dev'>
+                            <div className='record-table-dev-title'>
+                                <div style={{width:'7rem',height:'7rem',backgroundColor:' #3C342F',marginLeft:'15rem'}}></div>
+                                <span style={{marginLeft:'20rem'}}>Happening Now</span>
+                            </div>
                             <RecordTable/>
                         </div>
                     </div>

@@ -45,7 +45,7 @@ const Shiled = ({gId}) => {
                 centered
                 width={849} // 设置宽度
                 className='model-style'
-                style={{height: '534px', backgroundColor: '#000000'}} // 设置高度
+                style={{height: '534rem', backgroundColor: '#000000'}} // 设置高度
                 destroyOnClose={true}
             >
                 <div className='div-style-top'>
@@ -82,7 +82,7 @@ const Shiled = ({gId}) => {
                         </svg>
                         <div className='button-left-button'>
                             <p className='button-left-button-p'>Dinmond:</p>
-                            <p style={{fontWeight: '400', color: '#986D5A', fontSize: '16px'}}>4h</p>
+                            <p style={{fontWeight: '400', color: '#986D5A', fontSize: '16rem'}}>4h</p>
                         </div>
                     </div>
                     <div className='div-style-bottom-right'>
@@ -90,7 +90,7 @@ const Shiled = ({gId}) => {
                             <p>Shield Available:</p>
                             <p className="buttom-right-top-p">20</p>
                         </div>
-                        <p style={{color: "#65574A", fontSize: "12px", fontWeight: "400"}}>How many shields do you want
+                        <p style={{color: "#65574A", fontSize: "12rem", fontWeight: "400"}}>How many shields do you want
                             to use?</p>
                         <Input className="buttom-right-input"  placeholder="请输入内容" value={value} onChange={handleChange}></Input>
                     </div>

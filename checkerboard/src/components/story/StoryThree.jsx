@@ -11,8 +11,8 @@ const StoryThree = () => {
                         <img src="/images/picture/three-one.png" alt="Example"/>
                     </div>
                     <div className="three-div-top-right">
-                        <div style={{marginLeft:'70px'}}>HOW TO GET</div>
-                        <div style={{color:'#F5E01B',marginLeft:'70px'}}>$CHICO?</div>
+                        <div style={{marginLeft:'70rem'}}>HOW TO GET</div>
+                        <div style={{color:'#F5E01B',marginLeft:'70rem'}}>$CHICO?</div>
                     </div>
                 </div>
                 <div className="three-div-middle">
