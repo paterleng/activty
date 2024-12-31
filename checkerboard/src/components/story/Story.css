@@ -51,14 +51,24 @@
 }
 
 .first-svg-dog{
-    width: 440rem;
-        height: 440rem;
+    width: 350rem;
+        height: 340rem;
     position: absolute;
-    top: 200rem;
-        left: 450rem;
+    top: 260rem;
+        left: 730rem;
     z-index: 5;
-    background-image: url("./images/picture/dog.svg");
+    display: flex; /* 使内部内容对齐 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    overflow: hidden; /* 防止图片溢出 */
 }
+
+.first-svg-dog img {
+    width: 100%; /* 图片宽度填充容器 */
+    height: 100%; /* 图片高度填充容器 */
+    object-fit: cover; /* 保持比例填满容器，可能会裁剪 */
+}
+
 
 .first-svg-div{
     position: absolute;

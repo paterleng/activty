@@ -8,7 +8,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/activity.log" beforeDir="false" afterPath="$PROJECT_DIR$/activity.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkerboard/src/components/chessboard/ChessBoard.css" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/chessboard/ChessBoard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/chessboard/ChessBoard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/chessboard/ChessBoard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/rule/Rule.css" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/rule/Rule.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/rule/Rule.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/rule/Rule.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/story/Story.css" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/story/Story.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkerboard/src/components/story/StoryFirst.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/checkerboard/src/components/story/StoryFirst.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

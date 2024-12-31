@@ -9,7 +9,7 @@ const Rule = () => {
             <Header/>
             <div className='external'>
                 <div className='internal'>
-                    <div>
+                    <div style={{fontSize:'22rem'}}>
                         <h1>RULES</h1>
                     </div>
                     <Scrollbar/>

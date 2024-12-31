@@ -188,8 +188,8 @@ const StoryFirst = () => {
                 <svg
                     className="rotating-svg"
                     width="963"
-                    height="938"
-                    viewBox="0 0 963 938"
+                    height="963"
+                    viewBox="0 0 963 963"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                 >
@@ -249,7 +249,7 @@ const StoryFirst = () => {
 
             {/*狗的图片*/}
             <div className='first-svg-dog'>
-                <image src='./images/picture/dog.png'></image>
+                <img src='./images/picture/dog.png'></img>
             </div>
             <div className='first-svg-div'>
                 <svg width="994" height="103" viewBox="0 0 994 103" fill="none" xmlns="http://www.w3.org/2000/svg">
