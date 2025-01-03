@@ -12,7 +12,7 @@
     align-items: flex-start;
     justify-content: center;
     width: 1124rem;
-        height: 750rem;
+    height: 750rem;
     clip-path: polygon(4% 0, 85% 0, 100% 100%, 0 100%);
     background: #000000;
     margin-top: 40rem;
@@ -26,7 +26,7 @@
     align-items: flex-start;
     justify-content: space-evenly;
     width: 1100rem;
-        height: 730rem;
+    height: 730rem;
     clip-path: polygon(4% 0, 85% 0, 100% 100%, 0 100%);
     background: #191919;
     z-index: 1;
@@ -35,7 +35,8 @@
 .grid-style-margin {
     margin-left: 160rem;
 }
-.countdown-title{
+
+.countdown-title {
     font-family: SF Pro;
     font-size: 16rem;
     font-weight: 400;
@@ -44,7 +45,7 @@
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
     color: #646464;
-
+    margin-bottom: 10px;
 }
 
 .total-title {
@@ -68,17 +69,17 @@
 .gridStyle {
     display: grid;
     grid-template-columns: repeat(3, 150rem);
-        grid-template-rows: repeat(3, 150rem);
-        gap: 20rem;
-        border-radius: 6rem;
-        margin-left: 160rem;
+    grid-template-rows: repeat(3, 150rem);
+    gap: 20rem;
+    border-radius: 6rem;
+    margin-left: 160rem;
 }
 
 .cellStyle {
     width: 150rem;
-        height: 150rem;
-        border-radius: 15rem;
-        border: 1rem solid #3b332e;
+    height: 150rem;
+    border-radius: 15rem;
+    border: 1rem solid #3b332e;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -87,7 +88,7 @@
     background-color: #2b2522;
     .price {
         margin-bottom: 10rem;
-            font-size: 18rem;
+        font-size: 18rem;
         font-weight: bold;
         /* 设置渐变色 */
         background: -webkit-linear-gradient(45deg, #35f419, #e7d91b);
